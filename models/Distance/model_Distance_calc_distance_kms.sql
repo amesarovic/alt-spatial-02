@@ -1,7 +1,7 @@
 {{
   config({    
     "materialized": "table",
-    "alias": "prophecy_tmp__mdetnrlp__Distance__calculate_distance",
+    "alias": "prophecy_tmp__mdezq40d__Distance__calc_distance_kms",
     "database": "andre_dev",
     "schema": "alteryx_spatial"
   })
@@ -15,20 +15,20 @@ WITH distances AS (
 
 ),
 
-calculate_distance AS (
+calc_distance_kms AS (
 
   {{
     andre_spatial_09.Distance(
       'distances', 
-      'pt1', 
-      'pt2', 
+      'source_point', 
+      'dest_point', 
       'point', 
       'point', 
       true, 
       'kms', 
       true, 
-      false, 
-      ['pt1', 'pt2']
+      true, 
+      ['start_city', 'destination_city', 'source_point', 'dest_point']
     )
   }}
 
@@ -36,4 +36,4 @@ calculate_distance AS (
 
 SELECT *
 
-FROM calculate_distance
+FROM calc_distance_kms

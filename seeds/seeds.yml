@@ -1,5 +1,5 @@
 ---
 version: 2
 seeds:
-- name: "points"
+- name: "distances"
   columns: []

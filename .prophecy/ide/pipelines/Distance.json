@@ -22,13 +22,13 @@
     "isTranspiledPipeline" : false
   },
   "processes" : {
-    "spsK2br5aB2ywsrQyHIQu$$Qb5VdP9lnABJldoQE7tFx" : {
-      "id" : "spsK2br5aB2ywsrQyHIQu$$Qb5VdP9lnABJldoQE7tFx",
+    "vQKlP36X5G3K2Pn86tqVI$$r76dq7C2KnLLaAfSw1A8g" : {
+      "id" : "vQKlP36X5G3K2Pn86tqVI$$r76dq7C2KnLLaAfSw1A8g",
       "component" : "Dataset",
       "metadata" : {
         "label" : "distances",
-        "x" : -620,
-        "y" : -220,
+        "x" : -460,
+        "y" : -300,
         "phase" : 0
       },
       "properties" : {
@@ -42,21 +42,31 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "MF2YGdQ5CiCeS_d2kcKE0$$QA2RbE2-2-oqgjAjqwbhl",
+          "id" : "6TynU9koGrkqLmqbKqb6h$$j6Eeom2bxUeLNue9eJ0zK",
           "slug" : "in"
         } ],
         "outputs" : [ {
-          "id" : "hXwrL0gvW6UOZPHbQ8Jky$$2xyYtc1iLR2p7_CCwJjD9",
+          "id" : "lDaqnqzHSQS08UapZoBVI$$ogmoLV7rtSscpH5csMnfm",
           "schema" : {
             "entityType" : "",
             "providerType" : "Databricks",
             "fields" : [ {
-              "name" : "pt1",
+              "name" : "start_city",
               "dataType" : {
                 "type" : "String"
               }
             }, {
-              "name" : "pt2",
+              "name" : "destination_city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "source_point",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "dest_point",
               "dataType" : {
                 "type" : "String"
               }
@@ -67,13 +77,13 @@
         "isCustomOutputSchema" : false
       }
     },
-    "AiutCr7nQyk_5o4d5MXak$$HqB1abJniYmixvMWflKoP" : {
-      "id" : "AiutCr7nQyk_5o4d5MXak$$HqB1abJniYmixvMWflKoP",
+    "Dij-9Ms3frYfCN-NPDoNB$$zVbtfsjRRxOS9oIHZWssF" : {
+      "id" : "Dij-9Ms3frYfCN-NPDoNB$$zVbtfsjRRxOS9oIHZWssF",
       "component" : "Distance",
       "metadata" : {
-        "label" : "calculate_distance",
-        "x" : -420,
-        "y" : -220,
+        "label" : "calc_distance_kms",
+        "x" : -280,
+        "y" : -300,
         "phase" : 0
       },
       "properties" : {
@@ -89,13 +99,13 @@
             "value" : "['distances']"
           }, {
             "name" : "schema",
-            "value" : "[{\"name\": \"pt1\", \"dataType\": \"String\"}, {\"name\": \"pt2\", \"dataType\": \"String\"}]"
+            "value" : "[{\"name\": \"start_city\", \"dataType\": \"String\"}, {\"name\": \"destination_city\", \"dataType\": \"String\"}, {\"name\": \"source_point\", \"dataType\": \"String\"}, {\"name\": \"dest_point\", \"dataType\": \"String\"}]"
           }, {
             "name" : "sourceColumnNames",
-            "value" : "pt1"
+            "value" : "source_point"
           }, {
             "name" : "destinationColumnNames",
-            "value" : "pt2"
+            "value" : "dest_point"
           }, {
             "name" : "sourceType",
             "value" : "point"
@@ -113,30 +123,40 @@
             "value" : "true"
           }, {
             "name" : "outputDirectionDegrees",
-            "value" : "false"
+            "value" : "true"
           } ]
         },
         "outputCardDirection" : true,
-        "destinationColumnNames" : "pt2",
-        "schema" : "[{\"name\": \"pt1\", \"dataType\": \"String\"}, {\"name\": \"pt2\", \"dataType\": \"String\"}]",
+        "destinationColumnNames" : "dest_point",
+        "schema" : "[{\"name\": \"start_city\", \"dataType\": \"String\"}, {\"name\": \"destination_city\", \"dataType\": \"String\"}, {\"name\": \"source_point\", \"dataType\": \"String\"}, {\"name\": \"dest_point\", \"dataType\": \"String\"}]",
         "units" : "kms",
-        "outputDirectionDegrees" : false,
+        "outputDirectionDegrees" : true,
         "outputDistance" : true,
-        "sourceColumnNames" : "pt1"
+        "sourceColumnNames" : "source_point"
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "yKqFRqiAGdsMDOzKIZGUc$$0YdrF-qEezMOIIMk2W6DM",
+          "id" : "6W4InNry42rl0htHJtU4t$$2-gS2xk-UFyhgJ0_KzrX2",
           "schema" : {
             "entityType" : "",
             "providerType" : "Databricks",
             "fields" : [ {
-              "name" : "pt1",
+              "name" : "start_city",
               "dataType" : {
                 "type" : "String"
               }
             }, {
-              "name" : "pt2",
+              "name" : "destination_city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "source_point",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "dest_point",
               "dataType" : {
                 "type" : "String"
               }
@@ -145,17 +165,27 @@
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "Q0joT3felUEIwBWrg8nZr$$vwRRgKlutlmUTfvb-BqqW",
+          "id" : "RcYbRlNdFGmVMP3O8Sgz2$$oG-nfw6UmasmzdwnXOkY0",
           "schema" : {
             "entityType" : "",
             "providerType" : "Databricks",
             "fields" : [ {
-              "name" : "pt1",
+              "name" : "start_city",
               "dataType" : {
                 "type" : "String"
               }
             }, {
-              "name" : "pt2",
+              "name" : "destination_city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "source_point",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "dest_point",
               "dataType" : {
                 "type" : "String"
               }
@@ -168,6 +198,11 @@
               "name" : "cardinal_direction",
               "dataType" : {
                 "type" : "String"
+              }
+            }, {
+              "name" : "direction_degrees",
+              "dataType" : {
+                "type" : "Double"
               }
             } ]
           },
@@ -184,11 +219,11 @@
     }
   },
   "connections" : [ {
-    "id" : "pz9QgohNPeW5WnoxCF7Sr$$CM6_TczCSuo79QWpRrxPo",
-    "source" : "spsK2br5aB2ywsrQyHIQu$$Qb5VdP9lnABJldoQE7tFx",
-    "sourcePort" : "hXwrL0gvW6UOZPHbQ8Jky$$2xyYtc1iLR2p7_CCwJjD9",
-    "target" : "AiutCr7nQyk_5o4d5MXak$$HqB1abJniYmixvMWflKoP",
-    "targetPort" : "yKqFRqiAGdsMDOzKIZGUc$$0YdrF-qEezMOIIMk2W6DM"
+    "id" : "Ac4sXE7q9ZVZCPB4cwVz_$$cIVEeTm2utIgn4uG0lEcl",
+    "source" : "vQKlP36X5G3K2Pn86tqVI$$r76dq7C2KnLLaAfSw1A8g",
+    "sourcePort" : "lDaqnqzHSQS08UapZoBVI$$ogmoLV7rtSscpH5csMnfm",
+    "target" : "Dij-9Ms3frYfCN-NPDoNB$$zVbtfsjRRxOS9oIHZWssF",
+    "targetPort" : "6W4InNry42rl0htHJtU4t$$2-gS2xk-UFyhgJ0_KzrX2"
   } ],
   "component" : "Pipeline"
 }

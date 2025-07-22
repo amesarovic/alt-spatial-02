@@ -1,7 +1,7 @@
 ---
 version: 2
 models:
-- name: "model_Distance_calculate_distance"
+- name: "model_Distance_calc_distance_kms"
   tags:
   - "prophecy_temp"
 sources:
@@ -11,6 +11,6 @@ sources:
   config:
     enabled: true
   tables:
-  - name: "prophecy_tmp__mdetnrlp__Distance__calculate_distance"
+  - name: "prophecy_tmp__mdezq40d__Distance__calc_distance_kms"
     tags:
     - "prophecy_temp"

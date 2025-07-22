@@ -131,17 +131,24 @@ sqlSeeds:
       entityType: ''
       providerType: Databricks
       fields:
-      - name: pt1
+      - name: start_city
         dataType:
           type: String
-      - name: pt2
+      - name: destination_city
+        dataType:
+          type: String
+      - name: source_point
+        dataType:
+          type: String
+      - name: dest_point
         dataType:
           type: String
     description: null
     author: mesarovic.andre@prophecy.io
     files:
     - seeds/distances.csv
-    createdAt: '2025-07-22 17:37:23'
+    - seeds/seeds.yml
+    createdAt: '2025-07-22 20:27:53'
   .prophecy/metadata/sqlseeds/points:
     name: points
     schema:
@@ -161,7 +168,6 @@ sqlSeeds:
     author: mesarovic.andre@prophecy.io
     files:
     - seeds/points.csv
-    - seeds/seeds.yml
     createdAt: '2025-07-22 20:02:53'
   .prophecy/metadata/sqlseeds/points_02:
     name: points_02
@@ -295,7 +301,7 @@ sqlSources:
     author: mesarovic.andre@prophecy.io
     files:
     - models/Distance/schema.yml
-    createdAt: '2025-07-22 17:37:51'
+    createdAt: '2025-07-22 20:30:50'
     tables: []
   .prophecy/metadata/sqlsources/prophecy_tmp_source__Generalize:
     name: prophecy_tmp_source__Generalize
@@ -382,11 +388,11 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/Distance/model_Distance_calculate_distance.sql
     - models/Distance/schema.yml
+    - models/Distance/model_Distance_calc_distance_kms.sql
     - .prophecy/ide/pipelines/Distance.json
     - pipelines/Distance.py
-    createdAt: '2025-07-22 17:28:40'
+    createdAt: '2025-07-22 20:30:27'
   .prophecy/metadata/sqlorchestratorpipeline/SpatialMatch_Delta:
     name: SpatialMatch_Delta
     schema: null

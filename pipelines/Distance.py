@@ -7,9 +7,9 @@ with DAG(Schedule = Schedule):
         writeOptions = {"writeMode" : "overwrite"}, 
         table = {"name" : "distances", "sourceType" : "Seed"}
     )
-    model_Distance_calculate_distance = Task(
-        task_id = "model_Distance_calculate_distance", 
+    model_Distance_calc_distance_kms = Task(
+        task_id = "model_Distance_calc_distance_kms", 
         component = "Model", 
-        modelName = "model_Distance_calculate_distance"
+        modelName = "model_Distance_calc_distance_kms"
     )
-    distances.out >> model_Distance_calculate_distance.in_0
+    distances.out >> model_Distance_calc_distance_kms.in_0

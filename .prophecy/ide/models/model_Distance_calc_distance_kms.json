@@ -1,7 +1,7 @@
 {
-  "id" : "model_Distance_calculate_distance",
+  "id" : "model_Distance_calc_distance_kms",
   "metainfo" : {
-    "label" : "model_Distance_calculate_distance",
+    "label" : "model_Distance_calc_distance_kms",
     "autoLayout" : true,
     "staleState" : "none",
     "sourceSuggestions" : {
@@ -9,7 +9,7 @@
     },
     "graphConfig" : {
       "entityConfig" : {
-        "alias" : "\"prophecy_tmp__mdetnrlp__Distance__calculate_distance\"",
+        "alias" : "\"prophecy_tmp__mdezq40d__Distance__calc_distance_kms\"",
         "materialized" : "table",
         "database" : "\"andre_dev\"",
         "schema" : "\"alteryx_spatial\"",
@@ -19,18 +19,18 @@
     "version" : 3
   },
   "processes" : {
-    "prophecy_tmp__Distance__calculate_distance" : {
-      "id" : "prophecy_tmp__Distance__calculate_distance",
+    "prophecy_tmp__Distance__calc_distance_kms" : {
+      "id" : "prophecy_tmp__Distance__calc_distance_kms",
       "component" : "TargetModel",
       "metadata" : {
-        "label" : "calculate_distance",
+        "label" : "calc_distance_kms",
         "phase" : 0
       },
       "properties" : {
         "customQueryDisabled" : true,
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
-        "query" : "\nSELECT *\n\nFROM calculate_distance\n\n",
+        "query" : "\nSELECT *\n\nFROM calc_distance_kms\n\n",
         "isModel" : true,
         "incrementalKey" : false,
         "incremental" : {
@@ -50,13 +50,13 @@
         "autoUpdateOnRun" : false
       }
     },
-    "AiutCr7nQyk_5o4d5MXak$$HqB1abJniYmixvMWflKoP" : {
-      "id" : "AiutCr7nQyk_5o4d5MXak$$HqB1abJniYmixvMWflKoP",
+    "Dij-9Ms3frYfCN-NPDoNB$$zVbtfsjRRxOS9oIHZWssF" : {
+      "id" : "Dij-9Ms3frYfCN-NPDoNB$$zVbtfsjRRxOS9oIHZWssF",
       "component" : "Distance",
       "metadata" : {
-        "label" : "calculate_distance",
-        "x" : -420,
-        "y" : -220,
+        "label" : "calc_distance_kms",
+        "x" : -280,
+        "y" : -300,
         "phase" : 0
       },
       "properties" : {
@@ -72,13 +72,13 @@
             "value" : "['distances']"
           }, {
             "name" : "schema",
-            "value" : "[{\"name\": \"pt1\", \"dataType\": \"String\"}, {\"name\": \"pt2\", \"dataType\": \"String\"}]"
+            "value" : "[{\"name\": \"start_city\", \"dataType\": \"String\"}, {\"name\": \"destination_city\", \"dataType\": \"String\"}, {\"name\": \"source_point\", \"dataType\": \"String\"}, {\"name\": \"dest_point\", \"dataType\": \"String\"}]"
           }, {
             "name" : "sourceColumnNames",
-            "value" : "pt1"
+            "value" : "source_point"
           }, {
             "name" : "destinationColumnNames",
-            "value" : "pt2"
+            "value" : "dest_point"
           }, {
             "name" : "sourceType",
             "value" : "point"
@@ -96,37 +96,37 @@
             "value" : "true"
           }, {
             "name" : "outputDirectionDegrees",
-            "value" : "false"
+            "value" : "true"
           } ]
         },
         "outputCardDirection" : true,
-        "destinationColumnNames" : "pt2",
-        "schema" : "[{\"name\": \"pt1\", \"dataType\": \"String\"}, {\"name\": \"pt2\", \"dataType\": \"String\"}]",
+        "destinationColumnNames" : "dest_point",
+        "schema" : "[{\"name\": \"start_city\", \"dataType\": \"String\"}, {\"name\": \"destination_city\", \"dataType\": \"String\"}, {\"name\": \"source_point\", \"dataType\": \"String\"}, {\"name\": \"dest_point\", \"dataType\": \"String\"}]",
         "units" : "kms",
-        "outputDirectionDegrees" : false,
+        "outputDirectionDegrees" : true,
         "outputDistance" : true,
-        "sourceColumnNames" : "pt1"
+        "sourceColumnNames" : "source_point"
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "yKqFRqiAGdsMDOzKIZGUc$$0YdrF-qEezMOIIMk2W6DM",
+          "id" : "6W4InNry42rl0htHJtU4t$$2-gS2xk-UFyhgJ0_KzrX2",
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "Q0joT3felUEIwBWrg8nZr$$vwRRgKlutlmUTfvb-BqqW",
+          "id" : "RcYbRlNdFGmVMP3O8Sgz2$$oG-nfw6UmasmzdwnXOkY0",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
       }
     },
-    "spsK2br5aB2ywsrQyHIQu$$Qb5VdP9lnABJldoQE7tFx" : {
-      "id" : "spsK2br5aB2ywsrQyHIQu$$Qb5VdP9lnABJldoQE7tFx",
+    "vQKlP36X5G3K2Pn86tqVI$$r76dq7C2KnLLaAfSw1A8g" : {
+      "id" : "vQKlP36X5G3K2Pn86tqVI$$r76dq7C2KnLLaAfSw1A8g",
       "component" : "Source",
       "metadata" : {
         "label" : "distances",
-        "x" : -620,
-        "y" : -220,
+        "x" : -460,
+        "y" : -300,
         "phase" : 0
       },
       "properties" : {
@@ -141,7 +141,7 @@
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "hXwrL0gvW6UOZPHbQ8Jky$$2xyYtc1iLR2p7_CCwJjD9",
+          "id" : "lDaqnqzHSQS08UapZoBVI$$ogmoLV7rtSscpH5csMnfm",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -150,17 +150,17 @@
     }
   },
   "connections" : [ {
-    "id" : "conn_AiutCr7nQyk_5o4d5MXak$$HqB1abJniYmixvMWflKoP_prophecy_tmp__Distance__calculate_distance",
-    "source" : "AiutCr7nQyk_5o4d5MXak$$HqB1abJniYmixvMWflKoP",
-    "sourcePort" : "Q0joT3felUEIwBWrg8nZr$$vwRRgKlutlmUTfvb-BqqW",
-    "target" : "prophecy_tmp__Distance__calculate_distance",
+    "id" : "conn_Dij-9Ms3frYfCN-NPDoNB$$zVbtfsjRRxOS9oIHZWssF_prophecy_tmp__Distance__calc_distance_kms",
+    "source" : "Dij-9Ms3frYfCN-NPDoNB$$zVbtfsjRRxOS9oIHZWssF",
+    "sourcePort" : "RcYbRlNdFGmVMP3O8Sgz2$$oG-nfw6UmasmzdwnXOkY0",
+    "target" : "prophecy_tmp__Distance__calc_distance_kms",
     "targetPort" : "input_port_0"
   }, {
-    "id" : "pz9QgohNPeW5WnoxCF7Sr$$CM6_TczCSuo79QWpRrxPo",
-    "source" : "spsK2br5aB2ywsrQyHIQu$$Qb5VdP9lnABJldoQE7tFx",
-    "sourcePort" : "hXwrL0gvW6UOZPHbQ8Jky$$2xyYtc1iLR2p7_CCwJjD9",
-    "target" : "AiutCr7nQyk_5o4d5MXak$$HqB1abJniYmixvMWflKoP",
-    "targetPort" : "yKqFRqiAGdsMDOzKIZGUc$$0YdrF-qEezMOIIMk2W6DM"
+    "id" : "Ac4sXE7q9ZVZCPB4cwVz_$$cIVEeTm2utIgn4uG0lEcl",
+    "source" : "vQKlP36X5G3K2Pn86tqVI$$r76dq7C2KnLLaAfSw1A8g",
+    "sourcePort" : "lDaqnqzHSQS08UapZoBVI$$ogmoLV7rtSscpH5csMnfm",
+    "target" : "Dij-9Ms3frYfCN-NPDoNB$$zVbtfsjRRxOS9oIHZWssF",
+    "targetPort" : "6W4InNry42rl0htHJtU4t$$2-gS2xk-UFyhgJ0_KzrX2"
   } ],
   "component" : "Model"
 }
