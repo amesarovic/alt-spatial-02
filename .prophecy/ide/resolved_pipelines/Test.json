@@ -1,0 +1,105 @@
+{
+  "id" : "Test",
+  "metainfo" : {
+    "label" : "Test",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "_bJBeBzWw59qNFDwlBwyL$$7FBGKhHTk17sA8ajcMFyu" : {
+      "id" : "_bJBeBzWw59qNFDwlBwyL$$7FBGKhHTk17sA8ajcMFyu",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "new_england",
+        "x" : -540,
+        "y" : -260,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "new_england",
+          "sourceType" : "Source",
+          "sourceName" : "andre_dev.alteryx_spatial",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "s8bR7_pPzzI2QU19E0e9v$$ynPV-s5SB8oubC4shBoWH",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "Oj31lULb8pjBWAW4ibLc8$$Tog4eLPTknqR138X0I8Dg",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "Ub5zvYKBWatgvuBqU3ADm$$DLvt-k4ogCI2rf2xHXptl" : {
+      "id" : "Ub5zvYKBWatgvuBqU3ADm$$DLvt-k4ogCI2rf2xHXptl",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "model_Test_Limit_1",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "model_Test_Limit_1"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "prophecy_tmp__Test__Limit_1", "Ub5zvYKBWatgvuBqU3ADm$$DLvt-k4ogCI2rf2xHXptl", "_bJBeBzWw59qNFDwlBwyL$$7FBGKhHTk17sA8ajcMFyu" ],
+        "type" : "table",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "model_Test_Limit_1_in_0",
+          "slug" : "in_0"
+        } ],
+        "outputs" : [ {
+          "id" : "model_Test_Limit_1_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "kBe6uVayw8jUXoYhwNoKX$$FP0QkK5mIVj9OJMTT6xpt",
+    "source" : "_bJBeBzWw59qNFDwlBwyL$$7FBGKhHTk17sA8ajcMFyu",
+    "sourcePort" : "Oj31lULb8pjBWAW4ibLc8$$Tog4eLPTknqR138X0I8Dg",
+    "target" : "Ub5zvYKBWatgvuBqU3ADm$$DLvt-k4ogCI2rf2xHXptl",
+    "targetPort" : "model_Test_Limit_1_in_0"
+  } ],
+  "component" : "Pipeline"
+}

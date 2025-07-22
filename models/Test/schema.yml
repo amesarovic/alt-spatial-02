@@ -1,0 +1,16 @@
+---
+version: 2
+models:
+- name: "model_Test_Limit_1"
+  tags:
+  - "prophecy_temp"
+sources:
+- name: "prophecy_tmp_source__Test"
+  database: "andre_dev"
+  schema: "alteryx_spatial"
+  config:
+    enabled: true
+  tables:
+  - name: "prophecy_tmp__mdes29i7__Test__Limit_1"
+    tags:
+    - "prophecy_temp"
