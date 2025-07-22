@@ -22,90 +22,45 @@
     "isTranspiledPipeline" : false
   },
   "processes" : {
-    "FMBpsB93ogqacORiYrl-c$$OeSGKFtzn8-qQf33NOTHd" : {
-      "id" : "FMBpsB93ogqacORiYrl-c$$OeSGKFtzn8-qQf33NOTHd",
-      "component" : "Dataset",
-      "metadata" : {
-        "label" : "us_states_lines",
-        "x" : -620,
-        "y" : -220,
-        "phase" : 0
-      },
-      "properties" : {
-        "writeOptions" : {
-          "writeMode" : "overwrite"
-        },
-        "table" : {
-          "name" : "us_states_lines",
-          "sourceType" : "Seed"
-        }
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "VQFt46XzODhg1CcNmuEF5$$Oe4Zo5pi8wFb_sddmFnFV",
-          "slug" : "in"
-        } ],
-        "outputs" : [ {
-          "id" : "o09ZkSgNtBfgLZKaht9Dn$$DIjDk5iHt7w_6u4JCtrFb",
-          "schema" : {
-            "entityType" : "",
-            "providerType" : "Databricks",
-            "fields" : [ {
-              "name" : "name",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "geometry",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false
-      }
-    },
     "THub2u4n0KOocxqw9b5Bo$$TgTRYwf0AWc12VQopYg49" : {
       "id" : "THub2u4n0KOocxqw9b5Bo$$TgTRYwf0AWc12VQopYg49",
       "component" : "PolyBuild",
       "metadata" : {
-        "label" : "PolyBuild_1",
+        "label" : "build_polyline",
         "x" : -440,
         "y" : -220,
         "phase" : 0
       },
       "properties" : {
-        "buildMethod" : "SequencePolygon",
-        "longitudeColumnName" : "",
-        "sequenceColumnName" : "",
-        "groupColumnName" : "",
-        "relation_name" : [ "us_states_lines" ],
+        "buildMethod" : "SequencePolyline",
+        "longitudeColumnName" : "longitude",
+        "sequenceColumnName" : "stop_schedule",
+        "groupColumnName" : "route_id",
+        "relation_name" : [ "poly_build" ],
         "_oldMacroProperties" : {
           "macroName" : "PolyBuild",
           "projectName" : "andre_spatial_09",
           "parameters" : [ {
             "name" : "relation_name",
-            "value" : "['us_states_lines']"
+            "value" : "['poly_build']"
           }, {
             "name" : "buildMethod",
-            "value" : "SequencePolygon"
+            "value" : "SequencePolyline"
           }, {
             "name" : "longitudeColumnName",
-            "value" : ""
+            "value" : "longitude"
           }, {
             "name" : "latitudeColumnName",
-            "value" : ""
+            "value" : "latitude"
           }, {
             "name" : "groupColumnName",
-            "value" : ""
+            "value" : "route_id"
           }, {
             "name" : "sequenceColumnName",
-            "value" : ""
+            "value" : "stop_schedule"
           } ]
         },
-        "latitudeColumnName" : ""
+        "latitudeColumnName" : "latitude"
       },
       "ports" : {
         "inputs" : [ {
@@ -114,14 +69,24 @@
             "entityType" : "",
             "providerType" : "Databricks",
             "fields" : [ {
-              "name" : "name",
+              "name" : "route_id",
               "dataType" : {
                 "type" : "String"
               }
             }, {
-              "name" : "geometry",
+              "name" : "stop_schedule",
               "dataType" : {
-                "type" : "String"
+                "type" : "Date"
+              }
+            }, {
+              "name" : "latitude",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "longitude",
+              "dataType" : {
+                "type" : "Float"
               }
             } ]
           },
@@ -133,12 +98,12 @@
             "entityType" : "",
             "providerType" : "Databricks",
             "fields" : [ {
-              "name" : "name",
+              "name" : "grouping_column_name",
               "dataType" : {
                 "type" : "String"
               }
             }, {
-              "name" : "geometry",
+              "name" : "geometry_wkt",
               "dataType" : {
                 "type" : "String"
               }
@@ -154,12 +119,67 @@
         "projectName" : "andre_spatial_09",
         "sourceProjectName" : "andre_spatial_09"
       }
+    },
+    "7PvQCS7oOf4bU3A_BFIsp$$dz3CTmNT2cajC2J4ceimc" : {
+      "id" : "7PvQCS7oOf4bU3A_BFIsp$$dz3CTmNT2cajC2J4ceimc",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "poly_build",
+        "x" : -640,
+        "y" : -220,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "poly_build",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "loRnmq9Bi_FE-yTKldL4f$$DJMytSAc97VgJ6FxHETPM",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "2oxvTei5pgu5w6ycQAKCZ$$Ooz-M-gkgPokEBZQuoJ8h",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "route_id",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "stop_schedule",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "latitude",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "longitude",
+              "dataType" : {
+                "type" : "Float"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
     }
   },
   "connections" : [ {
-    "id" : "ivZsn6Z5OdSzHJ91NSJmH$$Lk0LMxODwNae39K3I6fvI",
-    "source" : "FMBpsB93ogqacORiYrl-c$$OeSGKFtzn8-qQf33NOTHd",
-    "sourcePort" : "o09ZkSgNtBfgLZKaht9Dn$$DIjDk5iHt7w_6u4JCtrFb",
+    "id" : "hWLFZp3DZGUeXwR4_elbC$$yMW2lFKJdHuONcjJVRcwV",
+    "source" : "7PvQCS7oOf4bU3A_BFIsp$$dz3CTmNT2cajC2J4ceimc",
+    "sourcePort" : "2oxvTei5pgu5w6ycQAKCZ$$Ooz-M-gkgPokEBZQuoJ8h",
     "target" : "THub2u4n0KOocxqw9b5Bo$$TgTRYwf0AWc12VQopYg49",
     "targetPort" : "rSKdp2yFKKExpJRSRC9oT$$OZmIhVmOv6nM0TBRvPknG"
   } ],

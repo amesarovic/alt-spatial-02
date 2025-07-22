@@ -11,6 +11,6 @@ sources:
   config:
     enabled: true
   tables:
-  - name: "prophecy_tmp__mdesmdzb__Buffer__buffer_us_states"
+  - name: "prophecy_tmp__mdezrmhr__Buffer__buffer_us_states"
     tags:
     - "prophecy_temp"

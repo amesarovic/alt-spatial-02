@@ -1,7 +1,7 @@
 ---
 version: 2
 models:
-- name: "model_PolyBuild_PolyBuild_1"
+- name: "model_PolyBuild_build_polyline"
   tags:
   - "prophecy_temp"
 sources:
@@ -11,6 +11,6 @@ sources:
   config:
     enabled: true
   tables:
-  - name: "prophecy_tmp__mdevmsak__PolyBuild__PolyBuild_1"
+  - name: "prophecy_tmp__mdf13x8p__PolyBuild__build_polyline"
     tags:
     - "prophecy_temp"

@@ -11,6 +11,6 @@ sources:
   config:
     enabled: true
   tables:
-  - name: "prophecy_tmp__mdet2c3o__Generalize__generalize_us_states"
+  - name: "prophecy_tmp__mdezrv9k__Generalize__generalize_us_states"
     tags:
     - "prophecy_temp"

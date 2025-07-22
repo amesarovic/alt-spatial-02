@@ -1,5 +1,5 @@
 ---
 version: 2
 seeds:
-- name: "distances"
+- name: "poly_build"
   columns: []

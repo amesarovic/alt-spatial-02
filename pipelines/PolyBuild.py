@@ -1,15 +1,15 @@
 Schedule = Schedule(cron = "* 0 2 * * * *", timezone = "GMT", emails = ["email@gmail.com"], enabled = False)
 
 with DAG(Schedule = Schedule):
-    us_states_lines = Task(
-        task_id = "us_states_lines", 
+    poly_build = Task(
+        task_id = "poly_build", 
         component = "Dataset", 
         writeOptions = {"writeMode" : "overwrite"}, 
-        table = {"name" : "us_states_lines", "sourceType" : "Seed"}
+        table = {"name" : "poly_build", "sourceType" : "Seed"}
     )
-    model_PolyBuild_PolyBuild_1 = Task(
-        task_id = "model_PolyBuild_PolyBuild_1", 
+    model_PolyBuild_build_polyline = Task(
+        task_id = "model_PolyBuild_build_polyline", 
         component = "Model", 
-        modelName = "model_PolyBuild_PolyBuild_1"
+        modelName = "model_PolyBuild_build_polyline"
     )
-    us_states_lines.out >> model_PolyBuild_PolyBuild_1.in_0
+    poly_build.out >> model_PolyBuild_build_polyline.in_0
