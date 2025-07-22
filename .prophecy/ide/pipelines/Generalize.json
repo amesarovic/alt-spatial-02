@@ -1,0 +1,163 @@
+{
+  "id" : "Generalize",
+  "metainfo" : {
+    "label" : "Generalize",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "fUdKlXpJ3Pp7Isuzp6DTu$$r3vWclQ10CXrMEiH1v2OG" : {
+      "id" : "fUdKlXpJ3Pp7Isuzp6DTu$$r3vWclQ10CXrMEiH1v2OG",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "us_states_lines",
+        "x" : -560,
+        "y" : -180,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "us_states_lines",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "ArJgLFFtzT4Q_3yMSMgPE$$pYtpdKy6u1N_I7H3SA-iR",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "3K6bmtuHe2wKryZVZlztT$$3h_zKt7PBI8UubQLkDczC",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "ZqKmcWrwxWNJpmMNr2-1d$$AJI8W7tdXyiPxzir8vriC" : {
+      "id" : "ZqKmcWrwxWNJpmMNr2-1d$$AJI8W7tdXyiPxzir8vriC",
+      "component" : "Generalize",
+      "metadata" : {
+        "label" : "generalize_us_states",
+        "x" : -320,
+        "y" : -180,
+        "phase" : 0
+      },
+      "properties" : {
+        "relation_name" : [ "us_states_lines" ],
+        "_oldMacroProperties" : {
+          "macroName" : "Generalize",
+          "projectName" : "andre_spatial_09",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['us_states_lines']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "destinationColumnNames",
+            "value" : "geometry"
+          }, {
+            "name" : "threshold",
+            "value" : "25"
+          }, {
+            "name" : "unit",
+            "value" : "kms"
+          } ]
+        },
+        "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
+        "threshold" : "25",
+        "polygonColumnName" : "geometry",
+        "unit" : "kms"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "ltVfuuFkj1FOuHONbZJ99$$2r6wwusiFnkATwo2c2xTw",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "qSz1flHHNOwcswyCZCeXO$$UN1ZH5_RwGMCOt8eFiu_8",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "input",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "output",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "componentInfo" : {
+        "gemId" : "Generalize_andre_spatial_09",
+        "name" : "Generalize",
+        "projectName" : "andre_spatial_09",
+        "sourceProjectName" : "andre_spatial_09"
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "LFGXV9wHPg2goukTt3xAt$$iIp0t6D32JnwTGAshz2Yd",
+    "source" : "fUdKlXpJ3Pp7Isuzp6DTu$$r3vWclQ10CXrMEiH1v2OG",
+    "sourcePort" : "3K6bmtuHe2wKryZVZlztT$$3h_zKt7PBI8UubQLkDczC",
+    "target" : "ZqKmcWrwxWNJpmMNr2-1d$$AJI8W7tdXyiPxzir8vriC",
+    "targetPort" : "ltVfuuFkj1FOuHONbZJ99$$2r6wwusiFnkATwo2c2xTw"
+  } ],
+  "component" : "Pipeline"
+}

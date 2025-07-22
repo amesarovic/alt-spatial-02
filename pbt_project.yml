@@ -38,6 +38,17 @@ sqlMacros:
     - macros/macros.yml
     - gems/Buffer.py
     createdAt: '2025-07-22 17:03:19'
+  .prophecy/metadata/sqlmacros/Generalize:
+    name: Generalize
+    macroType: query
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - macros/Generalize.sql
+    - .prophecy/ide/macros/Generalize.json
+    - macros/macros.yml
+    - gems/Generalize.py
+    createdAt: '2025-07-22 17:20:29'
   .prophecy/metadata/sqlmacros/generate_schema_name:
     name: generate_schema_name
     macroType: expression
@@ -87,6 +98,38 @@ sqlSeeds:
     - seeds/seeds.yml
     createdAt: '2025-07-22 17:12:12'
 sqlSources:
+  .prophecy/metadata/sqlsources/prophecy_tmp_source__Generalize:
+    name: prophecy_tmp_source__Generalize
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/Generalize/schema.yml
+    createdAt: '2025-07-22 17:25:09'
+    tables: []
+  .prophecy/metadata/sqlsources/prophecy_tmp_source__Generalize_Delta:
+    name: prophecy_tmp_source__Generalize_Delta
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/Generalize_Delta/schema.yml
+    createdAt: '2025-07-22 17:23:44'
+    tables: []
+  .prophecy/metadata/sqlsources/prophecy_tmp_source__Buffer_Delta:
+    name: prophecy_tmp_source__Buffer_Delta
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/Buffer_Delta/schema.yml
+    createdAt: '2025-07-22 17:05:27'
+    tables: []
+  .prophecy/metadata/sqlsources/prophecy_tmp_source__Test:
+    name: prophecy_tmp_source__Test
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/Test/schema.yml
+    createdAt: '2025-07-22 16:57:19'
+    tables: []
   .prophecy/metadata/sqlsources/andre_dev_alteryx_spatial:
     name: andre_dev.alteryx_spatial
     description: null
@@ -118,22 +161,6 @@ sqlSources:
     - models/Buffer/schema.yml
     createdAt: '2025-07-22 17:12:45'
     tables: []
-  .prophecy/metadata/sqlsources/prophecy_tmp_source__Buffer_Delta:
-    name: prophecy_tmp_source__Buffer_Delta
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - models/Buffer_Delta/schema.yml
-    createdAt: '2025-07-22 17:05:27'
-    tables: []
-  .prophecy/metadata/sqlsources/prophecy_tmp_source__Test:
-    name: prophecy_tmp_source__Test
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - models/Test/schema.yml
-    createdAt: '2025-07-22 16:57:19'
-    tables: []
 sqlUnreferencedSources: {}
 sqlPipeline:
   name: sqlPipeline
@@ -154,17 +181,17 @@ flags:
   shouldAddDefaultDependenciesIfAbsent: false
 pipelineConfigurations: {}
 sqlOrchestratorPipelines:
-  .prophecy/metadata/sqlorchestratorpipeline/Test:
-    name: Test
+  .prophecy/metadata/sqlorchestratorpipeline/Generalize_Delta:
+    name: Generalize_Delta
     schema: null
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/Test/model_Test_Limit_1.sql
-    - models/Test/schema.yml
-    - .prophecy/ide/pipelines/Test.json
-    - pipelines/Test.py
-    createdAt: '2025-07-22 16:55:51'
+    - models/Generalize_Delta/schema.yml
+    - models/Generalize_Delta/model_Generalize_Delta_generalize_new_england.sql
+    - .prophecy/ide/pipelines/Generalize_Delta.json
+    - pipelines/Generalize_Delta.py
+    createdAt: '2025-07-22 17:17:08'
   .prophecy/metadata/sqlorchestratorpipeline/Buffer_Delta:
     name: Buffer_Delta
     schema: null
@@ -176,16 +203,40 @@ sqlOrchestratorPipelines:
     - .prophecy/ide/pipelines/Buffer_Delta.json
     - pipelines/Buffer_Delta.py
     createdAt: '2025-07-22 17:05:01'
+  .prophecy/metadata/sqlorchestratorpipeline/Generalize:
+    name: Generalize
+    schema: null
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/Generalize_Delta/schema.yml
+    - models/Generalize_Delta/model_Generalize_Delta_generalize_new_england.sql
+    - models/Generalize/schema.yml
+    - models/Generalize/model_Generalize_generalize_us_states.sql
+    - .prophecy/ide/pipelines/Generalize.json
+    - pipelines/Generalize.py
+    createdAt: '2025-07-22 17:17:18'
+  .prophecy/metadata/sqlorchestratorpipeline/Test:
+    name: Test
+    schema: null
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/Test/model_Test_Limit_1.sql
+    - models/Test/schema.yml
+    - .prophecy/ide/pipelines/Test.json
+    - pipelines/Test.py
+    createdAt: '2025-07-22 16:55:51'
   .prophecy/metadata/sqlorchestratorpipeline/Buffer:
     name: Buffer
     schema: null
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/Buffer_Delta/schema.yml
-    - models/Buffer_Delta/model_Buffer_Delta_buffer_new_england.sql
     - models/Buffer/schema.yml
     - models/Buffer/model_Buffer_buffer_us_states.sql
+    - models/Buffer_Delta/schema.yml
+    - models/Buffer_Delta/model_Buffer_Delta_buffer_new_england.sql
     - .prophecy/ide/pipelines/Buffer.json
     - pipelines/Buffer.py
     createdAt: '2025-07-22 17:12:28'

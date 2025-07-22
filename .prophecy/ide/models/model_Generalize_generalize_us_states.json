@@ -1,0 +1,145 @@
+{
+  "id" : "model_Generalize_generalize_us_states",
+  "metainfo" : {
+    "label" : "model_Generalize_generalize_us_states",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "alias" : "\"prophecy_tmp__mdet2c3o__Generalize__generalize_us_states\"",
+        "materialized" : "table",
+        "database" : "\"andre_dev\"",
+        "schema" : "\"alteryx_spatial\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "prophecy_tmp__Generalize__generalize_us_states" : {
+      "id" : "prophecy_tmp__Generalize__generalize_us_states",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "generalize_us_states",
+        "phase" : 0
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM generalize_us_states\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "ZqKmcWrwxWNJpmMNr2-1d$$AJI8W7tdXyiPxzir8vriC" : {
+      "id" : "ZqKmcWrwxWNJpmMNr2-1d$$AJI8W7tdXyiPxzir8vriC",
+      "component" : "Generalize",
+      "metadata" : {
+        "label" : "generalize_us_states",
+        "x" : -320,
+        "y" : -180,
+        "phase" : 0
+      },
+      "properties" : {
+        "relation_name" : [ "us_states_lines" ],
+        "_oldMacroProperties" : {
+          "macroName" : "Generalize",
+          "projectName" : "andre_spatial_09",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['us_states_lines']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "destinationColumnNames",
+            "value" : "geometry"
+          }, {
+            "name" : "threshold",
+            "value" : "25"
+          }, {
+            "name" : "unit",
+            "value" : "kms"
+          } ]
+        },
+        "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
+        "threshold" : "25",
+        "polygonColumnName" : "geometry",
+        "unit" : "kms"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "ltVfuuFkj1FOuHONbZJ99$$2r6wwusiFnkATwo2c2xTw",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "qSz1flHHNOwcswyCZCeXO$$UN1ZH5_RwGMCOt8eFiu_8",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "fUdKlXpJ3Pp7Isuzp6DTu$$r3vWclQ10CXrMEiH1v2OG" : {
+      "id" : "fUdKlXpJ3Pp7Isuzp6DTu$$r3vWclQ10CXrMEiH1v2OG",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "us_states_lines",
+        "x" : -560,
+        "y" : -180,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "us_states_lines",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "3K6bmtuHe2wKryZVZlztT$$3h_zKt7PBI8UubQLkDczC",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_ZqKmcWrwxWNJpmMNr2-1d$$AJI8W7tdXyiPxzir8vriC_prophecy_tmp__Generalize__generalize_us_states",
+    "source" : "ZqKmcWrwxWNJpmMNr2-1d$$AJI8W7tdXyiPxzir8vriC",
+    "sourcePort" : "qSz1flHHNOwcswyCZCeXO$$UN1ZH5_RwGMCOt8eFiu_8",
+    "target" : "prophecy_tmp__Generalize__generalize_us_states",
+    "targetPort" : "input_port_0"
+  }, {
+    "id" : "LFGXV9wHPg2goukTt3xAt$$iIp0t6D32JnwTGAshz2Yd",
+    "source" : "fUdKlXpJ3Pp7Isuzp6DTu$$r3vWclQ10CXrMEiH1v2OG",
+    "sourcePort" : "3K6bmtuHe2wKryZVZlztT$$3h_zKt7PBI8UubQLkDczC",
+    "target" : "ZqKmcWrwxWNJpmMNr2-1d$$AJI8W7tdXyiPxzir8vriC",
+    "targetPort" : "ltVfuuFkj1FOuHONbZJ99$$2r6wwusiFnkATwo2c2xTw"
+  } ],
+  "component" : "Model"
+}

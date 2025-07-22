@@ -1,0 +1,16 @@
+---
+version: 2
+models:
+- name: "model_Generalize_generalize_us_states"
+  tags:
+  - "prophecy_temp"
+sources:
+- name: "prophecy_tmp_source__Generalize"
+  database: "andre_dev"
+  schema: "alteryx_spatial"
+  config:
+    enabled: true
+  tables:
+  - name: "prophecy_tmp__mdet2c3o__Generalize__generalize_us_states"
+    tags:
+    - "prophecy_temp"
