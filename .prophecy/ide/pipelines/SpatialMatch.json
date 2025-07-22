@@ -21,7 +21,45 @@
     },
     "isTranspiledPipeline" : false
   },
-  "processes" : { },
+  "processes" : {
+    "T9ZHWSaU7UHCraj4PLAXy$$Z2sAUQlahxOQBpBfTfehE" : {
+      "id" : "T9ZHWSaU7UHCraj4PLAXy$$Z2sAUQlahxOQBpBfTfehE",
+      "component" : "SpatialMatch",
+      "metadata" : {
+        "label" : "SpatialMatch_0",
+        "x" : -160,
+        "y" : -340,
+        "phase" : 0
+      },
+      "properties" : {
+        "relation_name" : [ ],
+        "target_column" : "",
+        "source_column" : "",
+        "match_type" : "",
+        "schemas" : [ ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "NCAD8CAIuAL0bFDfDpfB3$$4MAQAqIEiYvsSqkGfX8o-",
+          "slug" : "in0"
+        }, {
+          "id" : "QfCTHHEyIJndXbs8fWTIz$$xxe5qab2sqMfyENEqFK63",
+          "slug" : "in1"
+        } ],
+        "outputs" : [ {
+          "id" : "K0QVKcjJWoEkXAyxfngc2$$0k7s1yJ1yaBhvapShYwng",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "componentInfo" : {
+        "gemId" : "SpatialMatch_andre_spatial_09",
+        "name" : "SpatialMatch",
+        "projectName" : "andre_spatial_09",
+        "sourceProjectName" : "andre_spatial_09"
+      }
+    }
+  },
   "connections" : [ ],
   "component" : "Pipeline"
 }

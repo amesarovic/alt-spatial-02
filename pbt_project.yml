@@ -273,6 +273,14 @@ sqlSeeds:
     - seeds/find_nearest_01.csv
     createdAt: '2025-07-22 21:14:48'
 sqlSources:
+  .prophecy/metadata/sqlsources/prophecy_tmp_source__SpatialMatch:
+    name: prophecy_tmp_source__SpatialMatch
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/SpatialMatch/schema.yml
+    createdAt: '2025-07-22 21:24:19'
+    tables: []
   .prophecy/metadata/sqlsources/prophecy_tmp_source__FindNearest:
     name: prophecy_tmp_source__FindNearest
     description: null
@@ -280,6 +288,14 @@ sqlSources:
     files:
     - models/FindNearest/schema.yml
     createdAt: '2025-07-22 21:15:43'
+    tables: []
+  .prophecy/metadata/sqlsources/prophecy_tmp_source__HeatMap:
+    name: prophecy_tmp_source__HeatMap
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/HeatMap/schema.yml
+    createdAt: '2025-07-22 21:24:43'
     tables: []
   .prophecy/metadata/sqlsources/prophecy_tmp_source__Buffer_Delta:
     name: prophecy_tmp_source__Buffer_Delta
@@ -405,6 +421,8 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
+    - models/HeatMap/schema.yml
+    - models/HeatMap/model_HeatMap_create_heatmap.sql
     - .prophecy/ide/pipelines/HeatMap.json
     - pipelines/HeatMap.py
     createdAt: '2025-07-22 17:31:28'
@@ -506,6 +524,8 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
+    - models/SpatialMatch/model_SpatialMatch_SpatialMatch_0.sql
+    - models/SpatialMatch/schema.yml
     - .prophecy/ide/pipelines/SpatialMatch.json
     - pipelines/SpatialMatch.py
     createdAt: '2025-07-22 17:29:16'

@@ -1,27 +1,55 @@
 {
-  "id" : "HeatMap",
+  "id" : "model_HeatMap_create_heatmap",
   "metainfo" : {
-    "label" : "HeatMap",
-    "autoLayout" : false,
-    "version" : 1,
-    "configuration" : {
-      "schema" : {
-        "type" : "record",
-        "fields" : [ ]
+    "label" : "model_HeatMap_create_heatmap",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "alias" : "\"prophecy_tmp__mdf1tudm__HeatMap__create_heatmap\"",
+        "materialized" : "table",
+        "database" : "\"andre_dev\"",
+        "schema" : "\"alteryx_spatial\"",
+        "type" : "ModelConfig"
       }
     },
-    "schedule" : {
-      "cron" : "* 0 2 * * * *",
-      "timeZone" : "GMT",
-      "emailOnSuccess" : false,
-      "emailOnFailure" : false,
-      "emailOnStart" : false,
-      "emails" : [ "email@gmail.com" ],
-      "enabled" : false
-    },
-    "isTranspiledPipeline" : false
+    "version" : 3
   },
   "processes" : {
+    "prophecy_tmp__HeatMap__create_heatmap" : {
+      "id" : "prophecy_tmp__HeatMap__create_heatmap",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "create_heatmap",
+        "phase" : 0
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM create_heatmap\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
     "b6cUsJBzf_ddt9sK8YUFN$$Kx1hIj9JucN-Hl2Ylre7N" : {
       "id" : "b6cUsJBzf_ddt9sK8YUFN$$Kx1hIj9JucN-Hl2Ylre7N",
       "component" : "HeatMap",
@@ -69,59 +97,19 @@
       "ports" : {
         "inputs" : [ {
           "id" : "SM9JqmF7uhC_H2jamdj1U$$DB3arr4XjgMIJn6pamxQ7",
-          "schema" : {
-            "entityType" : "",
-            "providerType" : "Databricks",
-            "fields" : [ {
-              "name" : "city",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "lon",
-              "dataType" : {
-                "type" : "Float"
-              }
-            }, {
-              "name" : "lat",
-              "dataType" : {
-                "type" : "Float"
-              }
-            } ]
-          },
           "slug" : "in0"
         } ],
         "outputs" : [ {
           "id" : "AWoR8x8OR2OwnqQNcTme-$$se2qjPhAA_6D_Y2IJ1bx6",
-          "schema" : {
-            "entityType" : "",
-            "providerType" : "Databricks",
-            "fields" : [ {
-              "name" : "density",
-              "dataType" : {
-                "type" : "Bigint"
-              }
-            }, {
-              "name" : "geometry_wkt",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
           "slug" : "out"
         } ],
-        "isCustomOutputSchema" : false
-      },
-      "componentInfo" : {
-        "gemId" : "HeatMap_andre_spatial_09",
-        "name" : "HeatMap",
-        "projectName" : "andre_spatial_09",
-        "sourceProjectName" : "andre_spatial_09"
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       }
     },
     "ZLdKPUKyEuZt2hMtb4QnZ$$0rix-V0GVItEXr8_J7Usj" : {
       "id" : "ZLdKPUKyEuZt2hMtb4QnZ$$0rix-V0GVItEXr8_J7Usj",
-      "component" : "Dataset",
+      "component" : "Source",
       "metadata" : {
         "label" : "points",
         "x" : -480,
@@ -138,44 +126,28 @@
         }
       },
       "ports" : {
-        "inputs" : [ {
-          "id" : "aSLtcKB2O914aEB0FPBlA$$_cJqxYnJPokGsLsPUAVz4",
-          "slug" : "in"
-        } ],
+        "inputs" : [ ],
         "outputs" : [ {
           "id" : "GtrowPW8xpyODtt8LmxNv$$EKkGirHzSeRhoHM-5Kb6a",
-          "schema" : {
-            "entityType" : "",
-            "providerType" : "Databricks",
-            "fields" : [ {
-              "name" : "city",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "lon",
-              "dataType" : {
-                "type" : "Float"
-              }
-            }, {
-              "name" : "lat",
-              "dataType" : {
-                "type" : "Float"
-              }
-            } ]
-          },
           "slug" : "out"
         } ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       }
     }
   },
   "connections" : [ {
+    "id" : "conn_b6cUsJBzf_ddt9sK8YUFN$$Kx1hIj9JucN-Hl2Ylre7N_prophecy_tmp__HeatMap__create_heatmap",
+    "source" : "b6cUsJBzf_ddt9sK8YUFN$$Kx1hIj9JucN-Hl2Ylre7N",
+    "sourcePort" : "AWoR8x8OR2OwnqQNcTme-$$se2qjPhAA_6D_Y2IJ1bx6",
+    "target" : "prophecy_tmp__HeatMap__create_heatmap",
+    "targetPort" : "input_port_0"
+  }, {
     "id" : "GiwzS--pnb0rW-uhBN4-q$$j7NTByxX4H9BUQ1elKk81",
     "source" : "ZLdKPUKyEuZt2hMtb4QnZ$$0rix-V0GVItEXr8_J7Usj",
     "sourcePort" : "GtrowPW8xpyODtt8LmxNv$$EKkGirHzSeRhoHM-5Kb6a",
     "target" : "b6cUsJBzf_ddt9sK8YUFN$$Kx1hIj9JucN-Hl2Ylre7N",
     "targetPort" : "SM9JqmF7uhC_H2jamdj1U$$DB3arr4XjgMIJn6pamxQ7"
   } ],
-  "component" : "Pipeline"
+  "component" : "Model"
 }

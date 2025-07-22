@@ -21,7 +21,32 @@
     },
     "isTranspiledPipeline" : false
   },
-  "processes" : { },
+  "processes" : {
+    "T9ZHWSaU7UHCraj4PLAXy$$Z2sAUQlahxOQBpBfTfehE" : {
+      "id" : "T9ZHWSaU7UHCraj4PLAXy$$Z2sAUQlahxOQBpBfTfehE",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "model_SpatialMatch_SpatialMatch_0",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "model_SpatialMatch_SpatialMatch_0"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "prophecy_tmp__SpatialMatch__SpatialMatch_0", "T9ZHWSaU7UHCraj4PLAXy$$Z2sAUQlahxOQBpBfTfehE" ],
+        "type" : "table",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "model_SpatialMatch_SpatialMatch_0_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
   "connections" : [ ],
   "component" : "Pipeline"
 }
