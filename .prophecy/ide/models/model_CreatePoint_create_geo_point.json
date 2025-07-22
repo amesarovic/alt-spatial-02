@@ -9,7 +9,7 @@
     },
     "graphConfig" : {
       "entityConfig" : {
-        "alias" : "\"prophecy_tmp__mdetr7aq__CreatePoint__create_geo_point\"",
+        "alias" : "\"prophecy_tmp__mdett2d2__CreatePoint__create_geo_point\"",
         "materialized" : "table",
         "database" : "\"andre_dev\"",
         "schema" : "\"alteryx_spatial\"",
