@@ -49,6 +49,17 @@ sqlMacros:
     - macros/macros.yml
     - gems/Distance.py
     createdAt: '2025-07-22 17:33:36'
+  .prophecy/metadata/sqlmacros/SpatialMatch:
+    name: SpatialMatch
+    macroType: query
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - macros/SpatialMatch.sql
+    - .prophecy/ide/macros/SpatialMatch.json
+    - macros/macros.yml
+    - gems/SpatialMatch.py
+    createdAt: '2025-07-22 18:37:18'
   .prophecy/metadata/sqlmacros/Buffer:
     name: Buffer
     macroType: query
@@ -69,6 +80,28 @@ sqlMacros:
     - macros/generate_schema_name.sql
     - .prophecy/ide/macros/generate_schema_name.json
     createdAt: '2025-07-22 16:54:03'
+  .prophecy/metadata/sqlmacros/HeatMap:
+    name: HeatMap
+    macroType: query
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - macros/HeatMap.sql
+    - .prophecy/ide/macros/HeatMap.json
+    - macros/macros.yml
+    - gems/HeatMap.py
+    createdAt: '2025-07-22 18:40:49'
+  .prophecy/metadata/sqlmacros/FindNearest:
+    name: FindNearest
+    macroType: query
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - macros/FindNearest.sql
+    - .prophecy/ide/macros/FindNearest.json
+    - macros/macros.yml
+    - gems/FindNearest.py
+    createdAt: '2025-07-22 18:42:49'
   .prophecy/metadata/sqlmacros/CreatePoint:
     name: CreatePoint
     macroType: query

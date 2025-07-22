@@ -1,0 +1,247 @@
+{
+  "HeatMap" : {
+    "name" : "HeatMap",
+    "macroType" : "query",
+    "definition" : "\n{% if longitudeColumnName | trim | length == 0\n      or latitudeColumnName  | trim | length == 0 %}\n    SELECT * FROM {{ relation_name }}\n\n{% else %}\n{% if heatColumnName is not none and heatColumnName | trim | length > 0 %}\n    {% set heat_expr = heatColumnName %}\n{% else %}\n    {% set heat_expr = '1' %}\n{% endif %}\n{% set decay = (decayType | lower | trim) or 'constant' %}\n\n-- ── Hex-bin & weighted / decayed density ─────────────────────────────────────\nWITH points_h3 AS (\n    SELECT\n        h3_longlatash3(\n            {{ longitudeColumnName }},\n            {{ latitudeColumnName }},\n            {{ resolution }}\n        )                            AS h3_cell,\n        {{ heat_expr }}              AS point_heat\n    FROM {{ relation_name }}\n),\n\ncell_counts AS (\n    -- raw (weighted) heat per hex\n    SELECT\n        h3_cell,\n        SUM(point_heat) AS raw_heat\n    FROM points_h3\n    GROUP BY h3_cell\n),\n\ncell_counts_smoothed AS (\n    -- k-ring smoothing + decay kernel\n    SELECT\n        neighbour AS h3_cell,\n        SUM(\n            c.raw_heat *\n            CASE\n                {% if gridDistance == 0 %}\n                    WHEN true THEN 1\n                {% else %}\n                    {% if decay == 'constant' %}\n                        WHEN true THEN 1\n                    {% elif decay == 'linear' %}\n                        -- 1 − d / k + 1  (outer ring gets a small, non-zero share)\n                        WHEN true THEN (1 - (h3_distance(c.h3_cell, neighbour) / ({{ gridDistance }} + 1)))\n                    {% elif decay == 'exp' %}\n                        -- halves each ring: 0.5^d\n                        WHEN true THEN POWER(0.5, h3_distance(c.h3_cell, neighbour))\n                    {% else %}  {# exponential #}\n                        -- halves each ring: 0.5^d\n                        WHEN true THEN 1\n                    {% endif %}\n                {% endif %}\n            END\n        ) AS density\n    FROM cell_counts AS c\n    LATERAL VIEW explode(\n        CASE\n            WHEN {{ gridDistance }} = 0\n                 THEN array(c.h3_cell)\n                 ELSE h3_kring(c.h3_cell, {{ gridDistance }})\n        END\n    ) t AS neighbour\n    GROUP BY neighbour\n)\n\nSELECT\n    round(density,2) as density,\n    h3_boundaryaswkt(h3_cell) AS geometry_wkt\nFROM cell_counts_smoothed\n\n{% endif %}",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ {
+        "name" : "relation_name",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false,
+        "isReferenced" : false
+      }, {
+        "name" : "longitudeColumnName",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false,
+        "isReferenced" : false
+      }, {
+        "name" : "latitudeColumnName",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false,
+        "isReferenced" : false
+      }, {
+        "name" : "resolution",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false,
+        "isReferenced" : false
+      }, {
+        "name" : "gridDistance",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false,
+        "isReferenced" : false
+      }, {
+        "name" : "heatColumnName",
+        "kind" : {
+          "type" : "value",
+          "value" : "none"
+        },
+        "optional" : true,
+        "isWorkflowNodeConfiguration" : false,
+        "isReferenced" : false
+      }, {
+        "name" : "decayType",
+        "kind" : {
+          "type" : "value",
+          "value" : "'constant'"
+        },
+        "optional" : true,
+        "isWorkflowNodeConfiguration" : false,
+        "isReferenced" : false
+      } ]
+    },
+    "staleState" : "none",
+    "propertiesFile" : {
+      "name" : "macros",
+      "content" : "---\nversion: 2\nmacros:\n- name: \"Buffer\"\n  arguments:\n  - name: \"table_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"schema\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"geom_column_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"distance\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"unit\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"Generalize\"\n  arguments:\n  - name: \"table_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"schema\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"geom_column_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"tolerance\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"unit\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"Distance\"\n  arguments:\n  - name: \"relation_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"sourceColumnNames\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"destinationColumnNames\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"sourceType\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"destinationType\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"outputDistance\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"units\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"outputCardDirection\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"outputDirectionDegrees\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"allColumnNames\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"CreatePoint\"\n  arguments:\n  - name: \"relation\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"matchFields\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"PolyBuild\"\n  arguments:\n  - name: \"relation_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"buildMethod\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"longitudeColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"latitudeColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"groupColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"sequenceColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"SpatialMatch\"\n  arguments:\n  - name: \"relation_names\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"schemas\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"source_col\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"target_col\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"type\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"HeatMap\"\n  arguments:\n  - name: \"parameter1\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n",
+      "path" : "andre_spatial_09/macros/macros.yml",
+      "projectConfiguration" : null,
+      "folderConfiguration" : {
+        "version" : 2,
+        "macros" : [ {
+          "name" : "Buffer",
+          "arguments" : [ {
+            "name" : "table_name",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "schema",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "geom_column_name",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "distance",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "unit",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          } ],
+          "macroType" : "query"
+        }, {
+          "name" : "Generalize",
+          "arguments" : [ {
+            "name" : "table_name",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "schema",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "geom_column_name",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "tolerance",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "unit",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          } ],
+          "macroType" : "query"
+        }, {
+          "name" : "Distance",
+          "arguments" : [ {
+            "name" : "relation_name",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "sourceColumnNames",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "destinationColumnNames",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "sourceType",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "destinationType",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "outputDistance",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "units",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "outputCardDirection",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "outputDirectionDegrees",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "allColumnNames",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          } ],
+          "macroType" : "query"
+        }, {
+          "name" : "CreatePoint",
+          "arguments" : [ {
+            "name" : "relation",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "matchFields",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          } ],
+          "macroType" : "query"
+        }, {
+          "name" : "PolyBuild",
+          "arguments" : [ {
+            "name" : "relation_name",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "buildMethod",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "longitudeColumnName",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "latitudeColumnName",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "groupColumnName",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "sequenceColumnName",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          } ],
+          "macroType" : "query"
+        }, {
+          "name" : "SpatialMatch",
+          "arguments" : [ {
+            "name" : "relation_names",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "schemas",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "source_col",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "target_col",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "type",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          } ],
+          "macroType" : "query"
+        }, {
+          "name" : "HeatMap",
+          "arguments" : [ {
+            "name" : "parameter1",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          } ],
+          "macroType" : "query"
+        } ]
+      },
+      "packagesYml" : null,
+      "editable" : true
+    },
+    "version" : 0
+  }
+}

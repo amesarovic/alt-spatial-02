@@ -11,6 +11,6 @@ sources:
   config:
     enabled: true
   tables:
-  - name: "prophecy_tmp__mdevjx6d__PolyBuild__PolyBuild_1"
+  - name: "prophecy_tmp__mdevmsak__PolyBuild__PolyBuild_1"
     tags:
     - "prophecy_temp"
