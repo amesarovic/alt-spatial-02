@@ -1,5 +1,5 @@
 ---
 version: 2
 seeds:
-- name: "poly_build"
+- name: "find_nearest_02"
   columns: []

@@ -1,16 +1,16 @@
 ---
 version: 2
 models:
-- name: "model_Generalize_Delta_generalize_new_england"
+- name: "model_FindNearest_find_nearest_centers"
   tags:
   - "prophecy_temp"
 sources:
-- name: "prophecy_tmp_source__Generalize_Delta"
+- name: "prophecy_tmp_source__FindNearest"
   database: "andre_dev"
   schema: "alteryx_spatial"
   config:
     enabled: true
   tables:
-  - name: "prophecy_tmp__mdet1ck6__Generalize_Delta__generalize_new_england"
+  - name: "prophecy_tmp__mdf1fjz8__FindNearest__find_nearest_centers"
     tags:
     - "prophecy_temp"

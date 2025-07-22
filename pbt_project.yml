@@ -194,6 +194,24 @@ sqlSeeds:
     files:
     - seeds/distances.csv
     createdAt: '2025-07-22 20:27:53'
+  .prophecy/metadata/sqlseeds/find_nearest_02:
+    name: find_nearest_02
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: center_id
+        dataType:
+          type: String
+      - name: center_point
+        dataType:
+          type: String
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - seeds/find_nearest_02.csv
+    - seeds/seeds.yml
+    createdAt: '2025-07-22 21:15:28'
   .prophecy/metadata/sqlseeds/poly_build:
     name: poly_build
     schema:
@@ -216,7 +234,6 @@ sqlSeeds:
     author: mesarovic.andre@prophecy.io
     files:
     - seeds/poly_build.csv
-    - seeds/seeds.yml
     createdAt: '2025-07-22 20:36:37'
   .prophecy/metadata/sqlseeds/points:
     name: points
@@ -238,14 +255,31 @@ sqlSeeds:
     files:
     - seeds/points.csv
     createdAt: '2025-07-22 20:02:53'
-sqlSources:
-  .prophecy/metadata/sqlsources/prophecy_tmp_source__Generalize_Delta:
-    name: prophecy_tmp_source__Generalize_Delta
+  .prophecy/metadata/sqlseeds/find_nearest_01:
+    name: find_nearest_01
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: customer_id
+        dataType:
+          type: String
+      - name: customer_point
+        dataType:
+          type: String
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/Generalize_Delta/schema.yml
-    createdAt: '2025-07-22 17:23:44'
+    - seeds/find_nearest_01.csv
+    createdAt: '2025-07-22 21:14:48'
+sqlSources:
+  .prophecy/metadata/sqlsources/prophecy_tmp_source__FindNearest:
+    name: prophecy_tmp_source__FindNearest
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/FindNearest/schema.yml
+    createdAt: '2025-07-22 21:15:43'
     tables: []
   .prophecy/metadata/sqlsources/prophecy_tmp_source__Buffer_Delta:
     name: prophecy_tmp_source__Buffer_Delta
@@ -380,20 +414,11 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
+    - models/FindNearest/schema.yml
+    - models/FindNearest/model_FindNearest_find_nearest_centers.sql
     - .prophecy/ide/pipelines/FindNearest.json
     - pipelines/FindNearest.py
     createdAt: '2025-07-22 17:31:15'
-  .prophecy/metadata/sqlorchestratorpipeline/Generalize_Delta:
-    name: Generalize_Delta
-    schema: null
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - models/Generalize_Delta/model_Generalize_Delta_generalize_new_england.sql
-    - models/Generalize_Delta/schema.yml
-    - .prophecy/ide/pipelines/Generalize_Delta.json
-    - pipelines/Generalize_Delta.py
-    createdAt: '2025-07-22 17:17:08'
   .prophecy/metadata/sqlorchestratorpipeline/PolyBuild:
     name: PolyBuild
     schema: null
@@ -433,8 +458,6 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/Generalize_Delta/model_Generalize_Delta_generalize_new_england.sql
-    - models/Generalize_Delta/schema.yml
     - models/Generalize/model_Generalize_generalize_us_states.sql
     - models/Generalize/schema.yml
     - .prophecy/ide/pipelines/Generalize.json
