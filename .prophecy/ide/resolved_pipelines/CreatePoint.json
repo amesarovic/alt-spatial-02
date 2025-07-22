@@ -21,7 +21,91 @@
     },
     "isTranspiledPipeline" : false
   },
-  "processes" : { },
-  "connections" : [ ],
+  "processes" : {
+    "0FqX12L_W6z22zfSQd7AC$$uJlr3W0Ktbrcqd6XqCsOv" : {
+      "id" : "0FqX12L_W6z22zfSQd7AC$$uJlr3W0Ktbrcqd6XqCsOv",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "points",
+        "x" : -620,
+        "y" : -220,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "points",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "uw2JKTWKJsdGPIM5Ac69K$$3N-aQt9Nfohhk1gn06ncp",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "SYH-Ob2Ba9-mswGPiEAPH$$PjjamlBy4VOprpzC9n4H7",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "lon",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "lat",
+              "dataType" : {
+                "type" : "Float"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "iKwMEjTDQV8DhxqjpzXqV$$p-yBfEuyv26TPa1vGpxNH" : {
+      "id" : "iKwMEjTDQV8DhxqjpzXqV$$p-yBfEuyv26TPa1vGpxNH",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "model_CreatePoint_create_geo_point",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "model_CreatePoint_create_geo_point"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "prophecy_tmp__CreatePoint__create_geo_point", "iKwMEjTDQV8DhxqjpzXqV$$p-yBfEuyv26TPa1vGpxNH", "0FqX12L_W6z22zfSQd7AC$$uJlr3W0Ktbrcqd6XqCsOv" ],
+        "type" : "table",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "model_CreatePoint_create_geo_point_in_0",
+          "slug" : "in_0"
+        } ],
+        "outputs" : [ {
+          "id" : "model_CreatePoint_create_geo_point_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "VpDDE5hvje_PVbO5-5bx0",
+    "source" : "0FqX12L_W6z22zfSQd7AC$$uJlr3W0Ktbrcqd6XqCsOv",
+    "sourcePort" : "SYH-Ob2Ba9-mswGPiEAPH$$PjjamlBy4VOprpzC9n4H7",
+    "target" : "iKwMEjTDQV8DhxqjpzXqV$$p-yBfEuyv26TPa1vGpxNH",
+    "targetPort" : "model_CreatePoint_create_geo_point_in_0"
+  } ],
   "component" : "Pipeline"
 }

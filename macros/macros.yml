@@ -70,3 +70,12 @@ macros:
     type: "value"
     description: "{\"ProphecyType\": \"value\"}"
   macroType: "query"
+- name: "CreatePoint"
+  arguments:
+  - name: "relation"
+    type: "value"
+    description: "{\"ProphecyType\": \"value\"}"
+  - name: "matchFields"
+    type: "value"
+    description: "{\"ProphecyType\": \"value\"}"
+  macroType: "query"

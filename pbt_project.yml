@@ -27,17 +27,6 @@ sqlModels: {}
 sqlSnapshots: {}
 sqlTests: {}
 sqlMacros:
-  .prophecy/metadata/sqlmacros/Buffer:
-    name: Buffer
-    macroType: query
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - macros/Buffer.sql
-    - .prophecy/ide/macros/Buffer.json
-    - macros/macros.yml
-    - gems/Buffer.py
-    createdAt: '2025-07-22 17:03:19'
   .prophecy/metadata/sqlmacros/Distance:
     name: Distance
     macroType: query
@@ -49,6 +38,37 @@ sqlMacros:
     - macros/macros.yml
     - gems/Distance.py
     createdAt: '2025-07-22 17:33:36'
+  .prophecy/metadata/sqlmacros/Buffer:
+    name: Buffer
+    macroType: query
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - macros/Buffer.sql
+    - .prophecy/ide/macros/Buffer.json
+    - macros/macros.yml
+    - gems/Buffer.py
+    createdAt: '2025-07-22 17:03:19'
+  .prophecy/metadata/sqlmacros/generate_schema_name:
+    name: generate_schema_name
+    macroType: expression
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - macros/generate_schema_name.sql
+    - .prophecy/ide/macros/generate_schema_name.json
+    createdAt: '2025-07-22 16:54:03'
+  .prophecy/metadata/sqlmacros/CreatePoint:
+    name: CreatePoint
+    macroType: query
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - macros/CreatePoint.sql
+    - .prophecy/ide/macros/CreatePoint.json
+    - macros/macros.yml
+    - gems/CreatePoint.py
+    createdAt: '2025-07-22 17:42:05'
   .prophecy/metadata/sqlmacros/Generalize:
     name: Generalize
     macroType: query
@@ -60,15 +80,6 @@ sqlMacros:
     - macros/macros.yml
     - gems/Generalize.py
     createdAt: '2025-07-22 17:20:29'
-  .prophecy/metadata/sqlmacros/generate_schema_name:
-    name: generate_schema_name
-    macroType: expression
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - macros/generate_schema_name.sql
-    - .prophecy/ide/macros/generate_schema_name.json
-    createdAt: '2025-07-22 16:54:03'
 sqlSeeds:
   .prophecy/metadata/sqlseeds/distances:
     name: distances
@@ -149,6 +160,14 @@ sqlSources:
     files:
     - models/Test/schema.yml
     createdAt: '2025-07-22 16:57:19'
+    tables: []
+  .prophecy/metadata/sqlsources/prophecy_tmp_source__CreatePoint:
+    name: prophecy_tmp_source__CreatePoint
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/CreatePoint/schema.yml
+    createdAt: '2025-07-22 17:44:12'
     tables: []
   .prophecy/metadata/sqlsources/andre_dev_alteryx_spatial:
     name: andre_dev.alteryx_spatial
@@ -235,15 +254,6 @@ sqlOrchestratorPipelines:
     - .prophecy/ide/pipelines/FindNearest.json
     - pipelines/FindNearest.py
     createdAt: '2025-07-22 17:31:15'
-  .prophecy/metadata/sqlorchestratorpipeline/CreatePoint_Delta:
-    name: CreatePoint_Delta
-    schema: null
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - .prophecy/ide/pipelines/CreatePoint_Delta.json
-    - pipelines/CreatePoint_Delta.py
-    createdAt: '2025-07-22 17:28:17'
   .prophecy/metadata/sqlorchestratorpipeline/Generalize_Delta:
     name: Generalize_Delta
     schema: null
@@ -284,15 +294,6 @@ sqlOrchestratorPipelines:
     - .prophecy/ide/pipelines/SpatialMatch_Delta.json
     - pipelines/SpatialMatch_Delta.py
     createdAt: '2025-07-22 17:29:25'
-  .prophecy/metadata/sqlorchestratorpipeline/Distance_Delta:
-    name: Distance_Delta
-    schema: null
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - .prophecy/ide/pipelines/Distance_Delta.json
-    - pipelines/Distance_Delta.py
-    createdAt: '2025-07-22 17:28:49'
   .prophecy/metadata/sqlorchestratorpipeline/Buffer_Delta:
     name: Buffer_Delta
     schema: null
@@ -347,6 +348,8 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
+    - models/CreatePoint/schema.yml
+    - models/CreatePoint/model_CreatePoint_create_geo_point.sql
     - .prophecy/ide/pipelines/CreatePoint.json
     - pipelines/CreatePoint.py
     createdAt: '2025-07-22 17:28:23'

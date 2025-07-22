@@ -1,0 +1,137 @@
+{
+  "id" : "model_CreatePoint_create_geo_point",
+  "metainfo" : {
+    "label" : "model_CreatePoint_create_geo_point",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "alias" : "\"prophecy_tmp__mdetr7aq__CreatePoint__create_geo_point\"",
+        "materialized" : "table",
+        "database" : "\"andre_dev\"",
+        "schema" : "\"alteryx_spatial\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "prophecy_tmp__CreatePoint__create_geo_point" : {
+      "id" : "prophecy_tmp__CreatePoint__create_geo_point",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "create_geo_point",
+        "phase" : 0
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM create_geo_point\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "iKwMEjTDQV8DhxqjpzXqV$$p-yBfEuyv26TPa1vGpxNH" : {
+      "id" : "iKwMEjTDQV8DhxqjpzXqV$$p-yBfEuyv26TPa1vGpxNH",
+      "component" : "CreatePoint",
+      "metadata" : {
+        "label" : "create_geo_point",
+        "x" : -420,
+        "y" : -220,
+        "phase" : 0
+      },
+      "properties" : {
+        "addFields" : [ {
+          "kind" : "AddMatchField",
+          "AddMatchField" : {
+            "longitudeColumnName" : "lon",
+            "latitudeColumnName" : "lat",
+            "targetColumnName" : "point"
+          }
+        } ],
+        "relation_name" : [ "points" ],
+        "_oldMacroProperties" : {
+          "macroName" : "CreatePoint",
+          "projectName" : "andre_spatial_09",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['points']"
+          } ]
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "f-K6yH_1vg2M8Epp70dVg$$AaGSulw5v54ZnvLdr1EMD",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "zZnGz3iJxRKyfEXkAQlBf$$FqExjWaDvNF1_LIrg1GLQ",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "0FqX12L_W6z22zfSQd7AC$$uJlr3W0Ktbrcqd6XqCsOv" : {
+      "id" : "0FqX12L_W6z22zfSQd7AC$$uJlr3W0Ktbrcqd6XqCsOv",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "points",
+        "x" : -620,
+        "y" : -220,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "points",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "SYH-Ob2Ba9-mswGPiEAPH$$PjjamlBy4VOprpzC9n4H7",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_iKwMEjTDQV8DhxqjpzXqV$$p-yBfEuyv26TPa1vGpxNH_prophecy_tmp__CreatePoint__create_geo_point",
+    "source" : "iKwMEjTDQV8DhxqjpzXqV$$p-yBfEuyv26TPa1vGpxNH",
+    "sourcePort" : "zZnGz3iJxRKyfEXkAQlBf$$FqExjWaDvNF1_LIrg1GLQ",
+    "target" : "prophecy_tmp__CreatePoint__create_geo_point",
+    "targetPort" : "input_port_0"
+  }, {
+    "id" : "VpDDE5hvje_PVbO5-5bx0",
+    "source" : "0FqX12L_W6z22zfSQd7AC$$uJlr3W0Ktbrcqd6XqCsOv",
+    "sourcePort" : "SYH-Ob2Ba9-mswGPiEAPH$$PjjamlBy4VOprpzC9n4H7",
+    "target" : "iKwMEjTDQV8DhxqjpzXqV$$p-yBfEuyv26TPa1vGpxNH",
+    "targetPort" : "f-K6yH_1vg2M8Epp70dVg$$AaGSulw5v54ZnvLdr1EMD"
+  } ],
+  "component" : "Model"
+}
