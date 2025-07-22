@@ -1,0 +1,153 @@
+{
+  "id" : "model_HeatMap_sp_generate_heatmap",
+  "metainfo" : {
+    "label" : "model_HeatMap_sp_generate_heatmap",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "alias" : "\"prophecy_tmp__mdf5niao__HeatMap_sp__generate_heatmap\"",
+        "materialized" : "table",
+        "database" : "\"andre_dev\"",
+        "schema" : "\"alteryx_spatial\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "prophecy_tmp__HeatMap_sp__generate_heatmap" : {
+      "id" : "prophecy_tmp__HeatMap_sp__generate_heatmap",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "generate_heatmap",
+        "phase" : 0
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM generate_heatmap\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "-E7JAralZ2WYjurkg82ud$$_bSV_-2S3vL_lENBAaGse" : {
+      "id" : "-E7JAralZ2WYjurkg82ud$$_bSV_-2S3vL_lENBAaGse",
+      "component" : "HeatMap",
+      "metadata" : {
+        "label" : "generate_heatmap",
+        "x" : -400,
+        "y" : -240,
+        "phase" : 0
+      },
+      "properties" : {
+        "longitudeColumnName" : "lon",
+        "heatColumnName" : "",
+        "relation_name" : [ "points" ],
+        "_oldMacroProperties" : {
+          "macroName" : "HeatMap",
+          "projectName" : "andre_spatial_09",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['points']"
+          }, {
+            "name" : "longitudeColumnName",
+            "value" : "lon"
+          }, {
+            "name" : "latitudeColumnName",
+            "value" : "lat"
+          }, {
+            "name" : "resolution",
+            "value" : "8"
+          }, {
+            "name" : "gridDistance",
+            "value" : "10"
+          }, {
+            "name" : "heatColumnName",
+            "value" : ""
+          }, {
+            "name" : "decayType",
+            "value" : "constant"
+          } ]
+        },
+        "gridDistance" : 10,
+        "resolution" : 8,
+        "decayType" : "constant",
+        "latitudeColumnName" : "lat"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "mrRdOOlRtrCIeqLiOiS8p$$c9C4As61IHvwUq0plhvT6",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "8c7xKEoJx3SfMxns7EHMj$$hwWEhQuWY7TBGVe0G0aXx",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "WindUbK9FWA-zVjYwBg9b$$6xie5QL0j1_cnfhv8bTER" : {
+      "id" : "WindUbK9FWA-zVjYwBg9b$$6xie5QL0j1_cnfhv8bTER",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "points",
+        "x" : -560,
+        "y" : -240,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "points",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "wRMc39_8zDgYuzYcJUqGb$$1mqlgSKmy-5t6Lk7HGFXe",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_-E7JAralZ2WYjurkg82ud$$_bSV_-2S3vL_lENBAaGse_prophecy_tmp__HeatMap_sp__generate_heatmap",
+    "source" : "-E7JAralZ2WYjurkg82ud$$_bSV_-2S3vL_lENBAaGse",
+    "sourcePort" : "8c7xKEoJx3SfMxns7EHMj$$hwWEhQuWY7TBGVe0G0aXx",
+    "target" : "prophecy_tmp__HeatMap_sp__generate_heatmap",
+    "targetPort" : "input_port_0"
+  }, {
+    "id" : "X_SCuCYEL58D74vWjqEVK$$6rnkzr2ObOe236mHR4Oxb",
+    "source" : "WindUbK9FWA-zVjYwBg9b$$6xie5QL0j1_cnfhv8bTER",
+    "sourcePort" : "wRMc39_8zDgYuzYcJUqGb$$1mqlgSKmy-5t6Lk7HGFXe",
+    "target" : "-E7JAralZ2WYjurkg82ud$$_bSV_-2S3vL_lENBAaGse",
+    "targetPort" : "mrRdOOlRtrCIeqLiOiS8p$$c9C4As61IHvwUq0plhvT6"
+  } ],
+  "component" : "Model"
+}

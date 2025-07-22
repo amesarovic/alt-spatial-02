@@ -1,0 +1,106 @@
+{
+  "id" : "Generalize_sp",
+  "metainfo" : {
+    "label" : "Generalize_sp",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "0VZQK42y_sAwLmLAM1T7W$$xfL3otB8KbmVAyye0_G16" : {
+      "id" : "0VZQK42y_sAwLmLAM1T7W$$xfL3otB8KbmVAyye0_G16",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "us_states_lines",
+        "x" : -440,
+        "y" : -260,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "us_states_lines",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "MHRcuNUBBzzx2lwK3NOWk$$-ieSQxjRbJJh7AhfCUUUg",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "BPyw_T7xLH8AugwQSre9j$$cP6mLSer3MvvEscMNUM5-",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "WYw19E6hGaD35AQvD6T4r$$qOP5FcB5uYXkNUa70yKgP" : {
+      "id" : "WYw19E6hGaD35AQvD6T4r$$qOP5FcB5uYXkNUa70yKgP",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "model_Generalize_sp_generalize_us_states",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "model_Generalize_sp_generalize_us_states"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "prophecy_tmp__Generalize_sp__generalize_us_states", "WYw19E6hGaD35AQvD6T4r$$qOP5FcB5uYXkNUa70yKgP", "0VZQK42y_sAwLmLAM1T7W$$xfL3otB8KbmVAyye0_G16" ],
+        "type" : "table",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "model_Generalize_sp_generalize_us_states_in_0",
+          "slug" : "in_0"
+        } ],
+        "outputs" : [ {
+          "id" : "model_Generalize_sp_generalize_us_states_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "odXUOjh9qwgzyNCkLB7wM$$ZQ9_--DcQJr3A2gLLzD3R",
+    "source" : "0VZQK42y_sAwLmLAM1T7W$$xfL3otB8KbmVAyye0_G16",
+    "sourcePort" : "BPyw_T7xLH8AugwQSre9j$$cP6mLSer3MvvEscMNUM5-",
+    "target" : "WYw19E6hGaD35AQvD6T4r$$qOP5FcB5uYXkNUa70yKgP",
+    "targetPort" : "model_Generalize_sp_generalize_us_states_in_0"
+  } ],
+  "component" : "Pipeline"
+}

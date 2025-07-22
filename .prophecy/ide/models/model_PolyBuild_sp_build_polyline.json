@@ -1,0 +1,149 @@
+{
+  "id" : "model_PolyBuild_sp_build_polyline",
+  "metainfo" : {
+    "label" : "model_PolyBuild_sp_build_polyline",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "alias" : "\"prophecy_tmp__mdf5tptx__PolyBuild_sp__build_polyline\"",
+        "materialized" : "table",
+        "database" : "\"andre_dev\"",
+        "schema" : "\"alteryx_spatial\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "prophecy_tmp__PolyBuild_sp__build_polyline" : {
+      "id" : "prophecy_tmp__PolyBuild_sp__build_polyline",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "build_polyline",
+        "phase" : 0
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM build_polyline\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "dDSvM7xQ5phb3fNbz4qjZ$$f0XiwkfNuDlG_VP4GT_eC" : {
+      "id" : "dDSvM7xQ5phb3fNbz4qjZ$$f0XiwkfNuDlG_VP4GT_eC",
+      "component" : "PolyBuild",
+      "metadata" : {
+        "label" : "build_polyline",
+        "x" : -220,
+        "y" : -100,
+        "phase" : 0
+      },
+      "properties" : {
+        "buildMethod" : "SequencePolyline",
+        "longitudeColumnName" : "longitude",
+        "sequenceColumnName" : "stop_schedule",
+        "groupColumnName" : "route_id",
+        "relation_name" : [ "poly_build" ],
+        "_oldMacroProperties" : {
+          "macroName" : "PolyBuild",
+          "projectName" : "andre_spatial_09",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['poly_build']"
+          }, {
+            "name" : "buildMethod",
+            "value" : "SequencePolyline"
+          }, {
+            "name" : "longitudeColumnName",
+            "value" : "longitude"
+          }, {
+            "name" : "latitudeColumnName",
+            "value" : "latitude"
+          }, {
+            "name" : "groupColumnName",
+            "value" : "route_id"
+          }, {
+            "name" : "sequenceColumnName",
+            "value" : "stop_schedule"
+          } ]
+        },
+        "latitudeColumnName" : "latitude"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "ISfq2UXeNzRx_eJq_5V9k$$Kz95nvj8TcbaMi1meCeB5",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "W9Ya6buGNfkRwo4EvWDH2$$BYl3D37YF5iiT4EVXtu-X",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "Nnsf2wqBkc8VMAkPQAU-m$$3WJ7lCICzG_RRCic_NYBl" : {
+      "id" : "Nnsf2wqBkc8VMAkPQAU-m$$3WJ7lCICzG_RRCic_NYBl",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "poly_build",
+        "x" : -400,
+        "y" : -100,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "poly_build",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "N5w1cA_IXy36GVELuRyFL$$aIC3EeZjduqeNSBBRXzU4",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_dDSvM7xQ5phb3fNbz4qjZ$$f0XiwkfNuDlG_VP4GT_eC_prophecy_tmp__PolyBuild_sp__build_polyline",
+    "source" : "dDSvM7xQ5phb3fNbz4qjZ$$f0XiwkfNuDlG_VP4GT_eC",
+    "sourcePort" : "W9Ya6buGNfkRwo4EvWDH2$$BYl3D37YF5iiT4EVXtu-X",
+    "target" : "prophecy_tmp__PolyBuild_sp__build_polyline",
+    "targetPort" : "input_port_0"
+  }, {
+    "id" : "QuoqQZSSicNS83sBPkaJv$$IJVXQQr20n4EKkDHkwDYV",
+    "source" : "Nnsf2wqBkc8VMAkPQAU-m$$3WJ7lCICzG_RRCic_NYBl",
+    "sourcePort" : "N5w1cA_IXy36GVELuRyFL$$aIC3EeZjduqeNSBBRXzU4",
+    "target" : "dDSvM7xQ5phb3fNbz4qjZ$$f0XiwkfNuDlG_VP4GT_eC",
+    "targetPort" : "ISfq2UXeNzRx_eJq_5V9k$$Kz95nvj8TcbaMi1meCeB5"
+  } ],
+  "component" : "Model"
+}

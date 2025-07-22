@@ -1,0 +1,229 @@
+{
+  "id" : "Distance_sp",
+  "metainfo" : {
+    "label" : "Distance_sp",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "oUemF-Rtq-WZh-HNGvs3q$$MW7XkJFB08pIErGwbYIqW" : {
+      "id" : "oUemF-Rtq-WZh-HNGvs3q$$MW7XkJFB08pIErGwbYIqW",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "distances",
+        "x" : -440,
+        "y" : -260,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "distances",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "TcxLDXZlhZRtAs1RDX6Ma$$XE5ErguTgCBW3lblHvIwS",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "VgxLyn_hclsaE--aHNNSr$$FMyBAyxNKVgTvCj_6lx_L",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "start_city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "destination_city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "source_point",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "dest_point",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "LjWcTmgF9r6hIaoVtga8S$$f0Byke1vojdoduTEreAdJ" : {
+      "id" : "LjWcTmgF9r6hIaoVtga8S$$f0Byke1vojdoduTEreAdJ",
+      "component" : "Distance",
+      "metadata" : {
+        "label" : "calculate_distances",
+        "x" : -260,
+        "y" : -260,
+        "phase" : 0
+      },
+      "properties" : {
+        "sourceType" : "point",
+        "destinationType" : "point",
+        "relation_name" : [ "distances" ],
+        "columnNames" : [ ],
+        "_oldMacroProperties" : {
+          "macroName" : "Distance",
+          "projectName" : "andre_spatial_09",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['distances']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"start_city\", \"dataType\": \"String\"}, {\"name\": \"destination_city\", \"dataType\": \"String\"}, {\"name\": \"source_point\", \"dataType\": \"String\"}, {\"name\": \"dest_point\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "sourceColumnNames",
+            "value" : "source_point"
+          }, {
+            "name" : "destinationColumnNames",
+            "value" : "dest_point"
+          }, {
+            "name" : "sourceType",
+            "value" : "point"
+          }, {
+            "name" : "destinationType",
+            "value" : "point"
+          }, {
+            "name" : "outputDistance",
+            "value" : "true"
+          }, {
+            "name" : "units",
+            "value" : "kms"
+          }, {
+            "name" : "outputCardDirection",
+            "value" : "true"
+          }, {
+            "name" : "outputDirectionDegrees",
+            "value" : "true"
+          } ]
+        },
+        "outputCardDirection" : true,
+        "destinationColumnNames" : "dest_point",
+        "schema" : "[{\"name\": \"start_city\", \"dataType\": \"String\"}, {\"name\": \"destination_city\", \"dataType\": \"String\"}, {\"name\": \"source_point\", \"dataType\": \"String\"}, {\"name\": \"dest_point\", \"dataType\": \"String\"}]",
+        "units" : "kms",
+        "outputDirectionDegrees" : true,
+        "outputDistance" : true,
+        "sourceColumnNames" : "source_point"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "L00mwHCTOdP2M25JfFZIc$$57Rkd4QC42gL0-CKKkbXt",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "start_city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "destination_city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "source_point",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "dest_point",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "26NsObGbiZjTV1itSMa-g$$Fgsg9psWPiMoztc-d6IYO",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "start_city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "destination_city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "source_point",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "dest_point",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "distanceKilometers",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "cardinal_direction",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "direction_degrees",
+              "dataType" : {
+                "type" : "Double"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "componentInfo" : {
+        "gemId" : "Distance_andre_spatial_09",
+        "name" : "Distance",
+        "projectName" : "andre_spatial_09",
+        "sourceProjectName" : "andre_spatial_09"
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "nQ75kJVZAJiRm6hbn3Dmc$$HjOmeIWHG2q4YGHEFr0ZN",
+    "source" : "oUemF-Rtq-WZh-HNGvs3q$$MW7XkJFB08pIErGwbYIqW",
+    "sourcePort" : "VgxLyn_hclsaE--aHNNSr$$FMyBAyxNKVgTvCj_6lx_L",
+    "target" : "LjWcTmgF9r6hIaoVtga8S$$f0Byke1vojdoduTEreAdJ",
+    "targetPort" : "L00mwHCTOdP2M25JfFZIc$$57Rkd4QC42gL0-CKKkbXt"
+  } ],
+  "component" : "Pipeline"
+}

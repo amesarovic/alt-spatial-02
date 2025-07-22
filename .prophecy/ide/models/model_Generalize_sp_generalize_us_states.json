@@ -1,7 +1,7 @@
 {
-  "id" : "model_Buffer_buffer_us_states",
+  "id" : "model_Generalize_sp_generalize_us_states",
   "metainfo" : {
-    "label" : "model_Buffer_buffer_us_states",
+    "label" : "model_Generalize_sp_generalize_us_states",
     "autoLayout" : true,
     "staleState" : "none",
     "sourceSuggestions" : {
@@ -9,7 +9,7 @@
     },
     "graphConfig" : {
       "entityConfig" : {
-        "alias" : "\"prophecy_tmp__mdf4xzak__Buffer__buffer_us_states\"",
+        "alias" : "\"prophecy_tmp__mdf52yrn__Generalize_sp__generalize_us_states\"",
         "materialized" : "table",
         "database" : "\"andre_dev\"",
         "schema" : "\"alteryx_spatial\"",
@@ -19,18 +19,18 @@
     "version" : 3
   },
   "processes" : {
-    "prophecy_tmp__Buffer__buffer_us_states" : {
-      "id" : "prophecy_tmp__Buffer__buffer_us_states",
+    "prophecy_tmp__Generalize_sp__generalize_us_states" : {
+      "id" : "prophecy_tmp__Generalize_sp__generalize_us_states",
       "component" : "TargetModel",
       "metadata" : {
-        "label" : "buffer_us_states",
+        "label" : "generalize_us_states",
         "phase" : 0
       },
       "properties" : {
         "customQueryDisabled" : true,
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
-        "query" : "\nSELECT *\n\nFROM buffer_us_states\n\n",
+        "query" : "\nSELECT *\n\nFROM generalize_us_states\n\n",
         "isModel" : true,
         "incrementalKey" : false,
         "incremental" : {
@@ -50,20 +50,19 @@
         "autoUpdateOnRun" : false
       }
     },
-    "TDEC6XIqnxz1PCHxl3BGO$$EYS8m5ezSLhDzdLDf6wBF" : {
-      "id" : "TDEC6XIqnxz1PCHxl3BGO$$EYS8m5ezSLhDzdLDf6wBF",
-      "component" : "Buffer",
+    "WYw19E6hGaD35AQvD6T4r$$qOP5FcB5uYXkNUa70yKgP" : {
+      "id" : "WYw19E6hGaD35AQvD6T4r$$qOP5FcB5uYXkNUa70yKgP",
+      "component" : "Generalize",
       "metadata" : {
-        "label" : "buffer_us_states",
-        "x" : -380,
-        "y" : -220,
+        "label" : "generalize_us_states",
+        "x" : -260,
+        "y" : -260,
         "phase" : 0
       },
       "properties" : {
         "relation_name" : [ "us_states_lines" ],
-        "geometryColumnName" : "geometry",
         "_oldMacroProperties" : {
-          "macroName" : "Buffer",
+          "macroName" : "Generalize",
           "projectName" : "andre_spatial_09",
           "parameters" : [ {
             "name" : "relation_name",
@@ -75,37 +74,38 @@
             "name" : "destinationColumnNames",
             "value" : "geometry"
           }, {
-            "name" : "distance",
-            "value" : "25"
+            "name" : "threshold",
+            "value" : "10"
           }, {
             "name" : "unit",
-            "value" : "miles"
+            "value" : "kms"
           } ]
         },
         "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
-        "unit" : "miles",
-        "distance" : 25
+        "threshold" : "10",
+        "polygonColumnName" : "geometry",
+        "unit" : "kms"
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "beC9AzHLLLsDin8CuDtzu$$fm88ILSENtvse8e4tfc0L",
+          "id" : "PvakXHfKcm0E2Fbywjvvc$$hwtS2DUvKasooCCLVqPxd",
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "_YHQbJmKD-hKxmgyyTp6e$$X6ozIXWXVRnJJqvsPNE_D",
+          "id" : "LjdM9X2SIPwVxw_erghW9$$67S49hP6HQi6nufDh_IW0",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
       }
     },
-    "RqhhkXStLTbunvy33oEJ9$$h3f0OWtgunQzlxC9PoYda" : {
-      "id" : "RqhhkXStLTbunvy33oEJ9$$h3f0OWtgunQzlxC9PoYda",
+    "0VZQK42y_sAwLmLAM1T7W$$xfL3otB8KbmVAyye0_G16" : {
+      "id" : "0VZQK42y_sAwLmLAM1T7W$$xfL3otB8KbmVAyye0_G16",
       "component" : "Source",
       "metadata" : {
         "label" : "us_states_lines",
-        "x" : -580,
-        "y" : -220,
+        "x" : -440,
+        "y" : -260,
         "phase" : 0
       },
       "properties" : {
@@ -120,7 +120,7 @@
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "o1xh8NlejHCjJr8v66pXa$$-J8GNbTZhhVUZckK6dqlJ",
+          "id" : "BPyw_T7xLH8AugwQSre9j$$cP6mLSer3MvvEscMNUM5-",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -129,17 +129,17 @@
     }
   },
   "connections" : [ {
-    "id" : "conn_TDEC6XIqnxz1PCHxl3BGO$$EYS8m5ezSLhDzdLDf6wBF_prophecy_tmp__Buffer__buffer_us_states",
-    "source" : "TDEC6XIqnxz1PCHxl3BGO$$EYS8m5ezSLhDzdLDf6wBF",
-    "sourcePort" : "_YHQbJmKD-hKxmgyyTp6e$$X6ozIXWXVRnJJqvsPNE_D",
-    "target" : "prophecy_tmp__Buffer__buffer_us_states",
+    "id" : "conn_WYw19E6hGaD35AQvD6T4r$$qOP5FcB5uYXkNUa70yKgP_prophecy_tmp__Generalize_sp__generalize_us_states",
+    "source" : "WYw19E6hGaD35AQvD6T4r$$qOP5FcB5uYXkNUa70yKgP",
+    "sourcePort" : "LjdM9X2SIPwVxw_erghW9$$67S49hP6HQi6nufDh_IW0",
+    "target" : "prophecy_tmp__Generalize_sp__generalize_us_states",
     "targetPort" : "input_port_0"
   }, {
-    "id" : "Czm3l0CJkrHz01zt_k6MY$$MoSEh9m5Lub3tX4dpVuXq",
-    "source" : "RqhhkXStLTbunvy33oEJ9$$h3f0OWtgunQzlxC9PoYda",
-    "sourcePort" : "o1xh8NlejHCjJr8v66pXa$$-J8GNbTZhhVUZckK6dqlJ",
-    "target" : "TDEC6XIqnxz1PCHxl3BGO$$EYS8m5ezSLhDzdLDf6wBF",
-    "targetPort" : "beC9AzHLLLsDin8CuDtzu$$fm88ILSENtvse8e4tfc0L"
+    "id" : "odXUOjh9qwgzyNCkLB7wM$$ZQ9_--DcQJr3A2gLLzD3R",
+    "source" : "0VZQK42y_sAwLmLAM1T7W$$xfL3otB8KbmVAyye0_G16",
+    "sourcePort" : "BPyw_T7xLH8AugwQSre9j$$cP6mLSer3MvvEscMNUM5-",
+    "target" : "WYw19E6hGaD35AQvD6T4r$$qOP5FcB5uYXkNUa70yKgP",
+    "targetPort" : "PvakXHfKcm0E2Fbywjvvc$$hwtS2DUvKasooCCLVqPxd"
   } ],
   "component" : "Model"
 }

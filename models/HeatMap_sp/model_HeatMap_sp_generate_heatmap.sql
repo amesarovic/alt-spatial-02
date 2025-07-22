@@ -1,7 +1,7 @@
 {{
   config({    
     "materialized": "table",
-    "alias": "prophecy_tmp__mdf548ls__CreatePoint__create_geo_point",
+    "alias": "prophecy_tmp__mdf5niao__HeatMap_sp__generate_heatmap",
     "database": "andre_dev",
     "schema": "alteryx_spatial"
   })
@@ -15,12 +15,12 @@ WITH points AS (
 
 ),
 
-create_geo_point AS (
+generate_heatmap AS (
 
-  {{ andre_spatial_09.CreatePoint('points', [['lon', 'lat', 'point']]) }}
+  {{ andre_spatial_09.HeatMap('points', 'lon', 'lat', 8, 10, '', 'constant') }}
 
 )
 
 SELECT *
 
-FROM create_geo_point
+FROM generate_heatmap

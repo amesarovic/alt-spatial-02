@@ -1,0 +1,182 @@
+{
+  "id" : "model_SpatialMatch_sp_spatial_match_within",
+  "metainfo" : {
+    "label" : "model_SpatialMatch_sp_spatial_match_within",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "alias" : "\"prophecy_tmp__mdf5xvle__SpatialMatch_sp__spatial_match_within\"",
+        "materialized" : "table",
+        "database" : "\"andre_dev\"",
+        "schema" : "\"alteryx_spatial\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "prophecy_tmp__SpatialMatch_sp__spatial_match_within" : {
+      "id" : "prophecy_tmp__SpatialMatch_sp__spatial_match_within",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "spatial_match_within",
+        "phase" : 0
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM spatial_match_within\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "2fRONiFS-aw68fcf0WN8J$$sMhBEYZcBxSqfxE8VKr3v" : {
+      "id" : "2fRONiFS-aw68fcf0WN8J$$sMhBEYZcBxSqfxE8VKr3v",
+      "component" : "SpatialMatch",
+      "metadata" : {
+        "label" : "spatial_match_within",
+        "x" : -300,
+        "y" : -120,
+        "phase" : 0
+      },
+      "properties" : {
+        "relation_name" : [ "spatial_match_1", "spatial_match_2" ],
+        "_oldMacroProperties" : {
+          "macroName" : "SpatialMatch",
+          "projectName" : "andre_spatial_09",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['spatial_match_1', 'spatial_match_2']"
+          }, {
+            "name" : "schemas",
+            "value" : "[['store_id', 'store_name', 'store_location', 'store_type'], ['zone_id', 'zone_name', 'zone_polygon', 'delivery_fee']]"
+          }, {
+            "name" : "match_type",
+            "value" : "within"
+          }, {
+            "name" : "source_column",
+            "value" : "store_location"
+          }, {
+            "name" : "target_column",
+            "value" : "zone_polygon"
+          } ]
+        },
+        "target_column" : "zone_polygon",
+        "source_column" : "store_location",
+        "match_type" : "within",
+        "schemas" : [ [ "store_id", "store_name", "store_location", "store_type" ], [ "zone_id", "zone_name", "zone_polygon", "delivery_fee" ] ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "RidTDT71Bla3a-21XfNRe$$XOxIiC0foE75XyMpAulN1",
+          "slug" : "in0"
+        }, {
+          "id" : "UKsPnV7wrsfrOzeTY1lCc$$aVUT1nSQAHJrGJxa2WV9U",
+          "slug" : "in1"
+        } ],
+        "outputs" : [ {
+          "id" : "DccVZV3RWPMUwJOdHYCPK$$hUPGwQTsfJGNmXVhkIgKK",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "BmUKwUL2RiAdOA6S4wxbd$$Xe2Z_6ZOqB8Q79-zEVdvN" : {
+      "id" : "BmUKwUL2RiAdOA6S4wxbd$$Xe2Z_6ZOqB8Q79-zEVdvN",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "spatial_match_1",
+        "x" : -480,
+        "y" : -180,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "spatial_match_1",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "Siq3WvYTPx-gJGU4EhrL9$$hLi6d_ZSV_BXaAGNzmDm6",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "8qcmeyMQgeB0fJGSpSch5$$qWAAQo4TICB2ahVKm67B5" : {
+      "id" : "8qcmeyMQgeB0fJGSpSch5$$qWAAQo4TICB2ahVKm67B5",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "spatial_match_2",
+        "x" : -480,
+        "y" : -20,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "spatial_match_2",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "ObSn09POz6-yoe8EQ5e-J$$e2OJj9q4rjCHQPLSt6XQb",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_2fRONiFS-aw68fcf0WN8J$$sMhBEYZcBxSqfxE8VKr3v_prophecy_tmp__SpatialMatch_sp__spatial_match_within",
+    "source" : "2fRONiFS-aw68fcf0WN8J$$sMhBEYZcBxSqfxE8VKr3v",
+    "sourcePort" : "DccVZV3RWPMUwJOdHYCPK$$hUPGwQTsfJGNmXVhkIgKK",
+    "target" : "prophecy_tmp__SpatialMatch_sp__spatial_match_within",
+    "targetPort" : "input_port_0"
+  }, {
+    "id" : "4awVXGU7XnrR3MDyr7kFx$$-eRCisNMUDqzhOn1c7IN8",
+    "source" : "BmUKwUL2RiAdOA6S4wxbd$$Xe2Z_6ZOqB8Q79-zEVdvN",
+    "sourcePort" : "Siq3WvYTPx-gJGU4EhrL9$$hLi6d_ZSV_BXaAGNzmDm6",
+    "target" : "2fRONiFS-aw68fcf0WN8J$$sMhBEYZcBxSqfxE8VKr3v",
+    "targetPort" : "RidTDT71Bla3a-21XfNRe$$XOxIiC0foE75XyMpAulN1"
+  }, {
+    "id" : "mo0K-8tJ21ttNHjBV8xDk$$ihPwAYrO4xqhBGe9dG_5s",
+    "source" : "8qcmeyMQgeB0fJGSpSch5$$qWAAQo4TICB2ahVKm67B5",
+    "sourcePort" : "ObSn09POz6-yoe8EQ5e-J$$e2OJj9q4rjCHQPLSt6XQb",
+    "target" : "2fRONiFS-aw68fcf0WN8J$$sMhBEYZcBxSqfxE8VKr3v",
+    "targetPort" : "UKsPnV7wrsfrOzeTY1lCc$$aVUT1nSQAHJrGJxa2WV9U"
+  } ],
+  "component" : "Model"
+}

@@ -1,7 +1,7 @@
 {
-  "id" : "model_CreatePoint_create_geo_point",
+  "id" : "model_CreatePoint_sp_create_geo_point",
   "metainfo" : {
-    "label" : "model_CreatePoint_create_geo_point",
+    "label" : "model_CreatePoint_sp_create_geo_point",
     "autoLayout" : true,
     "staleState" : "none",
     "sourceSuggestions" : {
@@ -9,7 +9,7 @@
     },
     "graphConfig" : {
       "entityConfig" : {
-        "alias" : "\"prophecy_tmp__mdf548ls__CreatePoint__create_geo_point\"",
+        "alias" : "\"prophecy_tmp__mdf56oi4__CreatePoint_sp__create_geo_point\"",
         "materialized" : "table",
         "database" : "\"andre_dev\"",
         "schema" : "\"alteryx_spatial\"",
@@ -19,8 +19,8 @@
     "version" : 3
   },
   "processes" : {
-    "prophecy_tmp__CreatePoint__create_geo_point" : {
-      "id" : "prophecy_tmp__CreatePoint__create_geo_point",
+    "prophecy_tmp__CreatePoint_sp__create_geo_point" : {
+      "id" : "prophecy_tmp__CreatePoint_sp__create_geo_point",
       "component" : "TargetModel",
       "metadata" : {
         "label" : "create_geo_point",
@@ -50,13 +50,13 @@
         "autoUpdateOnRun" : false
       }
     },
-    "iKwMEjTDQV8DhxqjpzXqV$$p-yBfEuyv26TPa1vGpxNH" : {
-      "id" : "iKwMEjTDQV8DhxqjpzXqV$$p-yBfEuyv26TPa1vGpxNH",
+    "zrLAA-njZQu5d2Tt9Q5Ky$$snhTVDYP1FYP5jZlso0Ln" : {
+      "id" : "zrLAA-njZQu5d2Tt9Q5Ky$$snhTVDYP1FYP5jZlso0Ln",
       "component" : "CreatePoint",
       "metadata" : {
         "label" : "create_geo_point",
-        "x" : -420,
-        "y" : -220,
+        "x" : -260,
+        "y" : -260,
         "phase" : 0
       },
       "properties" : {
@@ -80,24 +80,24 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "f-K6yH_1vg2M8Epp70dVg$$AaGSulw5v54ZnvLdr1EMD",
+          "id" : "oj9QBrCDW3D-bzXmigwoe$$fS8leaLQh3b-_dHXJBqjA",
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "zZnGz3iJxRKyfEXkAQlBf$$FqExjWaDvNF1_LIrg1GLQ",
+          "id" : "JZbpB-XOH1JcjOZuCp-El$$UteHlRtkrmnPDvb6i77lz",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
       }
     },
-    "0FqX12L_W6z22zfSQd7AC$$uJlr3W0Ktbrcqd6XqCsOv" : {
-      "id" : "0FqX12L_W6z22zfSQd7AC$$uJlr3W0Ktbrcqd6XqCsOv",
+    "gSkKu3C2_CqQ3x6JxVptZ$$i5qKQtvuWiWbovxvH6Ars" : {
+      "id" : "gSkKu3C2_CqQ3x6JxVptZ$$i5qKQtvuWiWbovxvH6Ars",
       "component" : "Source",
       "metadata" : {
         "label" : "points",
-        "x" : -620,
-        "y" : -220,
+        "x" : -440,
+        "y" : -260,
         "phase" : 0
       },
       "properties" : {
@@ -112,7 +112,7 @@
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "SYH-Ob2Ba9-mswGPiEAPH$$PjjamlBy4VOprpzC9n4H7",
+          "id" : "ZFVeESQuX3fz-U_43ZAeS$$P8bUT-z2rzPQrMGNbk73N",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -121,17 +121,17 @@
     }
   },
   "connections" : [ {
-    "id" : "conn_iKwMEjTDQV8DhxqjpzXqV$$p-yBfEuyv26TPa1vGpxNH_prophecy_tmp__CreatePoint__create_geo_point",
-    "source" : "iKwMEjTDQV8DhxqjpzXqV$$p-yBfEuyv26TPa1vGpxNH",
-    "sourcePort" : "zZnGz3iJxRKyfEXkAQlBf$$FqExjWaDvNF1_LIrg1GLQ",
-    "target" : "prophecy_tmp__CreatePoint__create_geo_point",
+    "id" : "conn_zrLAA-njZQu5d2Tt9Q5Ky$$snhTVDYP1FYP5jZlso0Ln_prophecy_tmp__CreatePoint_sp__create_geo_point",
+    "source" : "zrLAA-njZQu5d2Tt9Q5Ky$$snhTVDYP1FYP5jZlso0Ln",
+    "sourcePort" : "JZbpB-XOH1JcjOZuCp-El$$UteHlRtkrmnPDvb6i77lz",
+    "target" : "prophecy_tmp__CreatePoint_sp__create_geo_point",
     "targetPort" : "input_port_0"
   }, {
-    "id" : "VpDDE5hvje_PVbO5-5bx0",
-    "source" : "0FqX12L_W6z22zfSQd7AC$$uJlr3W0Ktbrcqd6XqCsOv",
-    "sourcePort" : "SYH-Ob2Ba9-mswGPiEAPH$$PjjamlBy4VOprpzC9n4H7",
-    "target" : "iKwMEjTDQV8DhxqjpzXqV$$p-yBfEuyv26TPa1vGpxNH",
-    "targetPort" : "f-K6yH_1vg2M8Epp70dVg$$AaGSulw5v54ZnvLdr1EMD"
+    "id" : "PohMSH2wOI6bWk7t3q8c9$$O7TsXNQYZyh5oxRSP1Q_P",
+    "source" : "gSkKu3C2_CqQ3x6JxVptZ$$i5qKQtvuWiWbovxvH6Ars",
+    "sourcePort" : "ZFVeESQuX3fz-U_43ZAeS$$P8bUT-z2rzPQrMGNbk73N",
+    "target" : "zrLAA-njZQu5d2Tt9Q5Ky$$snhTVDYP1FYP5jZlso0Ln",
+    "targetPort" : "oj9QBrCDW3D-bzXmigwoe$$fS8leaLQh3b-_dHXJBqjA"
   } ],
   "component" : "Model"
 }

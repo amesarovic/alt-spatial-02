@@ -1,16 +1,16 @@
 ---
 version: 2
 models:
-- name: "model_CreatePoint_create_geo_point"
+- name: "model_Distance_sp_calculate_distances"
   tags:
   - "prophecy_temp"
 sources:
-- name: "prophecy_tmp_source__CreatePoint"
+- name: "prophecy_tmp_source__Distance_sp"
   database: "andre_dev"
   schema: "alteryx_spatial"
   config:
     enabled: true
   tables:
-  - name: "prophecy_tmp__mdf548ls__CreatePoint__create_geo_point"
+  - name: "prophecy_tmp__mdf5cvcx__Distance_sp__calculate_distances"
     tags:
     - "prophecy_temp"

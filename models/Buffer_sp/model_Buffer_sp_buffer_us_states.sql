@@ -1,7 +1,7 @@
 {{
   config({    
     "materialized": "table",
-    "alias": "prophecy_tmp__mdf4xzak__Buffer__buffer_us_states",
+    "alias": "prophecy_tmp__mdf50qac__Buffer_sp__buffer_us_states",
     "database": "andre_dev",
     "schema": "alteryx_spatial"
   })
@@ -22,7 +22,7 @@ buffer_us_states AS (
       'us_states_lines', 
       [{ "name": "name", "dataType": "String" }, { "name": "geometry", "dataType": "String" }], 
       'geometry', 
-      25, 
+      20, 
       'miles'
     )
   }}

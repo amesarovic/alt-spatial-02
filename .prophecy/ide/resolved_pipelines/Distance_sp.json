@@ -1,0 +1,116 @@
+{
+  "id" : "Distance_sp",
+  "metainfo" : {
+    "label" : "Distance_sp",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "oUemF-Rtq-WZh-HNGvs3q$$MW7XkJFB08pIErGwbYIqW" : {
+      "id" : "oUemF-Rtq-WZh-HNGvs3q$$MW7XkJFB08pIErGwbYIqW",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "distances",
+        "x" : -440,
+        "y" : -260,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "distances",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "TcxLDXZlhZRtAs1RDX6Ma$$XE5ErguTgCBW3lblHvIwS",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "VgxLyn_hclsaE--aHNNSr$$FMyBAyxNKVgTvCj_6lx_L",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "start_city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "destination_city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "source_point",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "dest_point",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "LjWcTmgF9r6hIaoVtga8S$$f0Byke1vojdoduTEreAdJ" : {
+      "id" : "LjWcTmgF9r6hIaoVtga8S$$f0Byke1vojdoduTEreAdJ",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "model_Distance_sp_calculate_distances",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "model_Distance_sp_calculate_distances"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "prophecy_tmp__Distance_sp__calculate_distances", "LjWcTmgF9r6hIaoVtga8S$$f0Byke1vojdoduTEreAdJ", "oUemF-Rtq-WZh-HNGvs3q$$MW7XkJFB08pIErGwbYIqW" ],
+        "type" : "table",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "model_Distance_sp_calculate_distances_in_0",
+          "slug" : "in_0"
+        } ],
+        "outputs" : [ {
+          "id" : "model_Distance_sp_calculate_distances_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "nQ75kJVZAJiRm6hbn3Dmc$$HjOmeIWHG2q4YGHEFr0ZN",
+    "source" : "oUemF-Rtq-WZh-HNGvs3q$$MW7XkJFB08pIErGwbYIqW",
+    "sourcePort" : "VgxLyn_hclsaE--aHNNSr$$FMyBAyxNKVgTvCj_6lx_L",
+    "target" : "LjWcTmgF9r6hIaoVtga8S$$f0Byke1vojdoduTEreAdJ",
+    "targetPort" : "model_Distance_sp_calculate_distances_in_0"
+  } ],
+  "component" : "Pipeline"
+}

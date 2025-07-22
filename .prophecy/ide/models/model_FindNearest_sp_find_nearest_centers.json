@@ -1,0 +1,207 @@
+{
+  "id" : "model_FindNearest_sp_find_nearest_centers",
+  "metainfo" : {
+    "label" : "model_FindNearest_sp_find_nearest_centers",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "alias" : "\"prophecy_tmp__mdf5hxrp__FindNearest_sp__find_nearest_centers\"",
+        "materialized" : "table",
+        "database" : "\"andre_dev\"",
+        "schema" : "\"alteryx_spatial\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "prophecy_tmp__FindNearest_sp__find_nearest_centers" : {
+      "id" : "prophecy_tmp__FindNearest_sp__find_nearest_centers",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "find_nearest_centers",
+        "phase" : 0
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM find_nearest_centers\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "7R_kmb2nVOlc1lsSdQiAU$$tOmAtCwtlt_uYTYUF6X0E" : {
+      "id" : "7R_kmb2nVOlc1lsSdQiAU$$tOmAtCwtlt_uYTYUF6X0E",
+      "component" : "FindNearest",
+      "metadata" : {
+        "label" : "find_nearest_centers",
+        "x" : -200,
+        "y" : -200,
+        "phase" : 0
+      },
+      "properties" : {
+        "sourceType" : "point",
+        "sourceColumnName" : "customer_point",
+        "ignoreZeroDistance" : false,
+        "relation_name" : [ "find_nearest_1", "find_nearest_2" ],
+        "columnNames" : [ ],
+        "_oldMacroProperties" : {
+          "macroName" : "FindNearest",
+          "projectName" : "andre_spatial_09",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['find_nearest_1', 'find_nearest_2']"
+          }, {
+            "name" : "source_schema",
+            "value" : "[{\"name\": \"customer_id\", \"dataType\": \"String\"}, {\"name\": \"customer_point\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "target_schema",
+            "value" : "[{\"name\": \"center_id\", \"dataType\": \"String\"}, {\"name\": \"center_point\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "sourceColumnName",
+            "value" : "customer_point"
+          }, {
+            "name" : "destinationColumnName",
+            "value" : "center_point"
+          }, {
+            "name" : "sourceType",
+            "value" : "point"
+          }, {
+            "name" : "targetType",
+            "value" : "point"
+          }, {
+            "name" : "nearestPoints",
+            "value" : "2"
+          }, {
+            "name" : "maxDistance",
+            "value" : "1000"
+          }, {
+            "name" : "units",
+            "value" : "kms"
+          }, {
+            "name" : "ignoreZeroDistance",
+            "value" : "false"
+          } ]
+        },
+        "source_schema" : "[{\"name\": \"customer_id\", \"dataType\": \"String\"}, {\"name\": \"customer_point\", \"dataType\": \"String\"}]",
+        "maxDistance" : 1000,
+        "destinationColumnName" : "center_point",
+        "nearestPoints" : 2,
+        "units" : "kms",
+        "targetType" : "point",
+        "target_schema" : "[{\"name\": \"center_id\", \"dataType\": \"String\"}, {\"name\": \"center_point\", \"dataType\": \"String\"}]"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "hSX3JpTwE3lA8nNWbhcTj$$dI5I7o0mXgEnA2r7gUhZI",
+          "slug" : "in0"
+        }, {
+          "id" : "1evyo8hXRh7wuwEvtiKW6$$HMHLgbqrS_j6Q9DFFRQGX",
+          "slug" : "in1"
+        } ],
+        "outputs" : [ {
+          "id" : "6D7E7meGxRjXlUT9yiiJ9$$mi_MuKFC7sKHFmz_gAS-9",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "_nPicDRvKsK7Zy-6_2xMt$$vAhdj91MF3RFoqB6bLzC_" : {
+      "id" : "_nPicDRvKsK7Zy-6_2xMt$$vAhdj91MF3RFoqB6bLzC_",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "find_nearest_2",
+        "x" : -400,
+        "y" : -120,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "find_nearest_2",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "2DMV7OprlMngbJsq2P6lG$$k-kz6wQxVT_FQe6v4ZntD",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "U0PThfF4W9z2EQCmvoZxo$$nWHZ1U0kXHg-LsUfmwbwh" : {
+      "id" : "U0PThfF4W9z2EQCmvoZxo$$nWHZ1U0kXHg-LsUfmwbwh",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "find_nearest_1",
+        "x" : -400,
+        "y" : -280,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "find_nearest_1",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "MhLzHbH4mLx9n7c6MBfwm$$KtwKEdL_1CzKdq2RqssxT",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_7R_kmb2nVOlc1lsSdQiAU$$tOmAtCwtlt_uYTYUF6X0E_prophecy_tmp__FindNearest_sp__find_nearest_centers",
+    "source" : "7R_kmb2nVOlc1lsSdQiAU$$tOmAtCwtlt_uYTYUF6X0E",
+    "sourcePort" : "6D7E7meGxRjXlUT9yiiJ9$$mi_MuKFC7sKHFmz_gAS-9",
+    "target" : "prophecy_tmp__FindNearest_sp__find_nearest_centers",
+    "targetPort" : "input_port_0"
+  }, {
+    "id" : "YLYxNU9kHIfZaGRaROw0_$$-34Ut8-ECb9zcOA7FnFX9",
+    "source" : "_nPicDRvKsK7Zy-6_2xMt$$vAhdj91MF3RFoqB6bLzC_",
+    "sourcePort" : "2DMV7OprlMngbJsq2P6lG$$k-kz6wQxVT_FQe6v4ZntD",
+    "target" : "7R_kmb2nVOlc1lsSdQiAU$$tOmAtCwtlt_uYTYUF6X0E",
+    "targetPort" : "1evyo8hXRh7wuwEvtiKW6$$HMHLgbqrS_j6Q9DFFRQGX"
+  }, {
+    "id" : "0hWEZeTdTENpI0wyxwGwa$$qyaDDpz7ONJZ4VBhCZVSj",
+    "source" : "U0PThfF4W9z2EQCmvoZxo$$nWHZ1U0kXHg-LsUfmwbwh",
+    "sourcePort" : "MhLzHbH4mLx9n7c6MBfwm$$KtwKEdL_1CzKdq2RqssxT",
+    "target" : "7R_kmb2nVOlc1lsSdQiAU$$tOmAtCwtlt_uYTYUF6X0E",
+    "targetPort" : "hSX3JpTwE3lA8nNWbhcTj$$dI5I7o0mXgEnA2r7gUhZI"
+  } ],
+  "component" : "Model"
+}

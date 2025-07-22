@@ -1,0 +1,181 @@
+{
+  "id" : "HeatMap_sp",
+  "metainfo" : {
+    "label" : "HeatMap_sp",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "WindUbK9FWA-zVjYwBg9b$$6xie5QL0j1_cnfhv8bTER" : {
+      "id" : "WindUbK9FWA-zVjYwBg9b$$6xie5QL0j1_cnfhv8bTER",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "points",
+        "x" : -560,
+        "y" : -240,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "points",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "j8_7C-JKV1eQHOKcN2GeF$$r1rCZxR1hu2JfSZRmCspw",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "wRMc39_8zDgYuzYcJUqGb$$1mqlgSKmy-5t6Lk7HGFXe",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "lon",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "lat",
+              "dataType" : {
+                "type" : "Float"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "-E7JAralZ2WYjurkg82ud$$_bSV_-2S3vL_lENBAaGse" : {
+      "id" : "-E7JAralZ2WYjurkg82ud$$_bSV_-2S3vL_lENBAaGse",
+      "component" : "HeatMap",
+      "metadata" : {
+        "label" : "generate_heatmap",
+        "x" : -400,
+        "y" : -240,
+        "phase" : 0
+      },
+      "properties" : {
+        "longitudeColumnName" : "lon",
+        "heatColumnName" : "",
+        "relation_name" : [ "points" ],
+        "_oldMacroProperties" : {
+          "macroName" : "HeatMap",
+          "projectName" : "andre_spatial_09",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['points']"
+          }, {
+            "name" : "longitudeColumnName",
+            "value" : "lon"
+          }, {
+            "name" : "latitudeColumnName",
+            "value" : "lat"
+          }, {
+            "name" : "resolution",
+            "value" : "8"
+          }, {
+            "name" : "gridDistance",
+            "value" : "10"
+          }, {
+            "name" : "heatColumnName",
+            "value" : ""
+          }, {
+            "name" : "decayType",
+            "value" : "constant"
+          } ]
+        },
+        "gridDistance" : 10,
+        "resolution" : 8,
+        "decayType" : "constant",
+        "latitudeColumnName" : "lat"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "mrRdOOlRtrCIeqLiOiS8p$$c9C4As61IHvwUq0plhvT6",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "lon",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "lat",
+              "dataType" : {
+                "type" : "Float"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "8c7xKEoJx3SfMxns7EHMj$$hwWEhQuWY7TBGVe0G0aXx",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "density",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "geometry_wkt",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "componentInfo" : {
+        "gemId" : "HeatMap_andre_spatial_09",
+        "name" : "HeatMap",
+        "projectName" : "andre_spatial_09",
+        "sourceProjectName" : "andre_spatial_09"
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "X_SCuCYEL58D74vWjqEVK$$6rnkzr2ObOe236mHR4Oxb",
+    "source" : "WindUbK9FWA-zVjYwBg9b$$6xie5QL0j1_cnfhv8bTER",
+    "sourcePort" : "wRMc39_8zDgYuzYcJUqGb$$1mqlgSKmy-5t6Lk7HGFXe",
+    "target" : "-E7JAralZ2WYjurkg82ud$$_bSV_-2S3vL_lENBAaGse",
+    "targetPort" : "mrRdOOlRtrCIeqLiOiS8p$$c9C4As61IHvwUq0plhvT6"
+  } ],
+  "component" : "Pipeline"
+}

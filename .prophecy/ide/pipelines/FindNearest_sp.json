@@ -1,0 +1,282 @@
+{
+  "id" : "FindNearest_sp",
+  "metainfo" : {
+    "label" : "FindNearest_sp",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "U0PThfF4W9z2EQCmvoZxo$$nWHZ1U0kXHg-LsUfmwbwh" : {
+      "id" : "U0PThfF4W9z2EQCmvoZxo$$nWHZ1U0kXHg-LsUfmwbwh",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "find_nearest_1",
+        "x" : -400,
+        "y" : -280,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "find_nearest_1",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Krxz0st361YXv_DR3UREl$$nTuQh5RF9kSLcO6RU1OCA",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "MhLzHbH4mLx9n7c6MBfwm$$KtwKEdL_1CzKdq2RqssxT",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "customer_id",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "customer_point",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "_nPicDRvKsK7Zy-6_2xMt$$vAhdj91MF3RFoqB6bLzC_" : {
+      "id" : "_nPicDRvKsK7Zy-6_2xMt$$vAhdj91MF3RFoqB6bLzC_",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "find_nearest_2",
+        "x" : -400,
+        "y" : -120,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "find_nearest_2",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "OXr2xPXERkvBhJAjjhhvW$$2vWOzcQXuyXOwckeekQv4",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "2DMV7OprlMngbJsq2P6lG$$k-kz6wQxVT_FQe6v4ZntD",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "center_id",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "center_point",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "7R_kmb2nVOlc1lsSdQiAU$$tOmAtCwtlt_uYTYUF6X0E" : {
+      "id" : "7R_kmb2nVOlc1lsSdQiAU$$tOmAtCwtlt_uYTYUF6X0E",
+      "component" : "FindNearest",
+      "metadata" : {
+        "label" : "find_nearest_centers",
+        "x" : -200,
+        "y" : -200,
+        "phase" : 0
+      },
+      "properties" : {
+        "sourceType" : "point",
+        "sourceColumnName" : "customer_point",
+        "ignoreZeroDistance" : false,
+        "relation_name" : [ "find_nearest_1", "find_nearest_2" ],
+        "columnNames" : [ ],
+        "_oldMacroProperties" : {
+          "macroName" : "FindNearest",
+          "projectName" : "andre_spatial_09",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['find_nearest_1', 'find_nearest_2']"
+          }, {
+            "name" : "source_schema",
+            "value" : "[{\"name\": \"customer_id\", \"dataType\": \"String\"}, {\"name\": \"customer_point\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "target_schema",
+            "value" : "[{\"name\": \"center_id\", \"dataType\": \"String\"}, {\"name\": \"center_point\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "sourceColumnName",
+            "value" : "customer_point"
+          }, {
+            "name" : "destinationColumnName",
+            "value" : "center_point"
+          }, {
+            "name" : "sourceType",
+            "value" : "point"
+          }, {
+            "name" : "targetType",
+            "value" : "point"
+          }, {
+            "name" : "nearestPoints",
+            "value" : "2"
+          }, {
+            "name" : "maxDistance",
+            "value" : "1000"
+          }, {
+            "name" : "units",
+            "value" : "kms"
+          }, {
+            "name" : "ignoreZeroDistance",
+            "value" : "false"
+          } ]
+        },
+        "source_schema" : "[{\"name\": \"customer_id\", \"dataType\": \"String\"}, {\"name\": \"customer_point\", \"dataType\": \"String\"}]",
+        "maxDistance" : 1000,
+        "destinationColumnName" : "center_point",
+        "nearestPoints" : 2,
+        "units" : "kms",
+        "targetType" : "point",
+        "target_schema" : "[{\"name\": \"center_id\", \"dataType\": \"String\"}, {\"name\": \"center_point\", \"dataType\": \"String\"}]"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "hSX3JpTwE3lA8nNWbhcTj$$dI5I7o0mXgEnA2r7gUhZI",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "customer_id",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "customer_point",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        }, {
+          "id" : "1evyo8hXRh7wuwEvtiKW6$$HMHLgbqrS_j6Q9DFFRQGX",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "center_id",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "center_point",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in1"
+        } ],
+        "outputs" : [ {
+          "id" : "6D7E7meGxRjXlUT9yiiJ9$$mi_MuKFC7sKHFmz_gAS-9",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "customer_id",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "customer_point",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "center_id",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "center_point",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "rank_number",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "distanceKilometers",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "cardinal_direction",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "componentInfo" : {
+        "gemId" : "FindNearest_andre_spatial_09",
+        "name" : "FindNearest",
+        "projectName" : "andre_spatial_09",
+        "sourceProjectName" : "andre_spatial_09"
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "YLYxNU9kHIfZaGRaROw0_$$-34Ut8-ECb9zcOA7FnFX9",
+    "source" : "_nPicDRvKsK7Zy-6_2xMt$$vAhdj91MF3RFoqB6bLzC_",
+    "sourcePort" : "2DMV7OprlMngbJsq2P6lG$$k-kz6wQxVT_FQe6v4ZntD",
+    "target" : "7R_kmb2nVOlc1lsSdQiAU$$tOmAtCwtlt_uYTYUF6X0E",
+    "targetPort" : "1evyo8hXRh7wuwEvtiKW6$$HMHLgbqrS_j6Q9DFFRQGX"
+  }, {
+    "id" : "0hWEZeTdTENpI0wyxwGwa$$qyaDDpz7ONJZ4VBhCZVSj",
+    "source" : "U0PThfF4W9z2EQCmvoZxo$$nWHZ1U0kXHg-LsUfmwbwh",
+    "sourcePort" : "MhLzHbH4mLx9n7c6MBfwm$$KtwKEdL_1CzKdq2RqssxT",
+    "target" : "7R_kmb2nVOlc1lsSdQiAU$$tOmAtCwtlt_uYTYUF6X0E",
+    "targetPort" : "hSX3JpTwE3lA8nNWbhcTj$$dI5I7o0mXgEnA2r7gUhZI"
+  } ],
+  "component" : "Pipeline"
+}
