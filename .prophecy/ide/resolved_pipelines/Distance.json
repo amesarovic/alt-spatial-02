@@ -1,0 +1,106 @@
+{
+  "id" : "Distance",
+  "metainfo" : {
+    "label" : "Distance",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "spsK2br5aB2ywsrQyHIQu$$Qb5VdP9lnABJldoQE7tFx" : {
+      "id" : "spsK2br5aB2ywsrQyHIQu$$Qb5VdP9lnABJldoQE7tFx",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "distances",
+        "x" : -620,
+        "y" : -220,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "distances",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "MF2YGdQ5CiCeS_d2kcKE0$$QA2RbE2-2-oqgjAjqwbhl",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "hXwrL0gvW6UOZPHbQ8Jky$$2xyYtc1iLR2p7_CCwJjD9",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "pt1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "pt2",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "AiutCr7nQyk_5o4d5MXak$$HqB1abJniYmixvMWflKoP" : {
+      "id" : "AiutCr7nQyk_5o4d5MXak$$HqB1abJniYmixvMWflKoP",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "model_Distance_calculate_distance",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "model_Distance_calculate_distance"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "prophecy_tmp__Distance__calculate_distance", "AiutCr7nQyk_5o4d5MXak$$HqB1abJniYmixvMWflKoP", "spsK2br5aB2ywsrQyHIQu$$Qb5VdP9lnABJldoQE7tFx" ],
+        "type" : "table",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "model_Distance_calculate_distance_in_0",
+          "slug" : "in_0"
+        } ],
+        "outputs" : [ {
+          "id" : "model_Distance_calculate_distance_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "pz9QgohNPeW5WnoxCF7Sr$$CM6_TczCSuo79QWpRrxPo",
+    "source" : "spsK2br5aB2ywsrQyHIQu$$Qb5VdP9lnABJldoQE7tFx",
+    "sourcePort" : "hXwrL0gvW6UOZPHbQ8Jky$$2xyYtc1iLR2p7_CCwJjD9",
+    "target" : "AiutCr7nQyk_5o4d5MXak$$HqB1abJniYmixvMWflKoP",
+    "targetPort" : "model_Distance_calculate_distance_in_0"
+  } ],
+  "component" : "Pipeline"
+}

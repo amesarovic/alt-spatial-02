@@ -38,6 +38,17 @@ sqlMacros:
     - macros/macros.yml
     - gems/Buffer.py
     createdAt: '2025-07-22 17:03:19'
+  .prophecy/metadata/sqlmacros/Distance:
+    name: Distance
+    macroType: query
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - macros/Distance.sql
+    - .prophecy/ide/macros/Distance.json
+    - macros/macros.yml
+    - gems/Distance.py
+    createdAt: '2025-07-22 17:33:36'
   .prophecy/metadata/sqlmacros/Generalize:
     name: Generalize
     macroType: query
@@ -59,6 +70,24 @@ sqlMacros:
     - .prophecy/ide/macros/generate_schema_name.json
     createdAt: '2025-07-22 16:54:03'
 sqlSeeds:
+  .prophecy/metadata/sqlseeds/distances:
+    name: distances
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: pt1
+        dataType:
+          type: String
+      - name: pt2
+        dataType:
+          type: String
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - seeds/distances.csv
+    - seeds/seeds.yml
+    createdAt: '2025-07-22 17:37:23'
   .prophecy/metadata/sqlseeds/points:
     name: points
     schema:
@@ -95,17 +124,8 @@ sqlSeeds:
     author: mesarovic.andre@prophecy.io
     files:
     - seeds/us_states_lines.csv
-    - seeds/seeds.yml
     createdAt: '2025-07-22 17:12:12'
 sqlSources:
-  .prophecy/metadata/sqlsources/prophecy_tmp_source__Generalize:
-    name: prophecy_tmp_source__Generalize
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - models/Generalize/schema.yml
-    createdAt: '2025-07-22 17:25:09'
-    tables: []
   .prophecy/metadata/sqlsources/prophecy_tmp_source__Generalize_Delta:
     name: prophecy_tmp_source__Generalize_Delta
     description: null
@@ -161,6 +181,22 @@ sqlSources:
     - models/Buffer/schema.yml
     createdAt: '2025-07-22 17:12:45'
     tables: []
+  .prophecy/metadata/sqlsources/prophecy_tmp_source__Distance:
+    name: prophecy_tmp_source__Distance
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/Distance/schema.yml
+    createdAt: '2025-07-22 17:37:51'
+    tables: []
+  .prophecy/metadata/sqlsources/prophecy_tmp_source__Generalize:
+    name: prophecy_tmp_source__Generalize
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/Generalize/schema.yml
+    createdAt: '2025-07-22 17:25:09'
+    tables: []
 sqlUnreferencedSources: {}
 sqlPipeline:
   name: sqlPipeline
@@ -181,6 +217,33 @@ flags:
   shouldAddDefaultDependenciesIfAbsent: false
 pipelineConfigurations: {}
 sqlOrchestratorPipelines:
+  .prophecy/metadata/sqlorchestratorpipeline/HeatMap:
+    name: HeatMap
+    schema: null
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - .prophecy/ide/pipelines/HeatMap.json
+    - pipelines/HeatMap.py
+    createdAt: '2025-07-22 17:31:28'
+  .prophecy/metadata/sqlorchestratorpipeline/FindNearest:
+    name: FindNearest
+    schema: null
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - .prophecy/ide/pipelines/FindNearest.json
+    - pipelines/FindNearest.py
+    createdAt: '2025-07-22 17:31:15'
+  .prophecy/metadata/sqlorchestratorpipeline/CreatePoint_Delta:
+    name: CreatePoint_Delta
+    schema: null
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - .prophecy/ide/pipelines/CreatePoint_Delta.json
+    - pipelines/CreatePoint_Delta.py
+    createdAt: '2025-07-22 17:28:17'
   .prophecy/metadata/sqlorchestratorpipeline/Generalize_Delta:
     name: Generalize_Delta
     schema: null
@@ -192,6 +255,44 @@ sqlOrchestratorPipelines:
     - .prophecy/ide/pipelines/Generalize_Delta.json
     - pipelines/Generalize_Delta.py
     createdAt: '2025-07-22 17:17:08'
+  .prophecy/metadata/sqlorchestratorpipeline/PolyBuild:
+    name: PolyBuild
+    schema: null
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - .prophecy/ide/pipelines/PolyBuild.json
+    - pipelines/PolyBuild.py
+    createdAt: '2025-07-22 17:31:03'
+  .prophecy/metadata/sqlorchestratorpipeline/Distance:
+    name: Distance
+    schema: null
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/Distance/schema.yml
+    - models/Distance/model_Distance_calculate_distance.sql
+    - .prophecy/ide/pipelines/Distance.json
+    - pipelines/Distance.py
+    createdAt: '2025-07-22 17:28:40'
+  .prophecy/metadata/sqlorchestratorpipeline/SpatialMatch_Delta:
+    name: SpatialMatch_Delta
+    schema: null
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - .prophecy/ide/pipelines/SpatialMatch_Delta.json
+    - pipelines/SpatialMatch_Delta.py
+    createdAt: '2025-07-22 17:29:25'
+  .prophecy/metadata/sqlorchestratorpipeline/Distance_Delta:
+    name: Distance_Delta
+    schema: null
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - .prophecy/ide/pipelines/Distance_Delta.json
+    - pipelines/Distance_Delta.py
+    createdAt: '2025-07-22 17:28:49'
   .prophecy/metadata/sqlorchestratorpipeline/Buffer_Delta:
     name: Buffer_Delta
     schema: null
@@ -240,4 +341,22 @@ sqlOrchestratorPipelines:
     - .prophecy/ide/pipelines/Buffer.json
     - pipelines/Buffer.py
     createdAt: '2025-07-22 17:12:28'
+  .prophecy/metadata/sqlorchestratorpipeline/CreatePoint:
+    name: CreatePoint
+    schema: null
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - .prophecy/ide/pipelines/CreatePoint.json
+    - pipelines/CreatePoint.py
+    createdAt: '2025-07-22 17:28:23'
+  .prophecy/metadata/sqlorchestratorpipeline/SpatialMatch:
+    name: SpatialMatch
+    schema: null
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - .prophecy/ide/pipelines/SpatialMatch.json
+    - pipelines/SpatialMatch.py
+    createdAt: '2025-07-22 17:29:16'
 sqlBusinessApps: {}

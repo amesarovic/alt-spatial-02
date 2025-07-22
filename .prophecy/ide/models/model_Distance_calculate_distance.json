@@ -1,0 +1,166 @@
+{
+  "id" : "model_Distance_calculate_distance",
+  "metainfo" : {
+    "label" : "model_Distance_calculate_distance",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "alias" : "\"prophecy_tmp__mdetjzr4__Distance__calculate_distance\"",
+        "materialized" : "table",
+        "database" : "\"andre_dev\"",
+        "schema" : "\"alteryx_spatial\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "prophecy_tmp__Distance__calculate_distance" : {
+      "id" : "prophecy_tmp__Distance__calculate_distance",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "calculate_distance",
+        "phase" : 0
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM calculate_distance\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "AiutCr7nQyk_5o4d5MXak$$HqB1abJniYmixvMWflKoP" : {
+      "id" : "AiutCr7nQyk_5o4d5MXak$$HqB1abJniYmixvMWflKoP",
+      "component" : "Distance",
+      "metadata" : {
+        "label" : "calculate_distance",
+        "x" : -420,
+        "y" : -220,
+        "phase" : 0
+      },
+      "properties" : {
+        "sourceType" : "point",
+        "destinationType" : "point",
+        "relation_name" : [ "distances" ],
+        "columnNames" : [ ],
+        "_oldMacroProperties" : {
+          "macroName" : "Distance",
+          "projectName" : "andre_spatial_09",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['distances']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"pt1\", \"dataType\": \"String\"}, {\"name\": \"pt2\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "sourceColumnNames",
+            "value" : "pt1"
+          }, {
+            "name" : "destinationColumnNames",
+            "value" : "pt2"
+          }, {
+            "name" : "sourceType",
+            "value" : "point"
+          }, {
+            "name" : "destinationType",
+            "value" : "point"
+          }, {
+            "name" : "outputDistance",
+            "value" : "true"
+          }, {
+            "name" : "units",
+            "value" : "kms"
+          }, {
+            "name" : "outputCardDirection",
+            "value" : "true"
+          }, {
+            "name" : "outputDirectionDegrees",
+            "value" : "false"
+          } ]
+        },
+        "outputCardDirection" : true,
+        "destinationColumnNames" : "pt2",
+        "schema" : "[{\"name\": \"pt1\", \"dataType\": \"String\"}, {\"name\": \"pt2\", \"dataType\": \"String\"}]",
+        "units" : "kms",
+        "outputDirectionDegrees" : false,
+        "outputDistance" : true,
+        "sourceColumnNames" : "pt1"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "yKqFRqiAGdsMDOzKIZGUc$$0YdrF-qEezMOIIMk2W6DM",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "Q0joT3felUEIwBWrg8nZr$$vwRRgKlutlmUTfvb-BqqW",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "spsK2br5aB2ywsrQyHIQu$$Qb5VdP9lnABJldoQE7tFx" : {
+      "id" : "spsK2br5aB2ywsrQyHIQu$$Qb5VdP9lnABJldoQE7tFx",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "distances",
+        "x" : -620,
+        "y" : -220,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "distances",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "hXwrL0gvW6UOZPHbQ8Jky$$2xyYtc1iLR2p7_CCwJjD9",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_AiutCr7nQyk_5o4d5MXak$$HqB1abJniYmixvMWflKoP_prophecy_tmp__Distance__calculate_distance",
+    "source" : "AiutCr7nQyk_5o4d5MXak$$HqB1abJniYmixvMWflKoP",
+    "sourcePort" : "Q0joT3felUEIwBWrg8nZr$$vwRRgKlutlmUTfvb-BqqW",
+    "target" : "prophecy_tmp__Distance__calculate_distance",
+    "targetPort" : "input_port_0"
+  }, {
+    "id" : "pz9QgohNPeW5WnoxCF7Sr$$CM6_TczCSuo79QWpRrxPo",
+    "source" : "spsK2br5aB2ywsrQyHIQu$$Qb5VdP9lnABJldoQE7tFx",
+    "sourcePort" : "hXwrL0gvW6UOZPHbQ8Jky$$2xyYtc1iLR2p7_CCwJjD9",
+    "target" : "AiutCr7nQyk_5o4d5MXak$$HqB1abJniYmixvMWflKoP",
+    "targetPort" : "yKqFRqiAGdsMDOzKIZGUc$$0YdrF-qEezMOIIMk2W6DM"
+  } ],
+  "component" : "Model"
+}

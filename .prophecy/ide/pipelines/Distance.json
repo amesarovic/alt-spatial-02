@@ -1,0 +1,194 @@
+{
+  "id" : "Distance",
+  "metainfo" : {
+    "label" : "Distance",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "spsK2br5aB2ywsrQyHIQu$$Qb5VdP9lnABJldoQE7tFx" : {
+      "id" : "spsK2br5aB2ywsrQyHIQu$$Qb5VdP9lnABJldoQE7tFx",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "distances",
+        "x" : -620,
+        "y" : -220,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "distances",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "MF2YGdQ5CiCeS_d2kcKE0$$QA2RbE2-2-oqgjAjqwbhl",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "hXwrL0gvW6UOZPHbQ8Jky$$2xyYtc1iLR2p7_CCwJjD9",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "pt1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "pt2",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "AiutCr7nQyk_5o4d5MXak$$HqB1abJniYmixvMWflKoP" : {
+      "id" : "AiutCr7nQyk_5o4d5MXak$$HqB1abJniYmixvMWflKoP",
+      "component" : "Distance",
+      "metadata" : {
+        "label" : "calculate_distance",
+        "x" : -420,
+        "y" : -220,
+        "phase" : 0
+      },
+      "properties" : {
+        "sourceType" : "point",
+        "destinationType" : "point",
+        "relation_name" : [ "distances" ],
+        "columnNames" : [ ],
+        "_oldMacroProperties" : {
+          "macroName" : "Distance",
+          "projectName" : "andre_spatial_09",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['distances']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"pt1\", \"dataType\": \"String\"}, {\"name\": \"pt2\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "sourceColumnNames",
+            "value" : "pt1"
+          }, {
+            "name" : "destinationColumnNames",
+            "value" : "pt2"
+          }, {
+            "name" : "sourceType",
+            "value" : "point"
+          }, {
+            "name" : "destinationType",
+            "value" : "point"
+          }, {
+            "name" : "outputDistance",
+            "value" : "true"
+          }, {
+            "name" : "units",
+            "value" : "kms"
+          }, {
+            "name" : "outputCardDirection",
+            "value" : "true"
+          }, {
+            "name" : "outputDirectionDegrees",
+            "value" : "false"
+          } ]
+        },
+        "outputCardDirection" : true,
+        "destinationColumnNames" : "pt2",
+        "schema" : "[{\"name\": \"pt1\", \"dataType\": \"String\"}, {\"name\": \"pt2\", \"dataType\": \"String\"}]",
+        "units" : "kms",
+        "outputDirectionDegrees" : false,
+        "outputDistance" : true,
+        "sourceColumnNames" : "pt1"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "yKqFRqiAGdsMDOzKIZGUc$$0YdrF-qEezMOIIMk2W6DM",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "pt1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "pt2",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "Q0joT3felUEIwBWrg8nZr$$vwRRgKlutlmUTfvb-BqqW",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "pt1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "pt2",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "distanceKilometers",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "cardinal_direction",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "componentInfo" : {
+        "gemId" : "Distance_andre_spatial_09",
+        "name" : "Distance",
+        "projectName" : "andre_spatial_09",
+        "sourceProjectName" : "andre_spatial_09"
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "pz9QgohNPeW5WnoxCF7Sr$$CM6_TczCSuo79QWpRrxPo",
+    "source" : "spsK2br5aB2ywsrQyHIQu$$Qb5VdP9lnABJldoQE7tFx",
+    "sourcePort" : "hXwrL0gvW6UOZPHbQ8Jky$$2xyYtc1iLR2p7_CCwJjD9",
+    "target" : "AiutCr7nQyk_5o4d5MXak$$HqB1abJniYmixvMWflKoP",
+    "targetPort" : "yKqFRqiAGdsMDOzKIZGUc$$0YdrF-qEezMOIIMk2W6DM"
+  } ],
+  "component" : "Pipeline"
+}
