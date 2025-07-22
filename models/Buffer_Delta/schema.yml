@@ -1,16 +1,16 @@
 ---
 version: 2
 models:
-- name: "model_Test_Limit_1"
+- name: "model_Buffer_Delta_buffer_new_england"
   tags:
   - "prophecy_temp"
 sources:
-- name: "prophecy_tmp_source__Test"
+- name: "prophecy_tmp_source__Buffer_Delta"
   database: "andre_dev"
   schema: "alteryx_spatial"
   config:
     enabled: true
   tables:
-  - name: "prophecy_tmp__mdes6w49__Test__Limit_1"
+  - name: "prophecy_tmp__mdesd3ws__Buffer_Delta__buffer_new_england"
     tags:
     - "prophecy_temp"

@@ -1,7 +1,7 @@
 {{
   config({    
     "materialized": "table",
-    "alias": "prophecy_tmp__mdes29i7__Test__Limit_1",
+    "alias": "prophecy_tmp__mdes6w49__Test__Limit_1",
     "database": "andre_dev",
     "schema": "alteryx_spatial"
   })
