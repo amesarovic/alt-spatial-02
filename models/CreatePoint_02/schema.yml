@@ -1,16 +1,16 @@
 ---
 version: 2
 models:
-- name: "model_CreatePoint_create_geo_point"
+- name: "model_CreatePoint_02_create_geo_points"
   tags:
   - "prophecy_temp"
 sources:
-- name: "prophecy_tmp_source__CreatePoint"
+- name: "prophecy_tmp_source__CreatePoint_02"
   database: "andre_dev"
   schema: "alteryx_spatial"
   config:
     enabled: true
   tables:
-  - name: "prophecy_tmp__mdez79rw__CreatePoint__create_geo_point"
+  - name: "prophecy_tmp__mdez5aun__CreatePoint_02__create_geo_points"
     tags:
     - "prophecy_temp"

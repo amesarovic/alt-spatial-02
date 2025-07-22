@@ -1,7 +1,7 @@
 {
-  "id" : "model_CreatePoint_create_geo_point",
+  "id" : "model_CreatePoint_02_create_geo_points",
   "metainfo" : {
-    "label" : "model_CreatePoint_create_geo_point",
+    "label" : "model_CreatePoint_02_create_geo_points",
     "autoLayout" : true,
     "staleState" : "none",
     "sourceSuggestions" : {
@@ -9,7 +9,7 @@
     },
     "graphConfig" : {
       "entityConfig" : {
-        "alias" : "\"prophecy_tmp__mdez79rw__CreatePoint__create_geo_point\"",
+        "alias" : "\"prophecy_tmp__mdez5aun__CreatePoint_02__create_geo_points\"",
         "materialized" : "table",
         "database" : "\"andre_dev\"",
         "schema" : "\"alteryx_spatial\"",
@@ -19,18 +19,18 @@
     "version" : 3
   },
   "processes" : {
-    "prophecy_tmp__CreatePoint__create_geo_point" : {
-      "id" : "prophecy_tmp__CreatePoint__create_geo_point",
+    "prophecy_tmp__CreatePoint_02__create_geo_points" : {
+      "id" : "prophecy_tmp__CreatePoint_02__create_geo_points",
       "component" : "TargetModel",
       "metadata" : {
-        "label" : "create_geo_point",
+        "label" : "create_geo_points",
         "phase" : 0
       },
       "properties" : {
         "customQueryDisabled" : true,
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
-        "query" : "\nSELECT *\n\nFROM create_geo_point\n\n",
+        "query" : "\nSELECT *\n\nFROM create_geo_points\n\n",
         "isModel" : true,
         "incrementalKey" : false,
         "incremental" : {
@@ -50,54 +50,61 @@
         "autoUpdateOnRun" : false
       }
     },
-    "iKwMEjTDQV8DhxqjpzXqV$$p-yBfEuyv26TPa1vGpxNH" : {
-      "id" : "iKwMEjTDQV8DhxqjpzXqV$$p-yBfEuyv26TPa1vGpxNH",
+    "fA61NdW2s-M5TcPHO6tuZ$$EniiA81dbLjqTedD3IHpN" : {
+      "id" : "fA61NdW2s-M5TcPHO6tuZ$$EniiA81dbLjqTedD3IHpN",
       "component" : "CreatePoint",
       "metadata" : {
-        "label" : "create_geo_point",
-        "x" : -420,
-        "y" : -220,
+        "label" : "create_geo_points",
+        "x" : -340,
+        "y" : -160,
         "phase" : 0
       },
       "properties" : {
         "addFields" : [ {
           "kind" : "AddMatchField",
           "AddMatchField" : {
-            "longitudeColumnName" : "lon",
-            "latitudeColumnName" : "lat",
-            "targetColumnName" : "point"
+            "longitudeColumnName" : "start_long",
+            "latitudeColumnName" : "start_lat",
+            "targetColumnName" : "start_point"
+          }
+        }, {
+          "kind" : "AddMatchField",
+          "AddMatchField" : {
+            "longitudeColumnName" : "destination_long",
+            "latitudeColumnName" : "destination_lat",
+            "targetColumnName" : "dest_point"
           }
         } ],
-        "relation_name" : [ "points" ],
+        "relation_name" : [ "points_02" ],
         "_oldMacroProperties" : {
           "macroName" : "CreatePoint",
           "projectName" : "andre_spatial_09",
           "parameters" : [ {
             "name" : "relation_name",
-            "value" : "['points']"
+            "value" : "['points_02']"
           } ]
         }
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "f-K6yH_1vg2M8Epp70dVg$$AaGSulw5v54ZnvLdr1EMD",
+          "id" : "4G8vJ7G5d32NT0nJ-ZKnw$$tvesWrLj-e2f0q0jUHMkY",
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "zZnGz3iJxRKyfEXkAQlBf$$FqExjWaDvNF1_LIrg1GLQ",
+          "id" : "i_JItPyFBJ8H8WiWqMqiM$$mgwsHuHm36w61Y0H67HG1",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
       }
     },
-    "0FqX12L_W6z22zfSQd7AC$$uJlr3W0Ktbrcqd6XqCsOv" : {
-      "id" : "0FqX12L_W6z22zfSQd7AC$$uJlr3W0Ktbrcqd6XqCsOv",
+    "tqLNaE7wrfG4dmnJWKQnX$$43u47xN52tI0yelJgQnzm" : {
+      "id" : "tqLNaE7wrfG4dmnJWKQnX$$43u47xN52tI0yelJgQnzm",
       "component" : "Source",
       "metadata" : {
-        "label" : "points",
-        "x" : -620,
-        "y" : -220,
+        "label" : "points_02",
+        "x" : -540,
+        "y" : -160,
         "phase" : 0
       },
       "properties" : {
@@ -105,14 +112,14 @@
           "writeMode" : "overwrite"
         },
         "table" : {
-          "name" : "points",
+          "name" : "points_02",
           "sourceType" : "Seed"
         }
       },
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "SYH-Ob2Ba9-mswGPiEAPH$$PjjamlBy4VOprpzC9n4H7",
+          "id" : "ojdLu4h-2caDtnsPv7D5x$$CYqrmYLm8mM9nuyKZggVL",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -121,17 +128,17 @@
     }
   },
   "connections" : [ {
-    "id" : "conn_iKwMEjTDQV8DhxqjpzXqV$$p-yBfEuyv26TPa1vGpxNH_prophecy_tmp__CreatePoint__create_geo_point",
-    "source" : "iKwMEjTDQV8DhxqjpzXqV$$p-yBfEuyv26TPa1vGpxNH",
-    "sourcePort" : "zZnGz3iJxRKyfEXkAQlBf$$FqExjWaDvNF1_LIrg1GLQ",
-    "target" : "prophecy_tmp__CreatePoint__create_geo_point",
+    "id" : "conn_fA61NdW2s-M5TcPHO6tuZ$$EniiA81dbLjqTedD3IHpN_prophecy_tmp__CreatePoint_02__create_geo_points",
+    "source" : "fA61NdW2s-M5TcPHO6tuZ$$EniiA81dbLjqTedD3IHpN",
+    "sourcePort" : "i_JItPyFBJ8H8WiWqMqiM$$mgwsHuHm36w61Y0H67HG1",
+    "target" : "prophecy_tmp__CreatePoint_02__create_geo_points",
     "targetPort" : "input_port_0"
   }, {
-    "id" : "VpDDE5hvje_PVbO5-5bx0",
-    "source" : "0FqX12L_W6z22zfSQd7AC$$uJlr3W0Ktbrcqd6XqCsOv",
-    "sourcePort" : "SYH-Ob2Ba9-mswGPiEAPH$$PjjamlBy4VOprpzC9n4H7",
-    "target" : "iKwMEjTDQV8DhxqjpzXqV$$p-yBfEuyv26TPa1vGpxNH",
-    "targetPort" : "f-K6yH_1vg2M8Epp70dVg$$AaGSulw5v54ZnvLdr1EMD"
+    "id" : "BZqTcbrltvPORxX1Phvrt",
+    "source" : "tqLNaE7wrfG4dmnJWKQnX$$43u47xN52tI0yelJgQnzm",
+    "sourcePort" : "ojdLu4h-2caDtnsPv7D5x$$CYqrmYLm8mM9nuyKZggVL",
+    "target" : "fA61NdW2s-M5TcPHO6tuZ$$EniiA81dbLjqTedD3IHpN",
+    "targetPort" : "4G8vJ7G5d32NT0nJ-ZKnw$$tvesWrLj-e2f0q0jUHMkY"
   } ],
   "component" : "Model"
 }

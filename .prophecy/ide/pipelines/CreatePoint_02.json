@@ -1,0 +1,232 @@
+{
+  "id" : "CreatePoint_02",
+  "metainfo" : {
+    "label" : "CreatePoint_02",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "tqLNaE7wrfG4dmnJWKQnX$$43u47xN52tI0yelJgQnzm" : {
+      "id" : "tqLNaE7wrfG4dmnJWKQnX$$43u47xN52tI0yelJgQnzm",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "points_02",
+        "x" : -540,
+        "y" : -160,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "points_02",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "2rVfdlo8jlLoPF7BNyNnS$$49tD4KKSl7SDKRyYVs4YT",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "ojdLu4h-2caDtnsPv7D5x$$CYqrmYLm8mM9nuyKZggVL",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "start_city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "start_lat",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "start_long",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "destination_city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "destination_lat",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "destination_long",
+              "dataType" : {
+                "type" : "Float"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "fA61NdW2s-M5TcPHO6tuZ$$EniiA81dbLjqTedD3IHpN" : {
+      "id" : "fA61NdW2s-M5TcPHO6tuZ$$EniiA81dbLjqTedD3IHpN",
+      "component" : "CreatePoint",
+      "metadata" : {
+        "label" : "create_geo_points",
+        "x" : -340,
+        "y" : -160,
+        "phase" : 0
+      },
+      "properties" : {
+        "addFields" : [ {
+          "kind" : "AddMatchField",
+          "AddMatchField" : {
+            "longitudeColumnName" : "start_long",
+            "latitudeColumnName" : "start_lat",
+            "targetColumnName" : "start_point"
+          }
+        }, {
+          "kind" : "AddMatchField",
+          "AddMatchField" : {
+            "longitudeColumnName" : "destination_long",
+            "latitudeColumnName" : "destination_lat",
+            "targetColumnName" : "dest_point"
+          }
+        } ],
+        "relation_name" : [ "points_02" ],
+        "_oldMacroProperties" : {
+          "macroName" : "CreatePoint",
+          "projectName" : "andre_spatial_09",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['points_02']"
+          } ]
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "4G8vJ7G5d32NT0nJ-ZKnw$$tvesWrLj-e2f0q0jUHMkY",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "start_city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "start_lat",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "start_long",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "destination_city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "destination_lat",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "destination_long",
+              "dataType" : {
+                "type" : "Float"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "i_JItPyFBJ8H8WiWqMqiM$$mgwsHuHm36w61Y0H67HG1",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "start_city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "start_lat",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "start_long",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "destination_city",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "destination_lat",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "destination_long",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "start_point",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "dest_point",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "componentInfo" : {
+        "gemId" : "CreatePoint_andre_spatial_09",
+        "name" : "CreatePoint",
+        "projectName" : "andre_spatial_09",
+        "sourceProjectName" : "andre_spatial_09"
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "BZqTcbrltvPORxX1Phvrt",
+    "source" : "tqLNaE7wrfG4dmnJWKQnX$$43u47xN52tI0yelJgQnzm",
+    "sourcePort" : "ojdLu4h-2caDtnsPv7D5x$$CYqrmYLm8mM9nuyKZggVL",
+    "target" : "fA61NdW2s-M5TcPHO6tuZ$$EniiA81dbLjqTedD3IHpN",
+    "targetPort" : "4G8vJ7G5d32NT0nJ-ZKnw$$tvesWrLj-e2f0q0jUHMkY"
+  } ],
+  "component" : "Pipeline"
+}

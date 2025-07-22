@@ -141,7 +141,6 @@ sqlSeeds:
     author: mesarovic.andre@prophecy.io
     files:
     - seeds/distances.csv
-    - seeds/seeds.yml
     createdAt: '2025-07-22 17:37:23'
   .prophecy/metadata/sqlseeds/points:
     name: points
@@ -149,7 +148,7 @@ sqlSeeds:
       entityType: ''
       providerType: Databricks
       fields:
-      - name: name
+      - name: city
         dataType:
           type: String
       - name: lon
@@ -162,7 +161,37 @@ sqlSeeds:
     author: mesarovic.andre@prophecy.io
     files:
     - seeds/points.csv
-    createdAt: '2025-07-22 17:10:27'
+    - seeds/seeds.yml
+    createdAt: '2025-07-22 20:02:53'
+  .prophecy/metadata/sqlseeds/points_02:
+    name: points_02
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: start_city
+        dataType:
+          type: String
+      - name: start_lat
+        dataType:
+          type: Float
+      - name: start_long
+        dataType:
+          type: Float
+      - name: destination_city
+        dataType:
+          type: String
+      - name: destination_lat
+        dataType:
+          type: Float
+      - name: destination_long
+        dataType:
+          type: Float
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - seeds/points_02.csv
+    createdAt: '2025-07-22 19:03:51'
   .prophecy/metadata/sqlseeds/us_states_lines:
     name: us_states_lines
     schema:
@@ -212,6 +241,14 @@ sqlSources:
     files:
     - models/PolyBuild/schema.yml
     createdAt: '2025-07-22 17:48:16'
+    tables: []
+  .prophecy/metadata/sqlsources/prophecy_tmp_source__CreatePoint_02:
+    name: prophecy_tmp_source__CreatePoint_02
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/CreatePoint_02/schema.yml
+    createdAt: '2025-07-22 20:14:09'
     tables: []
   .prophecy/metadata/sqlsources/prophecy_tmp_source__CreatePoint:
     name: prophecy_tmp_source__CreatePoint
@@ -288,6 +325,17 @@ flags:
   shouldAddDefaultDependenciesIfAbsent: false
 pipelineConfigurations: {}
 sqlOrchestratorPipelines:
+  .prophecy/metadata/sqlorchestratorpipeline/CreatePoint_02:
+    name: CreatePoint_02
+    schema: null
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/CreatePoint_02/schema.yml
+    - models/CreatePoint_02/model_CreatePoint_02_create_geo_points.sql
+    - .prophecy/ide/pipelines/CreatePoint_02.json
+    - pipelines/CreatePoint_02.py
+    createdAt: '2025-07-22 20:13:32'
   .prophecy/metadata/sqlorchestratorpipeline/HeatMap:
     name: HeatMap
     schema: null
@@ -389,10 +437,10 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/Buffer/schema.yml
-    - models/Buffer/model_Buffer_buffer_us_states.sql
     - models/Buffer_Delta/schema.yml
     - models/Buffer_Delta/model_Buffer_Delta_buffer_new_england.sql
+    - models/Buffer/schema.yml
+    - models/Buffer/model_Buffer_buffer_us_states.sql
     - .prophecy/ide/pipelines/Buffer.json
     - pipelines/Buffer.py
     createdAt: '2025-07-22 17:12:28'
@@ -402,6 +450,8 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
+    - models/CreatePoint_02/schema.yml
+    - models/CreatePoint_02/model_CreatePoint_02_create_geo_points.sql
     - models/CreatePoint/schema.yml
     - models/CreatePoint/model_CreatePoint_create_geo_point.sql
     - .prophecy/ide/pipelines/CreatePoint.json
