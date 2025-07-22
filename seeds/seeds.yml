@@ -1,0 +1,5 @@
+---
+version: 2
+seeds:
+- name: "us_states_lines"
+  columns: []

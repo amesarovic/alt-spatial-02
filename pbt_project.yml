@@ -47,7 +47,45 @@ sqlMacros:
     - macros/generate_schema_name.sql
     - .prophecy/ide/macros/generate_schema_name.json
     createdAt: '2025-07-22 16:54:03'
-sqlSeeds: {}
+sqlSeeds:
+  .prophecy/metadata/sqlseeds/points:
+    name: points
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: name
+        dataType:
+          type: String
+      - name: lon
+        dataType:
+          type: Float
+      - name: lat
+        dataType:
+          type: Float
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - seeds/points.csv
+    createdAt: '2025-07-22 17:10:27'
+  .prophecy/metadata/sqlseeds/us_states_lines:
+    name: us_states_lines
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: name
+        dataType:
+          type: String
+      - name: geometry
+        dataType:
+          type: String
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - seeds/us_states_lines.csv
+    - seeds/seeds.yml
+    createdAt: '2025-07-22 17:12:12'
 sqlSources:
   .prophecy/metadata/sqlsources/andre_dev_alteryx_spatial:
     name: andre_dev.alteryx_spatial
@@ -72,6 +110,14 @@ sqlSources:
       author: mesarovic.andre@prophecy.io
       createdAt: '2025-07-22 16:57:02'
       tableType: table
+  .prophecy/metadata/sqlsources/prophecy_tmp_source__Buffer:
+    name: prophecy_tmp_source__Buffer
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/Buffer/schema.yml
+    createdAt: '2025-07-22 17:12:45'
+    tables: []
   .prophecy/metadata/sqlsources/prophecy_tmp_source__Buffer_Delta:
     name: prophecy_tmp_source__Buffer_Delta
     description: null
@@ -130,4 +176,17 @@ sqlOrchestratorPipelines:
     - .prophecy/ide/pipelines/Buffer_Delta.json
     - pipelines/Buffer_Delta.py
     createdAt: '2025-07-22 17:05:01'
+  .prophecy/metadata/sqlorchestratorpipeline/Buffer:
+    name: Buffer
+    schema: null
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/Buffer_Delta/schema.yml
+    - models/Buffer_Delta/model_Buffer_Delta_buffer_new_england.sql
+    - models/Buffer/schema.yml
+    - models/Buffer/model_Buffer_buffer_us_states.sql
+    - .prophecy/ide/pipelines/Buffer.json
+    - pipelines/Buffer.py
+    createdAt: '2025-07-22 17:12:28'
 sqlBusinessApps: {}
