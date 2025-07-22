@@ -11,6 +11,6 @@ sources:
   config:
     enabled: true
   tables:
-  - name: "prophecy_tmp__mdf1fjz8__FindNearest__find_nearest_centers"
+  - name: "prophecy_tmp__mdf41ozt__FindNearest__find_nearest_centers"
     tags:
     - "prophecy_temp"

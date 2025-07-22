@@ -9,7 +9,7 @@
     },
     "graphConfig" : {
       "entityConfig" : {
-        "alias" : "\"prophecy_tmp__mdf1fjz8__FindNearest__find_nearest_centers\"",
+        "alias" : "\"prophecy_tmp__mdf41ozt__FindNearest__find_nearest_centers\"",
         "materialized" : "table",
         "database" : "\"andre_dev\"",
         "schema" : "\"alteryx_spatial\"",
@@ -50,12 +50,12 @@
         "autoUpdateOnRun" : false
       }
     },
-    "afDD9sVV6PyPLuErf0Y2d$$OeUhJWixcZrTkSL9kGyeJ" : {
-      "id" : "afDD9sVV6PyPLuErf0Y2d$$OeUhJWixcZrTkSL9kGyeJ",
+    "vADpBHo60MxNTdFFwaq7V$$7Y6d7EXW__GR5WISXchVp" : {
+      "id" : "vADpBHo60MxNTdFFwaq7V$$7Y6d7EXW__GR5WISXchVp",
       "component" : "FindNearest",
       "metadata" : {
         "label" : "find_nearest_centers",
-        "x" : -160,
+        "x" : -180,
         "y" : -240,
         "phase" : 0
       },
@@ -63,14 +63,14 @@
         "sourceType" : "point",
         "sourceColumnName" : "customer_point",
         "ignoreZeroDistance" : false,
-        "relation_name" : [ "find_nearest_01", "find_nearest_02" ],
+        "relation_name" : [ "find_nearest_1", "find_nearest_2" ],
         "columnNames" : [ ],
         "_oldMacroProperties" : {
           "macroName" : "FindNearest",
           "projectName" : "andre_spatial_09",
           "parameters" : [ {
             "name" : "relation_name",
-            "value" : "['find_nearest_01', 'find_nearest_02']"
+            "value" : "['find_nearest_1', 'find_nearest_2']"
           }, {
             "name" : "source_schema",
             "value" : "[{\"name\": \"customer_id\", \"dataType\": \"String\"}, {\"name\": \"customer_point\", \"dataType\": \"String\"}]"
@@ -113,26 +113,26 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "cKS2KE6-5W1aBvDuNL1Em$$LdMWRUOdLvo5RaA2ENC0d",
+          "id" : "GBkv89nR7t2lQvH91bEmc$$6VZKZcpa74X7svzKYpjAQ",
           "slug" : "in0"
         }, {
-          "id" : "HM4oRCQKfuVwIOxpm40Os$$0xpqlkc-v4oETfIFFfB6L",
+          "id" : "R5XlSwdYD1y_EKNivR3HW$$vstFv-sIV5LmRhAWiXv5L",
           "slug" : "in1"
         } ],
         "outputs" : [ {
-          "id" : "JI4vwP2g7nh5rwi7bM3T6$$ZcZAdIkVPSpudNrJMMfdr",
+          "id" : "jAoytm0RlPd7DazS1x8Yf$$DTM92ebDhQcxwR92L0yDb",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
       }
     },
-    "2rp9eByvJnenxqnBdt1OD$$t178MxGhY6HfhZX5aFeyf" : {
-      "id" : "2rp9eByvJnenxqnBdt1OD$$t178MxGhY6HfhZX5aFeyf",
+    "DUWzW-NDIGtHq0DPkjahd$$yRmRV4KfFLLUcOLJcA9is" : {
+      "id" : "DUWzW-NDIGtHq0DPkjahd$$yRmRV4KfFLLUcOLJcA9is",
       "component" : "Source",
       "metadata" : {
-        "label" : "find_nearest_01",
-        "x" : -380,
+        "label" : "find_nearest_1",
+        "x" : -440,
         "y" : -300,
         "phase" : 0
       },
@@ -141,27 +141,27 @@
           "writeMode" : "overwrite"
         },
         "table" : {
-          "name" : "find_nearest_01",
+          "name" : "find_nearest_1",
           "sourceType" : "Seed"
         }
       },
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "oLxlnBn8nm9pqKrGUPgg_$$WkF6IWYiwIfsNbn1kupvG",
+          "id" : "0lXQdlSXn72bsFy9mrvUh$$o54NIurSnexGwgk6iwiwb",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
       }
     },
-    "Cwuu7dTvFL_AHFA1RvvUZ$$UuDX8bgjwOn2T5Qy9wkyc" : {
-      "id" : "Cwuu7dTvFL_AHFA1RvvUZ$$UuDX8bgjwOn2T5Qy9wkyc",
+    "gvhYMkoYJgzHlX3KIisV5$$TZxYakMFtz5eJ54dHufv-" : {
+      "id" : "gvhYMkoYJgzHlX3KIisV5$$TZxYakMFtz5eJ54dHufv-",
       "component" : "Source",
       "metadata" : {
-        "label" : "find_nearest_02",
-        "x" : -380,
-        "y" : -160,
+        "label" : "find_nearest_2",
+        "x" : -440,
+        "y" : -140,
         "phase" : 0
       },
       "properties" : {
@@ -169,14 +169,14 @@
           "writeMode" : "overwrite"
         },
         "table" : {
-          "name" : "find_nearest_02",
+          "name" : "find_nearest_2",
           "sourceType" : "Seed"
         }
       },
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "T-oeEr-dkpPrGI3dqASXk$$eaIsiUAV5GipSxgZvT9zJ",
+          "id" : "kvd82fI2XSDNsx5k6K_Q4$$_37XD6h8P4KrpZu-fmQlJ",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -185,23 +185,23 @@
     }
   },
   "connections" : [ {
-    "id" : "conn_afDD9sVV6PyPLuErf0Y2d$$OeUhJWixcZrTkSL9kGyeJ_prophecy_tmp__FindNearest__find_nearest_centers",
-    "source" : "afDD9sVV6PyPLuErf0Y2d$$OeUhJWixcZrTkSL9kGyeJ",
-    "sourcePort" : "JI4vwP2g7nh5rwi7bM3T6$$ZcZAdIkVPSpudNrJMMfdr",
+    "id" : "conn_vADpBHo60MxNTdFFwaq7V$$7Y6d7EXW__GR5WISXchVp_prophecy_tmp__FindNearest__find_nearest_centers",
+    "source" : "vADpBHo60MxNTdFFwaq7V$$7Y6d7EXW__GR5WISXchVp",
+    "sourcePort" : "jAoytm0RlPd7DazS1x8Yf$$DTM92ebDhQcxwR92L0yDb",
     "target" : "prophecy_tmp__FindNearest__find_nearest_centers",
     "targetPort" : "input_port_0"
   }, {
-    "id" : "boMk0CbNMhgZbxC6kTAkS$$iXAfV6wx-DfbOSLojfBCA",
-    "source" : "2rp9eByvJnenxqnBdt1OD$$t178MxGhY6HfhZX5aFeyf",
-    "sourcePort" : "oLxlnBn8nm9pqKrGUPgg_$$WkF6IWYiwIfsNbn1kupvG",
-    "target" : "afDD9sVV6PyPLuErf0Y2d$$OeUhJWixcZrTkSL9kGyeJ",
-    "targetPort" : "cKS2KE6-5W1aBvDuNL1Em$$LdMWRUOdLvo5RaA2ENC0d"
+    "id" : "g5VurABumSVsBtWjNV5gV",
+    "source" : "DUWzW-NDIGtHq0DPkjahd$$yRmRV4KfFLLUcOLJcA9is",
+    "sourcePort" : "0lXQdlSXn72bsFy9mrvUh$$o54NIurSnexGwgk6iwiwb",
+    "target" : "vADpBHo60MxNTdFFwaq7V$$7Y6d7EXW__GR5WISXchVp",
+    "targetPort" : "GBkv89nR7t2lQvH91bEmc$$6VZKZcpa74X7svzKYpjAQ"
   }, {
-    "id" : "tVjux2OAUnLq3Usz6c7yT",
-    "source" : "Cwuu7dTvFL_AHFA1RvvUZ$$UuDX8bgjwOn2T5Qy9wkyc",
-    "sourcePort" : "T-oeEr-dkpPrGI3dqASXk$$eaIsiUAV5GipSxgZvT9zJ",
-    "target" : "afDD9sVV6PyPLuErf0Y2d$$OeUhJWixcZrTkSL9kGyeJ",
-    "targetPort" : "HM4oRCQKfuVwIOxpm40Os$$0xpqlkc-v4oETfIFFfB6L"
+    "id" : "3A5S3J-rvPixCgq8Hu8uD",
+    "source" : "gvhYMkoYJgzHlX3KIisV5$$TZxYakMFtz5eJ54dHufv-",
+    "sourcePort" : "kvd82fI2XSDNsx5k6K_Q4$$_37XD6h8P4KrpZu-fmQlJ",
+    "target" : "vADpBHo60MxNTdFFwaq7V$$7Y6d7EXW__GR5WISXchVp",
+    "targetPort" : "R5XlSwdYD1y_EKNivR3HW$$vstFv-sIV5LmRhAWiXv5L"
   } ],
   "component" : "Model"
 }

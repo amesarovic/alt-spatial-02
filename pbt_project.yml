@@ -125,35 +125,23 @@ sqlMacros:
     - gems/Generalize.py
     createdAt: '2025-07-22 17:20:29'
 sqlSeeds:
-  .prophecy/metadata/sqlseeds/points_02:
-    name: points_02
+  .prophecy/metadata/sqlseeds/find_nearest_1:
+    name: find_nearest_1
     schema:
       entityType: ''
       providerType: Databricks
       fields:
-      - name: start_city
+      - name: customer_id
         dataType:
           type: String
-      - name: start_lat
-        dataType:
-          type: Float
-      - name: start_long
-        dataType:
-          type: Float
-      - name: destination_city
+      - name: customer_point
         dataType:
           type: String
-      - name: destination_lat
-        dataType:
-          type: Float
-      - name: destination_long
-        dataType:
-          type: Float
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - seeds/points_02.csv
-    createdAt: '2025-07-22 19:03:51'
+    - seeds/find_nearest_1.csv
+    createdAt: '2025-07-22 22:28:09'
   .prophecy/metadata/sqlseeds/us_states_lines:
     name: us_states_lines
     schema:
@@ -171,46 +159,6 @@ sqlSeeds:
     files:
     - seeds/us_states_lines.csv
     createdAt: '2025-07-22 17:12:12'
-  .prophecy/metadata/sqlseeds/distances:
-    name: distances
-    schema:
-      entityType: ''
-      providerType: Databricks
-      fields:
-      - name: start_city
-        dataType:
-          type: String
-      - name: destination_city
-        dataType:
-          type: String
-      - name: source_point
-        dataType:
-          type: String
-      - name: dest_point
-        dataType:
-          type: String
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - seeds/distances.csv
-    createdAt: '2025-07-22 20:27:53'
-  .prophecy/metadata/sqlseeds/find_nearest_02:
-    name: find_nearest_02
-    schema:
-      entityType: ''
-      providerType: Databricks
-      fields:
-      - name: center_id
-        dataType:
-          type: String
-      - name: center_point
-        dataType:
-          type: String
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - seeds/find_nearest_02.csv
-    createdAt: '2025-07-22 21:15:28'
   .prophecy/metadata/sqlseeds/spatial_match_2:
     name: spatial_match_2
     schema:
@@ -233,7 +181,6 @@ sqlSeeds:
     author: mesarovic.andre@prophecy.io
     files:
     - seeds/spatial_match_2.csv
-    - seeds/seeds.yml
     createdAt: '2025-07-22 21:39:10'
   .prophecy/metadata/sqlseeds/poly_build:
     name: poly_build
@@ -301,23 +248,47 @@ sqlSeeds:
     files:
     - seeds/spatial_match_1.csv
     createdAt: '2025-07-22 21:38:11'
-  .prophecy/metadata/sqlseeds/find_nearest_01:
-    name: find_nearest_01
+  .prophecy/metadata/sqlseeds/distances:
+    name: distances
     schema:
       entityType: ''
       providerType: Databricks
       fields:
-      - name: customer_id
+      - name: start_city
         dataType:
           type: String
-      - name: customer_point
+      - name: destination_city
+        dataType:
+          type: String
+      - name: source_point
+        dataType:
+          type: String
+      - name: dest_point
         dataType:
           type: String
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - seeds/find_nearest_01.csv
-    createdAt: '2025-07-22 21:14:48'
+    - seeds/distances.csv
+    createdAt: '2025-07-22 20:27:53'
+  .prophecy/metadata/sqlseeds/find_nearest_2:
+    name: find_nearest_2
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: center_id
+        dataType:
+          type: String
+      - name: center_point
+        dataType:
+          type: String
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - seeds/find_nearest_2.csv
+    - seeds/seeds.yml
+    createdAt: '2025-07-22 22:29:04'
 sqlSources:
   .prophecy/metadata/sqlsources/prophecy_tmp_source__SpatialMatch:
     name: prophecy_tmp_source__SpatialMatch
@@ -333,7 +304,7 @@ sqlSources:
     author: mesarovic.andre@prophecy.io
     files:
     - models/FindNearest/schema.yml
-    createdAt: '2025-07-22 21:15:43'
+    createdAt: '2025-07-22 22:30:30'
     tables: []
   .prophecy/metadata/sqlsources/prophecy_tmp_source__HeatMap:
     name: prophecy_tmp_source__HeatMap

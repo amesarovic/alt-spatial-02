@@ -1,25 +1,25 @@
 {{
   config({    
     "materialized": "table",
-    "alias": "prophecy_tmp__mdf1fjz8__FindNearest__find_nearest_centers",
+    "alias": "prophecy_tmp__mdf41ozt__FindNearest__find_nearest_centers",
     "database": "andre_dev",
     "schema": "alteryx_spatial"
   })
 }}
 
-WITH find_nearest_01 AS (
+WITH find_nearest_1 AS (
 
   SELECT * 
   
-  FROM {{ ref('find_nearest_01')}}
+  FROM {{ ref('find_nearest_1')}}
 
 ),
 
-find_nearest_02 AS (
+find_nearest_2 AS (
 
   SELECT * 
   
-  FROM {{ ref('find_nearest_02')}}
+  FROM {{ ref('find_nearest_2')}}
 
 ),
 
@@ -27,7 +27,7 @@ find_nearest_centers AS (
 
   {{
     andre_spatial_09.FindNearest(
-      ['find_nearest_01', 'find_nearest_02'], 
+      ['find_nearest_1', 'find_nearest_2'], 
       'customer_point', 
       'center_point', 
       'point', 
