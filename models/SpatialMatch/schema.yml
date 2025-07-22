@@ -1,7 +1,7 @@
 ---
 version: 2
 models:
-- name: "model_SpatialMatch_SpatialMatch_0"
+- name: "model_SpatialMatch_spatial_match_within"
   tags:
   - "prophecy_temp"
 sources:
@@ -11,6 +11,6 @@ sources:
   config:
     enabled: true
   tables:
-  - name: "prophecy_tmp__mdf1lmcm__SpatialMatch__SpatialMatch_0"
+  - name: "prophecy_tmp__mdf3os7t__SpatialMatch__spatial_match_within"
     tags:
     - "prophecy_temp"

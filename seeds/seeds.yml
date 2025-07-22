@@ -1,5 +1,5 @@
 ---
 version: 2
 seeds:
-- name: "find_nearest_02"
+- name: "spatial_match_2"
   columns: []
