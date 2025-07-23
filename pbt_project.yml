@@ -350,14 +350,6 @@ sqlSources:
     - models/FindNearest_sp/schema.yml
     createdAt: '2025-07-22 23:23:41'
     tables: []
-  .prophecy/metadata/sqlsources/prophecy_tmp_source__Buffer_sp:
-    name: prophecy_tmp_source__Buffer_sp
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - models/Buffer_sp/schema.yml
-    createdAt: '2025-07-22 22:59:40'
-    tables: []
   .prophecy/metadata/sqlsources/prophecy_tmp_source__PolyBuild_sp:
     name: prophecy_tmp_source__PolyBuild_sp
     description: null
@@ -389,6 +381,14 @@ sqlSources:
     files:
     - models/Test/schema.yml
     createdAt: '2025-07-22 16:57:19'
+    tables: []
+  .prophecy/metadata/sqlsources/prophecy_tmp_source__Distance_sp:
+    name: prophecy_tmp_source__Distance_sp
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/Distance_sp/schema.yml
+    createdAt: '2025-07-22 23:23:41'
     tables: []
   .prophecy/metadata/sqlsources/prophecy_tmp_source__PolyBuild:
     name: prophecy_tmp_source__PolyBuild
@@ -429,14 +429,6 @@ sqlSources:
       author: mesarovic.andre@prophecy.io
       createdAt: '2025-07-22 16:57:02'
       tableType: table
-  .prophecy/metadata/sqlsources/prophecy_tmp_source__Buffer:
-    name: prophecy_tmp_source__Buffer
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - models/Buffer/schema.yml
-    createdAt: '2025-07-22 17:12:45'
-    tables: []
   .prophecy/metadata/sqlsources/prophecy_tmp_source__Distance:
     name: prophecy_tmp_source__Distance
     description: null
@@ -452,22 +444,6 @@ sqlSources:
     files:
     - models/Generalize/schema.yml
     createdAt: '2025-07-22 17:25:09'
-    tables: []
-  .prophecy/metadata/sqlsources/prophecy_tmp_source__Distance_sp:
-    name: prophecy_tmp_source__Distance_sp
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - models/Distance_sp/schema.yml
-    createdAt: '2025-07-22 23:23:41'
-    tables: []
-  .prophecy/metadata/sqlsources/prophecy_tmp_source__CreatePoint_sp:
-    name: prophecy_tmp_source__CreatePoint_sp
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - models/CreatePoint_sp/schema.yml
-    createdAt: '2025-07-22 23:03:50'
     tables: []
   .prophecy/metadata/sqlsources/prophecy_tmp_source__CreatePoint_02:
     name: prophecy_tmp_source__CreatePoint_02
@@ -522,8 +498,8 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/CreatePoint_sp/model_CreatePoint_sp_create_geo_point.sql
     - models/CreatePoint_sp/schema.yml
+    - models/CreatePoint_sp/CreatePoint_sp__create_geo_point.sql
     - .prophecy/ide/pipelines/CreatePoint_sp.json
     - pipelines/CreatePoint_sp.py
     createdAt: '2025-07-22 23:02:31'
@@ -544,10 +520,10 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/FindNearest/schema.yml
-    - models/FindNearest/model_FindNearest_find_nearest_centers.sql
     - models/FindNearest_sp/model_FindNearest_sp_find_nearest_centers.sql
     - models/FindNearest_sp/schema.yml
+    - models/FindNearest/schema.yml
+    - models/FindNearest/model_FindNearest_find_nearest_centers.sql
     - .prophecy/ide/pipelines/FindNearest.json
     - pipelines/FindNearest.py
     createdAt: '2025-07-22 17:31:15'
@@ -570,7 +546,7 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/Buffer_sp/model_Buffer_sp_buffer_us_states.sql
+    - models/Buffer_sp/Buffer_sp__buffer_us_states.sql
     - models/Buffer_sp/schema.yml
     - .prophecy/ide/pipelines/Buffer_sp.json
     - pipelines/Buffer_sp.py
@@ -688,12 +664,12 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
+    - models/Buffer_sp/Buffer_sp__buffer_us_states.sql
+    - models/Buffer/Buffer__buffer_us_states.sql
     - models/Buffer_sp/schema.yml
-    - models/Buffer/model_Buffer_buffer_us_states.sql
-    - models/Buffer_Delta/model_Buffer_Delta_buffer_new_england.sql
-    - models/Buffer/schema.yml
-    - models/Buffer_sp/model_Buffer_sp_buffer_us_states.sql
     - models/Buffer_Delta/schema.yml
+    - models/Buffer/schema.yml
+    - models/Buffer_Delta/model_Buffer_Delta_buffer_new_england.sql
     - .prophecy/ide/pipelines/Buffer.json
     - pipelines/Buffer.py
     createdAt: '2025-07-22 17:12:28'
@@ -703,12 +679,12 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/CreatePoint_02/model_CreatePoint_02_create_geo_points.sql
-    - models/CreatePoint_sp/schema.yml
     - models/CreatePoint_02/schema.yml
-    - models/CreatePoint_sp/model_CreatePoint_sp_create_geo_point.sql
-    - models/CreatePoint/schema.yml
     - models/CreatePoint/model_CreatePoint_create_geo_point.sql
+    - models/CreatePoint/schema.yml
+    - models/CreatePoint_sp/CreatePoint_sp__create_geo_point.sql
+    - models/CreatePoint_sp/schema.yml
+    - models/CreatePoint_02/model_CreatePoint_02_create_geo_points.sql
     - .prophecy/ide/pipelines/CreatePoint.json
     - pipelines/CreatePoint.py
     createdAt: '2025-07-22 17:28:23'
@@ -731,8 +707,8 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/SpatialInfo/schema.yml
     - models/SpatialInfo/SpatialInfo__compute_spatial_area.sql
+    - models/SpatialInfo/schema.yml
     - .prophecy/ide/pipelines/SpatialInfo.json
     - pipelines/SpatialInfo.py
     createdAt: '2025-07-23 13:30:03'

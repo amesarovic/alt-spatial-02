@@ -71,24 +71,24 @@
       "id" : "TDEC6XIqnxz1PCHxl3BGO$$EYS8m5ezSLhDzdLDf6wBF",
       "component" : "Model",
       "metadata" : {
-        "label" : "model_Buffer_buffer_us_states",
+        "label" : "Buffer__buffer_us_states",
         "phase" : 0
       },
       "properties" : {
-        "modelName" : "model_Buffer_buffer_us_states"
+        "modelName" : "Buffer__buffer_us_states"
       },
       "visualMetaInfo" : {
-        "visualProcessIds" : [ "prophecy_tmp__Buffer__buffer_us_states", "TDEC6XIqnxz1PCHxl3BGO$$EYS8m5ezSLhDzdLDf6wBF", "RqhhkXStLTbunvy33oEJ9$$h3f0OWtgunQzlxC9PoYda" ],
-        "type" : "table",
+        "visualProcessIds" : [ "buffer_us_states__YHQbJmKD-hKxmgyyTp6e$$X6ozIXWXVRnJJqvsPNE_D", "TDEC6XIqnxz1PCHxl3BGO$$EYS8m5ezSLhDzdLDf6wBF", "RqhhkXStLTbunvy33oEJ9$$h3f0OWtgunQzlxC9PoYda" ],
+        "type" : "ephemeral",
         "isTemporaryTable" : true
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "model_Buffer_buffer_us_states_in_0",
+          "id" : "Buffer__buffer_us_states_in_0",
           "slug" : "in_0"
         } ],
         "outputs" : [ {
-          "id" : "model_Buffer_buffer_us_states_out_0",
+          "id" : "Buffer__buffer_us_states_out_0",
           "slug" : "out_0"
         } ],
         "isCustomOutputSchema" : false
@@ -100,7 +100,7 @@
     "source" : "RqhhkXStLTbunvy33oEJ9$$h3f0OWtgunQzlxC9PoYda",
     "sourcePort" : "o1xh8NlejHCjJr8v66pXa$$-J8GNbTZhhVUZckK6dqlJ",
     "target" : "TDEC6XIqnxz1PCHxl3BGO$$EYS8m5ezSLhDzdLDf6wBF",
-    "targetPort" : "model_Buffer_buffer_us_states_in_0"
+    "targetPort" : "Buffer__buffer_us_states_in_0"
   } ],
   "component" : "Pipeline"
 }

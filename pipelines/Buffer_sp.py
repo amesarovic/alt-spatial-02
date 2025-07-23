@@ -7,9 +7,9 @@ with DAG(Schedule = Schedule):
         writeOptions = {"writeMode" : "overwrite"}, 
         table = {"name" : "us_states_lines", "sourceType" : "Seed"}
     )
-    model_Buffer_sp_buffer_us_states = Task(
-        task_id = "model_Buffer_sp_buffer_us_states", 
+    Buffer_sp__buffer_us_states = Task(
+        task_id = "Buffer_sp__buffer_us_states", 
         component = "Model", 
-        modelName = "model_Buffer_sp_buffer_us_states"
+        modelName = "Buffer_sp__buffer_us_states"
     )
-    us_states_lines.out >> model_Buffer_sp_buffer_us_states.in_0
+    us_states_lines.out >> Buffer_sp__buffer_us_states.in_0

@@ -1,16 +1,6 @@
 ---
 version: 2
 models:
-- name: "model_Buffer_buffer_us_states"
+- name: "Buffer__buffer_us_states"
   tags:
   - "prophecy_temp"
-sources:
-- name: "prophecy_tmp_source__Buffer"
-  database: "andre_dev"
-  schema: "alteryx_spatial"
-  config:
-    enabled: true
-  tables:
-  - name: "prophecy_tmp__mdf4xzak__Buffer__buffer_us_states"
-    tags:
-    - "prophecy_temp"

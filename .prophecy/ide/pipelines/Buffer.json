@@ -150,6 +150,25 @@
         "projectName" : "andre_spatial_09",
         "sourceProjectName" : "andre_spatial_09"
       }
+    },
+    "RLXBTrS3uvBo-arhs9ujf$$G5OSzFhsQTZ-cFG1Dt7sb" : {
+      "id" : "RLXBTrS3uvBo-arhs9ujf$$G5OSzFhsQTZ-cFG1Dt7sb",
+      "component" : "Comment",
+      "metadata" : {
+        "label" : "Comment_1",
+        "x" : -820,
+        "y" : -400,
+        "height" : 59.32292175292969,
+        "width" : 220.00001525878906,
+        "phase" : 0
+      },
+      "properties" : {
+        "comment" : "Enter distance in miles or kilometers."
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ ]
+      }
     }
   },
   "connections" : [ {

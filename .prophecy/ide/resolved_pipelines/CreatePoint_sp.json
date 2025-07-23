@@ -58,12 +58,12 @@
             }, {
               "name" : "lon",
               "dataType" : {
-                "type" : "Float"
+                "type" : "Decimal"
               }
             }, {
               "name" : "lat",
               "dataType" : {
-                "type" : "Float"
+                "type" : "Decimal"
               }
             } ]
           },
@@ -76,24 +76,24 @@
       "id" : "zrLAA-njZQu5d2Tt9Q5Ky$$snhTVDYP1FYP5jZlso0Ln",
       "component" : "Model",
       "metadata" : {
-        "label" : "model_CreatePoint_sp_create_geo_point",
+        "label" : "CreatePoint_sp__create_geo_point",
         "phase" : 0
       },
       "properties" : {
-        "modelName" : "model_CreatePoint_sp_create_geo_point"
+        "modelName" : "CreatePoint_sp__create_geo_point"
       },
       "visualMetaInfo" : {
-        "visualProcessIds" : [ "prophecy_tmp__CreatePoint_sp__create_geo_point", "zrLAA-njZQu5d2Tt9Q5Ky$$snhTVDYP1FYP5jZlso0Ln", "gSkKu3C2_CqQ3x6JxVptZ$$i5qKQtvuWiWbovxvH6Ars" ],
-        "type" : "table",
+        "visualProcessIds" : [ "create_geo_point_JZbpB-XOH1JcjOZuCp-El$$UteHlRtkrmnPDvb6i77lz", "zrLAA-njZQu5d2Tt9Q5Ky$$snhTVDYP1FYP5jZlso0Ln", "gSkKu3C2_CqQ3x6JxVptZ$$i5qKQtvuWiWbovxvH6Ars" ],
+        "type" : "ephemeral",
         "isTemporaryTable" : true
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "model_CreatePoint_sp_create_geo_point_in_0",
+          "id" : "CreatePoint_sp__create_geo_point_in_0",
           "slug" : "in_0"
         } ],
         "outputs" : [ {
-          "id" : "model_CreatePoint_sp_create_geo_point_out_0",
+          "id" : "CreatePoint_sp__create_geo_point_out_0",
           "slug" : "out_0"
         } ],
         "isCustomOutputSchema" : false
@@ -105,7 +105,7 @@
     "source" : "gSkKu3C2_CqQ3x6JxVptZ$$i5qKQtvuWiWbovxvH6Ars",
     "sourcePort" : "ZFVeESQuX3fz-U_43ZAeS$$P8bUT-z2rzPQrMGNbk73N",
     "target" : "zrLAA-njZQu5d2Tt9Q5Ky$$snhTVDYP1FYP5jZlso0Ln",
-    "targetPort" : "model_CreatePoint_sp_create_geo_point_in_0"
+    "targetPort" : "CreatePoint_sp__create_geo_point_in_0"
   } ],
   "component" : "Pipeline"
 }
