@@ -1,0 +1,6 @@
+---
+version: 2
+models:
+- name: "SpatialInfo__compute_spatial_area"
+  tags:
+  - "prophecy_temp"

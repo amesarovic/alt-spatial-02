@@ -1,0 +1,104 @@
+{
+  "id" : "model_Test_DynamicSelect_1",
+  "metainfo" : {
+    "label" : "model_Test_DynamicSelect_1",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "alias" : "\"prophecy_tmp__mdfkja77__Test__DynamicSelect_1\"",
+        "materialized" : "table",
+        "database" : "\"andre_dev\"",
+        "schema" : "\"alteryx_spatial\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "prophecy_tmp__Test__DynamicSelect_1" : {
+      "id" : "prophecy_tmp__Test__DynamicSelect_1",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "DynamicSelect_1",
+        "phase" : 0
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM DynamicSelect_1\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_1",
+          "slug" : "input_port_1"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_1",
+          "slug" : "output_port_1"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "_aDdPTlPsbN2QZma-0Tof$$qgMXKmbhV7yj1CLXlPvk8" : {
+      "id" : "_aDdPTlPsbN2QZma-0Tof$$qgMXKmbhV7yj1CLXlPvk8",
+      "component" : "DynamicSelect",
+      "metadata" : {
+        "label" : "DynamicSelect_1",
+        "x" : -840,
+        "y" : -120,
+        "phase" : 0
+      },
+      "properties" : {
+        "targetTypes" : "''",
+        "structTypeChecked" : false,
+        "relation_name" : [ ],
+        "dateTypeChecked" : false,
+        "binaryTypeChecked" : false,
+        "strTypeChecked" : false,
+        "floatTypeChecked" : false,
+        "timestampTypeChecked" : false,
+        "boolTypeChecked" : false,
+        "schema" : "''",
+        "customExpression" : "",
+        "longTypeChecked" : false,
+        "doubleTypeChecked" : false,
+        "intTypeChecked" : false,
+        "byteTypeChecked" : false,
+        "decimalTypeChecked" : false,
+        "selectUsing" : "SELECT_FIELD_TYPES",
+        "shortTypeChecked" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "dpXr6_jiaZJNKjB5ALfvm$$XxwxaYZ_7IKTG3AheA87Q",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "NVBKqapCz_osYb-9arBdT$$Rb2907CmUD9nqjb5ahf8I",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn__aDdPTlPsbN2QZma-0Tof$$qgMXKmbhV7yj1CLXlPvk8_prophecy_tmp__Test__DynamicSelect_1",
+    "source" : "_aDdPTlPsbN2QZma-0Tof$$qgMXKmbhV7yj1CLXlPvk8",
+    "sourcePort" : "NVBKqapCz_osYb-9arBdT$$Rb2907CmUD9nqjb5ahf8I",
+    "target" : "prophecy_tmp__Test__DynamicSelect_1",
+    "targetPort" : "input_port_1"
+  } ],
+  "component" : "Model"
+}

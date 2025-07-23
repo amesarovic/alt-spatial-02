@@ -1,7 +1,7 @@
 {{
   config({    
     "materialized": "table",
-    "alias": "prophecy_tmp__mdf56oi4__CreatePoint_sp__create_geo_point",
+    "alias": "prophecy_tmp__mdfjqktr__CreatePoint_sp__create_geo_point",
     "database": "andre_dev",
     "schema": "alteryx_spatial"
   })

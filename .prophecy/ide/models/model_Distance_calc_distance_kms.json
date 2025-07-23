@@ -9,7 +9,7 @@
     },
     "graphConfig" : {
       "entityConfig" : {
-        "alias" : "\"prophecy_tmp__mdezq40d__Distance__calc_distance_kms\"",
+        "alias" : "\"prophecy_tmp__mdfdzlwm__Distance__calc_distance_kms\"",
         "materialized" : "table",
         "database" : "\"andre_dev\"",
         "schema" : "\"alteryx_spatial\"",

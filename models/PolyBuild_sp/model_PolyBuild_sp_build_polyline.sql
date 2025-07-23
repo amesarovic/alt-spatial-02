@@ -1,7 +1,7 @@
 {{
   config({    
     "materialized": "table",
-    "alias": "prophecy_tmp__mdf5tptx__PolyBuild_sp__build_polyline",
+    "alias": "prophecy_tmp__mdfew55r__PolyBuild_sp__build_polyline",
     "database": "andre_dev",
     "schema": "alteryx_spatial"
   })

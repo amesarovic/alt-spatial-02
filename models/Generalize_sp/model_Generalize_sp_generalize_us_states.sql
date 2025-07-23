@@ -1,7 +1,7 @@
 {{
   config({    
     "materialized": "table",
-    "alias": "prophecy_tmp__mdf52yrn__Generalize_sp__generalize_us_states",
+    "alias": "prophecy_tmp__mdfekda2__Generalize_sp__generalize_us_states",
     "database": "andre_dev",
     "schema": "alteryx_spatial"
   })
@@ -22,8 +22,8 @@ generalize_us_states AS (
       'us_states_lines', 
       [{ "name": "name", "dataType": "String" }, { "name": "geometry", "dataType": "String" }], 
       'geometry', 
-      10, 
-      'kms'
+      20, 
+      'miles'
     )
   }}
 

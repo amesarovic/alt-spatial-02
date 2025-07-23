@@ -11,6 +11,6 @@ sources:
   config:
     enabled: true
   tables:
-  - name: "prophecy_tmp__mdf5niao__HeatMap_sp__generate_heatmap"
+  - name: "prophecy_tmp__mdfjrctq__HeatMap_sp__generate_heatmap"
     tags:
     - "prophecy_temp"

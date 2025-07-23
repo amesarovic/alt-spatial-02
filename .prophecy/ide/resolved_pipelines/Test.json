@@ -22,6 +22,54 @@
     "isTranspiledPipeline" : false
   },
   "processes" : {
+    "zbm7gQYZjRPirGbjYtz6h$$-ZGMRfeHlCBp06LxXEwyS" : {
+      "id" : "zbm7gQYZjRPirGbjYtz6h$$-ZGMRfeHlCBp06LxXEwyS",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "model_Test_TextToColumns_1",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "model_Test_TextToColumns_1"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "prophecy_tmp__Test__TextToColumns_1", "zbm7gQYZjRPirGbjYtz6h$$-ZGMRfeHlCBp06LxXEwyS" ],
+        "type" : "table",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "model_Test_TextToColumns_1_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "_aDdPTlPsbN2QZma-0Tof$$qgMXKmbhV7yj1CLXlPvk8" : {
+      "id" : "_aDdPTlPsbN2QZma-0Tof$$qgMXKmbhV7yj1CLXlPvk8",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "model_Test_DynamicSelect_1",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "model_Test_DynamicSelect_1"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "prophecy_tmp__Test__DynamicSelect_1", "_aDdPTlPsbN2QZma-0Tof$$qgMXKmbhV7yj1CLXlPvk8" ],
+        "type" : "table",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "model_Test_DynamicSelect_1_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
     "_bJBeBzWw59qNFDwlBwyL$$7FBGKhHTk17sA8ajcMFyu" : {
       "id" : "_bJBeBzWw59qNFDwlBwyL$$7FBGKhHTk17sA8ajcMFyu",
       "component" : "Dataset",

@@ -1,7 +1,13 @@
 ---
 version: 2
 models:
+- name: "model_Test_DynamicSelect_1"
+  tags:
+  - "prophecy_temp"
 - name: "model_Test_Limit_1"
+  tags:
+  - "prophecy_temp"
+- name: "model_Test_TextToColumns_1"
   tags:
   - "prophecy_temp"
 sources:
@@ -11,6 +17,12 @@ sources:
   config:
     enabled: true
   tables:
-  - name: "prophecy_tmp__mdes6w49__Test__Limit_1"
+  - name: "prophecy_tmp__mdfkja77__Test__DynamicSelect_1"
+    tags:
+    - "prophecy_temp"
+  - name: "prophecy_tmp__mdfkja77__Test__Limit_1"
+    tags:
+    - "prophecy_temp"
+  - name: "prophecy_tmp__mdfkja77__Test__TextToColumns_1"
     tags:
     - "prophecy_temp"

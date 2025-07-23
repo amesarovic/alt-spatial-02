@@ -1,7 +1,7 @@
 {{
   config({    
     "materialized": "table",
-    "alias": "prophecy_tmp__mdezq40d__Distance__calc_distance_kms",
+    "alias": "prophecy_tmp__mdfdzlwm__Distance__calc_distance_kms",
     "database": "andre_dev",
     "schema": "alteryx_spatial"
   })

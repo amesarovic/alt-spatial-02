@@ -1,7 +1,7 @@
 {{
   config({    
     "materialized": "table",
-    "alias": "prophecy_tmp__mdf41ozt__FindNearest__find_nearest_centers",
+    "alias": "prophecy_tmp__mdfjp2q6__FindNearest__find_nearest_centers",
     "database": "andre_dev",
     "schema": "alteryx_spatial"
   })

@@ -1,7 +1,7 @@
 {{
   config({    
     "materialized": "table",
-    "alias": "prophecy_tmp__mdf5xvle__SpatialMatch_sp__spatial_match_within",
+    "alias": "prophecy_tmp__mdfjujq3__SpatialMatch_sp__spatial_match_within",
     "database": "andre_dev",
     "schema": "alteryx_spatial"
   })

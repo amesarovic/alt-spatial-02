@@ -11,6 +11,6 @@ sources:
   config:
     enabled: true
   tables:
-  - name: "prophecy_tmp__mdf56oi4__CreatePoint_sp__create_geo_point"
+  - name: "prophecy_tmp__mdfjqktr__CreatePoint_sp__create_geo_point"
     tags:
     - "prophecy_temp"

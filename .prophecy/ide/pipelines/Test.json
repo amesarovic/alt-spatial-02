@@ -22,6 +22,93 @@
     "isTranspiledPipeline" : false
   },
   "processes" : {
+    "zbm7gQYZjRPirGbjYtz6h$$-ZGMRfeHlCBp06LxXEwyS" : {
+      "id" : "zbm7gQYZjRPirGbjYtz6h$$-ZGMRfeHlCBp06LxXEwyS",
+      "component" : "TextToColumns",
+      "metadata" : {
+        "label" : "TextToColumns_1",
+        "x" : -860,
+        "y" : -280,
+        "phase" : 0
+      },
+      "properties" : {
+        "split_strategy" : "",
+        "splitColumnPrefix" : "root",
+        "relation_name" : [ ],
+        "columnNames" : "",
+        "noOfColumns" : 1,
+        "splitColumnSuffix" : "generated",
+        "splitRowsColumnName" : "generated_column",
+        "leaveExtraCharLastCol" : "Leave extra in last column",
+        "delimiter" : ""
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "zNfuomfGPdnCdArBSBivp$$-twneXHt2zNKOWlz85uxI",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "XmGu13LZDynvHSyJ-HO7Z$$dY_idyRtFPVR-6YxxI4fq",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "componentInfo" : {
+        "gemId" : "TextToColumns_DatabricksSqlBasics",
+        "name" : "TextToColumns",
+        "projectName" : "DatabricksSqlBasics",
+        "sourceProjectName" : "DatabricksSqlBasics",
+        "sourceProjectVersion" : "0.0.10"
+      }
+    },
+    "_aDdPTlPsbN2QZma-0Tof$$qgMXKmbhV7yj1CLXlPvk8" : {
+      "id" : "_aDdPTlPsbN2QZma-0Tof$$qgMXKmbhV7yj1CLXlPvk8",
+      "component" : "DynamicSelect",
+      "metadata" : {
+        "label" : "DynamicSelect_1",
+        "x" : -840,
+        "y" : -120,
+        "phase" : 0
+      },
+      "properties" : {
+        "targetTypes" : "''",
+        "structTypeChecked" : false,
+        "relation_name" : [ ],
+        "dateTypeChecked" : false,
+        "binaryTypeChecked" : false,
+        "strTypeChecked" : false,
+        "floatTypeChecked" : false,
+        "timestampTypeChecked" : false,
+        "boolTypeChecked" : false,
+        "schema" : "''",
+        "customExpression" : "",
+        "longTypeChecked" : false,
+        "doubleTypeChecked" : false,
+        "intTypeChecked" : false,
+        "byteTypeChecked" : false,
+        "decimalTypeChecked" : false,
+        "selectUsing" : "SELECT_FIELD_TYPES",
+        "shortTypeChecked" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "dpXr6_jiaZJNKjB5ALfvm$$XxwxaYZ_7IKTG3AheA87Q",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "NVBKqapCz_osYb-9arBdT$$Rb2907CmUD9nqjb5ahf8I",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "componentInfo" : {
+        "gemId" : "DynamicSelect_DatabricksSqlBasics",
+        "name" : "DynamicSelect",
+        "projectName" : "DatabricksSqlBasics",
+        "sourceProjectName" : "DatabricksSqlBasics",
+        "sourceProjectVersion" : "0.0.10"
+      }
+    },
     "_bJBeBzWw59qNFDwlBwyL$$7FBGKhHTk17sA8ajcMFyu" : {
       "id" : "_bJBeBzWw59qNFDwlBwyL$$7FBGKhHTk17sA8ajcMFyu",
       "component" : "Dataset",

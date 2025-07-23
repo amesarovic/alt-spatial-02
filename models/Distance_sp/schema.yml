@@ -11,6 +11,6 @@ sources:
   config:
     enabled: true
   tables:
-  - name: "prophecy_tmp__mdf5cvcx__Distance_sp__calculate_distances"
+  - name: "prophecy_tmp__mdfjowso__Distance_sp__calculate_distances"
     tags:
     - "prophecy_temp"
