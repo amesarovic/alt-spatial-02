@@ -1,7 +1,7 @@
 {
-  "id" : "model_SpatialMatch_sp_spatial_match_within",
+  "id" : "SpatialMatch__spatial_match_within",
   "metainfo" : {
-    "label" : "model_SpatialMatch_sp_spatial_match_within",
+    "label" : "SpatialMatch__spatial_match_within",
     "autoLayout" : true,
     "staleState" : "none",
     "sourceSuggestions" : {
@@ -9,8 +9,7 @@
     },
     "graphConfig" : {
       "entityConfig" : {
-        "alias" : "\"prophecy_tmp__mdfjujq3__SpatialMatch_sp__spatial_match_within\"",
-        "materialized" : "table",
+        "materialized" : "ephemeral",
         "database" : "\"andre_dev\"",
         "schema" : "\"alteryx_spatial\"",
         "type" : "ModelConfig"
@@ -19,12 +18,11 @@
     "version" : 3
   },
   "processes" : {
-    "prophecy_tmp__SpatialMatch_sp__spatial_match_within" : {
-      "id" : "prophecy_tmp__SpatialMatch_sp__spatial_match_within",
+    "spatial_match_within_K0QVKcjJWoEkXAyxfngc2$$0k7s1yJ1yaBhvapShYwng" : {
+      "id" : "spatial_match_within_K0QVKcjJWoEkXAyxfngc2$$0k7s1yJ1yaBhvapShYwng",
       "component" : "TargetModel",
       "metadata" : {
-        "label" : "spatial_match_within",
-        "phase" : 0
+        "label" : "spatial_match_within"
       },
       "properties" : {
         "customQueryDisabled" : true,
@@ -50,13 +48,13 @@
         "autoUpdateOnRun" : false
       }
     },
-    "2fRONiFS-aw68fcf0WN8J$$sMhBEYZcBxSqfxE8VKr3v" : {
-      "id" : "2fRONiFS-aw68fcf0WN8J$$sMhBEYZcBxSqfxE8VKr3v",
+    "T9ZHWSaU7UHCraj4PLAXy$$Z2sAUQlahxOQBpBfTfehE" : {
+      "id" : "T9ZHWSaU7UHCraj4PLAXy$$Z2sAUQlahxOQBpBfTfehE",
       "component" : "SpatialMatch",
       "metadata" : {
         "label" : "spatial_match_within",
-        "x" : -300,
-        "y" : -120,
+        "x" : -180,
+        "y" : -300,
         "phase" : 0
       },
       "properties" : {
@@ -88,55 +86,27 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "RidTDT71Bla3a-21XfNRe$$XOxIiC0foE75XyMpAulN1",
+          "id" : "NCAD8CAIuAL0bFDfDpfB3$$4MAQAqIEiYvsSqkGfX8o-",
           "slug" : "in0"
         }, {
-          "id" : "UKsPnV7wrsfrOzeTY1lCc$$aVUT1nSQAHJrGJxa2WV9U",
+          "id" : "QfCTHHEyIJndXbs8fWTIz$$xxe5qab2sqMfyENEqFK63",
           "slug" : "in1"
         } ],
         "outputs" : [ {
-          "id" : "DccVZV3RWPMUwJOdHYCPK$$hUPGwQTsfJGNmXVhkIgKK",
+          "id" : "K0QVKcjJWoEkXAyxfngc2$$0k7s1yJ1yaBhvapShYwng",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
       }
     },
-    "BmUKwUL2RiAdOA6S4wxbd$$Xe2Z_6ZOqB8Q79-zEVdvN" : {
-      "id" : "BmUKwUL2RiAdOA6S4wxbd$$Xe2Z_6ZOqB8Q79-zEVdvN",
-      "component" : "Source",
-      "metadata" : {
-        "label" : "spatial_match_1",
-        "x" : -480,
-        "y" : -180,
-        "phase" : 0
-      },
-      "properties" : {
-        "writeOptions" : {
-          "writeMode" : "overwrite"
-        },
-        "table" : {
-          "name" : "spatial_match_1",
-          "sourceType" : "Seed"
-        }
-      },
-      "ports" : {
-        "inputs" : [ ],
-        "outputs" : [ {
-          "id" : "Siq3WvYTPx-gJGU4EhrL9$$hLi6d_ZSV_BXaAGNzmDm6",
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false,
-        "autoUpdateOnRun" : false
-      }
-    },
-    "8qcmeyMQgeB0fJGSpSch5$$qWAAQo4TICB2ahVKm67B5" : {
-      "id" : "8qcmeyMQgeB0fJGSpSch5$$qWAAQo4TICB2ahVKm67B5",
+    "BM9xMKcQxySeU3aGq9SeY$$_mGp7a4NSDOtLi7MMw7aR" : {
+      "id" : "BM9xMKcQxySeU3aGq9SeY$$_mGp7a4NSDOtLi7MMw7aR",
       "component" : "Source",
       "metadata" : {
         "label" : "spatial_match_2",
-        "x" : -480,
-        "y" : -20,
+        "x" : -400,
+        "y" : -200,
         "phase" : 0
       },
       "properties" : {
@@ -151,7 +121,35 @@
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "ObSn09POz6-yoe8EQ5e-J$$e2OJj9q4rjCHQPLSt6XQb",
+          "id" : "4RpiHiAv3povxH5DFGHel$$wrO2RYCQ6AMnmSbMXiTDv",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "ESHUp0jQJts4W4EDkzvp_$$uczkRtehc0tz-DD7Lbsu1" : {
+      "id" : "ESHUp0jQJts4W4EDkzvp_$$uczkRtehc0tz-DD7Lbsu1",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "spatial_match_1",
+        "x" : -400,
+        "y" : -360,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "spatial_match_1",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "_XxHDTF5cO-Rdhiikmw5y$$QdtlOEe8uOuJ-88x9WwqJ",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -160,23 +158,23 @@
     }
   },
   "connections" : [ {
-    "id" : "conn_2fRONiFS-aw68fcf0WN8J$$sMhBEYZcBxSqfxE8VKr3v_prophecy_tmp__SpatialMatch_sp__spatial_match_within",
-    "source" : "2fRONiFS-aw68fcf0WN8J$$sMhBEYZcBxSqfxE8VKr3v",
-    "sourcePort" : "DccVZV3RWPMUwJOdHYCPK$$hUPGwQTsfJGNmXVhkIgKK",
-    "target" : "prophecy_tmp__SpatialMatch_sp__spatial_match_within",
+    "id" : "conn_T9ZHWSaU7UHCraj4PLAXy$$Z2sAUQlahxOQBpBfTfehE_spatial_match_within_K0QVKcjJWoEkXAyxfngc2$$0k7s1yJ1yaBhvapShYwng",
+    "source" : "T9ZHWSaU7UHCraj4PLAXy$$Z2sAUQlahxOQBpBfTfehE",
+    "sourcePort" : "K0QVKcjJWoEkXAyxfngc2$$0k7s1yJ1yaBhvapShYwng",
+    "target" : "spatial_match_within_K0QVKcjJWoEkXAyxfngc2$$0k7s1yJ1yaBhvapShYwng",
     "targetPort" : "input_port_0"
   }, {
-    "id" : "4awVXGU7XnrR3MDyr7kFx$$-eRCisNMUDqzhOn1c7IN8",
-    "source" : "BmUKwUL2RiAdOA6S4wxbd$$Xe2Z_6ZOqB8Q79-zEVdvN",
-    "sourcePort" : "Siq3WvYTPx-gJGU4EhrL9$$hLi6d_ZSV_BXaAGNzmDm6",
-    "target" : "2fRONiFS-aw68fcf0WN8J$$sMhBEYZcBxSqfxE8VKr3v",
-    "targetPort" : "RidTDT71Bla3a-21XfNRe$$XOxIiC0foE75XyMpAulN1"
+    "id" : "SUJKiN0H8azzZ6xtsRC2-",
+    "source" : "BM9xMKcQxySeU3aGq9SeY$$_mGp7a4NSDOtLi7MMw7aR",
+    "sourcePort" : "4RpiHiAv3povxH5DFGHel$$wrO2RYCQ6AMnmSbMXiTDv",
+    "target" : "T9ZHWSaU7UHCraj4PLAXy$$Z2sAUQlahxOQBpBfTfehE",
+    "targetPort" : "QfCTHHEyIJndXbs8fWTIz$$xxe5qab2sqMfyENEqFK63"
   }, {
-    "id" : "mo0K-8tJ21ttNHjBV8xDk$$ihPwAYrO4xqhBGe9dG_5s",
-    "source" : "8qcmeyMQgeB0fJGSpSch5$$qWAAQo4TICB2ahVKm67B5",
-    "sourcePort" : "ObSn09POz6-yoe8EQ5e-J$$e2OJj9q4rjCHQPLSt6XQb",
-    "target" : "2fRONiFS-aw68fcf0WN8J$$sMhBEYZcBxSqfxE8VKr3v",
-    "targetPort" : "UKsPnV7wrsfrOzeTY1lCc$$aVUT1nSQAHJrGJxa2WV9U"
+    "id" : "90QKDEQpmaGe_exHO8R6b",
+    "source" : "ESHUp0jQJts4W4EDkzvp_$$uczkRtehc0tz-DD7Lbsu1",
+    "sourcePort" : "_XxHDTF5cO-Rdhiikmw5y$$QdtlOEe8uOuJ-88x9WwqJ",
+    "target" : "T9ZHWSaU7UHCraj4PLAXy$$Z2sAUQlahxOQBpBfTfehE",
+    "targetPort" : "NCAD8CAIuAL0bFDfDpfB3$$4MAQAqIEiYvsSqkGfX8o-"
   } ],
   "component" : "Model"
 }

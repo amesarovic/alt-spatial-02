@@ -14,14 +14,15 @@ WITH new_england AS (
 
 ),
 
-compute_spatial_area AS (
+spatial_info_new_england AS (
 
   {{
     andre_spatial_09.SpatialInfo(
       'new_england', 
       [{ "name": "name", "dataType": "String" }, { "name": "geometry", "dataType": "String" }], 
       'geometry', 
-      True
+      false, 
+      false
     )
   }}
 
@@ -29,4 +30,4 @@ compute_spatial_area AS (
 
 SELECT *
 
-FROM compute_spatial_area
+FROM spatial_info_new_england

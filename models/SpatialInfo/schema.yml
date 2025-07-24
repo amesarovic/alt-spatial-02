@@ -1,6 +1,6 @@
 ---
 version: 2
 models:
-- name: "SpatialInfo__compute_spatial_area"
+- name: "SpatialInfo__spatial_info_new_england"
   tags:
   - "prophecy_temp"

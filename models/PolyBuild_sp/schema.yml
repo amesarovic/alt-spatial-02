@@ -1,16 +1,6 @@
 ---
 version: 2
 models:
-- name: "model_PolyBuild_sp_build_polyline"
+- name: "PolyBuild_sp__build_polyline"
   tags:
   - "prophecy_temp"
-sources:
-- name: "prophecy_tmp_source__PolyBuild_sp"
-  database: "andre_dev"
-  schema: "alteryx_spatial"
-  config:
-    enabled: true
-  tables:
-  - name: "prophecy_tmp__mdfew55r__PolyBuild_sp__build_polyline"
-    tags:
-    - "prophecy_temp"

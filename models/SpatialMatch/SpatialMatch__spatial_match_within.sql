@@ -1,25 +1,24 @@
 {{
   config({    
-    "materialized": "table",
-    "alias": "prophecy_tmp__mdfjujq3__SpatialMatch_sp__spatial_match_within",
+    "materialized": "ephemeral",
     "database": "andre_dev",
     "schema": "alteryx_spatial"
   })
 }}
 
-WITH spatial_match_1 AS (
-
-  SELECT * 
-  
-  FROM {{ ref('spatial_match_1')}}
-
-),
-
-spatial_match_2 AS (
+WITH spatial_match_2 AS (
 
   SELECT * 
   
   FROM {{ ref('spatial_match_2')}}
+
+),
+
+spatial_match_1 AS (
+
+  SELECT * 
+  
+  FROM {{ ref('spatial_match_1')}}
 
 ),
 

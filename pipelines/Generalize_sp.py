@@ -7,9 +7,9 @@ with DAG(Schedule = Schedule):
         writeOptions = {"writeMode" : "overwrite"}, 
         table = {"name" : "us_states_lines", "sourceType" : "Seed"}
     )
-    model_Generalize_sp_generalize_us_states = Task(
-        task_id = "model_Generalize_sp_generalize_us_states", 
+    Generalize_sp__generalize_us_states = Task(
+        task_id = "Generalize_sp__generalize_us_states", 
         component = "Model", 
-        modelName = "model_Generalize_sp_generalize_us_states"
+        modelName = "Generalize_sp__generalize_us_states"
     )
-    us_states_lines.out >> model_Generalize_sp_generalize_us_states.in_0
+    us_states_lines.out >> Generalize_sp__generalize_us_states.in_0

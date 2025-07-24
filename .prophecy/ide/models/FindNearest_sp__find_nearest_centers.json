@@ -1,7 +1,7 @@
 {
-  "id" : "model_FindNearest_sp_find_nearest_centers",
+  "id" : "FindNearest_sp__find_nearest_centers",
   "metainfo" : {
-    "label" : "model_FindNearest_sp_find_nearest_centers",
+    "label" : "FindNearest_sp__find_nearest_centers",
     "autoLayout" : true,
     "staleState" : "none",
     "sourceSuggestions" : {
@@ -9,8 +9,7 @@
     },
     "graphConfig" : {
       "entityConfig" : {
-        "alias" : "\"prophecy_tmp__mdfalmvb__FindNearest_sp__find_nearest_centers\"",
-        "materialized" : "table",
+        "materialized" : "ephemeral",
         "database" : "\"andre_dev\"",
         "schema" : "\"alteryx_spatial\"",
         "type" : "ModelConfig"
@@ -19,12 +18,11 @@
     "version" : 3
   },
   "processes" : {
-    "prophecy_tmp__FindNearest_sp__find_nearest_centers" : {
-      "id" : "prophecy_tmp__FindNearest_sp__find_nearest_centers",
+    "find_nearest_centers_6D7E7meGxRjXlUT9yiiJ9$$mi_MuKFC7sKHFmz_gAS-9" : {
+      "id" : "find_nearest_centers_6D7E7meGxRjXlUT9yiiJ9$$mi_MuKFC7sKHFmz_gAS-9",
       "component" : "TargetModel",
       "metadata" : {
-        "label" : "find_nearest_centers",
-        "phase" : 0
+        "label" : "find_nearest_centers"
       },
       "properties" : {
         "customQueryDisabled" : true,
@@ -185,10 +183,10 @@
     }
   },
   "connections" : [ {
-    "id" : "conn_7R_kmb2nVOlc1lsSdQiAU$$tOmAtCwtlt_uYTYUF6X0E_prophecy_tmp__FindNearest_sp__find_nearest_centers",
+    "id" : "conn_7R_kmb2nVOlc1lsSdQiAU$$tOmAtCwtlt_uYTYUF6X0E_find_nearest_centers_6D7E7meGxRjXlUT9yiiJ9$$mi_MuKFC7sKHFmz_gAS-9",
     "source" : "7R_kmb2nVOlc1lsSdQiAU$$tOmAtCwtlt_uYTYUF6X0E",
     "sourcePort" : "6D7E7meGxRjXlUT9yiiJ9$$mi_MuKFC7sKHFmz_gAS-9",
-    "target" : "prophecy_tmp__FindNearest_sp__find_nearest_centers",
+    "target" : "find_nearest_centers_6D7E7meGxRjXlUT9yiiJ9$$mi_MuKFC7sKHFmz_gAS-9",
     "targetPort" : "input_port_0"
   }, {
     "id" : "YLYxNU9kHIfZaGRaROw0_$$-34Ut8-ECb9zcOA7FnFX9",

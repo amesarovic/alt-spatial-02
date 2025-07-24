@@ -1,16 +1,6 @@
 ---
 version: 2
 models:
-- name: "model_HeatMap_sp_generate_heatmap"
+- name: "HeatMap_sp__generate_heatmap"
   tags:
   - "prophecy_temp"
-sources:
-- name: "prophecy_tmp_source__HeatMap_sp"
-  database: "andre_dev"
-  schema: "alteryx_spatial"
-  config:
-    enabled: true
-  tables:
-  - name: "prophecy_tmp__mdfjrctq__HeatMap_sp__generate_heatmap"
-    tags:
-    - "prophecy_temp"

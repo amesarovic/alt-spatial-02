@@ -123,7 +123,7 @@
             }, {
               "name" : "delivery_fee",
               "dataType" : {
-                "type" : "Float"
+                "type" : "Decimal"
               }
             } ]
           },
@@ -136,27 +136,27 @@
       "id" : "2fRONiFS-aw68fcf0WN8J$$sMhBEYZcBxSqfxE8VKr3v",
       "component" : "Model",
       "metadata" : {
-        "label" : "model_SpatialMatch_sp_spatial_match_within",
+        "label" : "SpatialMatch_sp__spatial_match_within",
         "phase" : 0
       },
       "properties" : {
-        "modelName" : "model_SpatialMatch_sp_spatial_match_within"
+        "modelName" : "SpatialMatch_sp__spatial_match_within"
       },
       "visualMetaInfo" : {
-        "visualProcessIds" : [ "prophecy_tmp__SpatialMatch_sp__spatial_match_within", "2fRONiFS-aw68fcf0WN8J$$sMhBEYZcBxSqfxE8VKr3v", "BmUKwUL2RiAdOA6S4wxbd$$Xe2Z_6ZOqB8Q79-zEVdvN", "8qcmeyMQgeB0fJGSpSch5$$qWAAQo4TICB2ahVKm67B5" ],
-        "type" : "table",
+        "visualProcessIds" : [ "spatial_match_within_DccVZV3RWPMUwJOdHYCPK$$hUPGwQTsfJGNmXVhkIgKK", "2fRONiFS-aw68fcf0WN8J$$sMhBEYZcBxSqfxE8VKr3v", "BmUKwUL2RiAdOA6S4wxbd$$Xe2Z_6ZOqB8Q79-zEVdvN", "8qcmeyMQgeB0fJGSpSch5$$qWAAQo4TICB2ahVKm67B5" ],
+        "type" : "ephemeral",
         "isTemporaryTable" : true
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "model_SpatialMatch_sp_spatial_match_within_in_0",
+          "id" : "SpatialMatch_sp__spatial_match_within_in_0",
           "slug" : "in_0"
         }, {
-          "id" : "model_SpatialMatch_sp_spatial_match_within_in_1",
+          "id" : "SpatialMatch_sp__spatial_match_within_in_1",
           "slug" : "in_1"
         } ],
         "outputs" : [ {
-          "id" : "model_SpatialMatch_sp_spatial_match_within_out_0",
+          "id" : "SpatialMatch_sp__spatial_match_within_out_0",
           "slug" : "out_0"
         } ],
         "isCustomOutputSchema" : false
@@ -168,13 +168,13 @@
     "source" : "BmUKwUL2RiAdOA6S4wxbd$$Xe2Z_6ZOqB8Q79-zEVdvN",
     "sourcePort" : "Siq3WvYTPx-gJGU4EhrL9$$hLi6d_ZSV_BXaAGNzmDm6",
     "target" : "2fRONiFS-aw68fcf0WN8J$$sMhBEYZcBxSqfxE8VKr3v",
-    "targetPort" : "model_SpatialMatch_sp_spatial_match_within_in_0"
+    "targetPort" : "SpatialMatch_sp__spatial_match_within_in_0"
   }, {
     "id" : "mo0K-8tJ21ttNHjBV8xDk$$ihPwAYrO4xqhBGe9dG_5s",
     "source" : "8qcmeyMQgeB0fJGSpSch5$$qWAAQo4TICB2ahVKm67B5",
     "sourcePort" : "ObSn09POz6-yoe8EQ5e-J$$e2OJj9q4rjCHQPLSt6XQb",
     "target" : "2fRONiFS-aw68fcf0WN8J$$sMhBEYZcBxSqfxE8VKr3v",
-    "targetPort" : "model_SpatialMatch_sp_spatial_match_within_in_1"
+    "targetPort" : "SpatialMatch_sp__spatial_match_within_in_1"
   } ],
   "component" : "Pipeline"
 }

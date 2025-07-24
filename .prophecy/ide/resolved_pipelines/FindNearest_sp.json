@@ -116,27 +116,27 @@
       "id" : "7R_kmb2nVOlc1lsSdQiAU$$tOmAtCwtlt_uYTYUF6X0E",
       "component" : "Model",
       "metadata" : {
-        "label" : "model_FindNearest_sp_find_nearest_centers",
+        "label" : "FindNearest_sp__find_nearest_centers",
         "phase" : 0
       },
       "properties" : {
-        "modelName" : "model_FindNearest_sp_find_nearest_centers"
+        "modelName" : "FindNearest_sp__find_nearest_centers"
       },
       "visualMetaInfo" : {
-        "visualProcessIds" : [ "prophecy_tmp__FindNearest_sp__find_nearest_centers", "7R_kmb2nVOlc1lsSdQiAU$$tOmAtCwtlt_uYTYUF6X0E", "_nPicDRvKsK7Zy-6_2xMt$$vAhdj91MF3RFoqB6bLzC_", "U0PThfF4W9z2EQCmvoZxo$$nWHZ1U0kXHg-LsUfmwbwh" ],
-        "type" : "table",
+        "visualProcessIds" : [ "find_nearest_centers_6D7E7meGxRjXlUT9yiiJ9$$mi_MuKFC7sKHFmz_gAS-9", "7R_kmb2nVOlc1lsSdQiAU$$tOmAtCwtlt_uYTYUF6X0E", "_nPicDRvKsK7Zy-6_2xMt$$vAhdj91MF3RFoqB6bLzC_", "U0PThfF4W9z2EQCmvoZxo$$nWHZ1U0kXHg-LsUfmwbwh" ],
+        "type" : "ephemeral",
         "isTemporaryTable" : true
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "model_FindNearest_sp_find_nearest_centers_in_0",
+          "id" : "FindNearest_sp__find_nearest_centers_in_0",
           "slug" : "in_0"
         }, {
-          "id" : "model_FindNearest_sp_find_nearest_centers_in_1",
+          "id" : "FindNearest_sp__find_nearest_centers_in_1",
           "slug" : "in_1"
         } ],
         "outputs" : [ {
-          "id" : "model_FindNearest_sp_find_nearest_centers_out_0",
+          "id" : "FindNearest_sp__find_nearest_centers_out_0",
           "slug" : "out_0"
         } ],
         "isCustomOutputSchema" : false
@@ -148,13 +148,13 @@
     "source" : "_nPicDRvKsK7Zy-6_2xMt$$vAhdj91MF3RFoqB6bLzC_",
     "sourcePort" : "2DMV7OprlMngbJsq2P6lG$$k-kz6wQxVT_FQe6v4ZntD",
     "target" : "7R_kmb2nVOlc1lsSdQiAU$$tOmAtCwtlt_uYTYUF6X0E",
-    "targetPort" : "model_FindNearest_sp_find_nearest_centers_in_0"
+    "targetPort" : "FindNearest_sp__find_nearest_centers_in_0"
   }, {
     "id" : "0hWEZeTdTENpI0wyxwGwa$$qyaDDpz7ONJZ4VBhCZVSj",
     "source" : "U0PThfF4W9z2EQCmvoZxo$$nWHZ1U0kXHg-LsUfmwbwh",
     "sourcePort" : "MhLzHbH4mLx9n7c6MBfwm$$KtwKEdL_1CzKdq2RqssxT",
     "target" : "7R_kmb2nVOlc1lsSdQiAU$$tOmAtCwtlt_uYTYUF6X0E",
-    "targetPort" : "model_FindNearest_sp_find_nearest_centers_in_1"
+    "targetPort" : "FindNearest_sp__find_nearest_centers_in_1"
   } ],
   "component" : "Pipeline"
 }

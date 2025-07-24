@@ -13,10 +13,10 @@ with DAG(Schedule = Schedule):
         writeOptions = {"writeMode" : "overwrite"}, 
         table = {"name" : "spatial_match_2", "sourceType" : "Seed"}
     )
-    model_SpatialMatch_spatial_match_within = Task(
-        task_id = "model_SpatialMatch_spatial_match_within", 
+    SpatialMatch__spatial_match_within = Task(
+        task_id = "SpatialMatch__spatial_match_within", 
         component = "Model", 
-        modelName = "model_SpatialMatch_spatial_match_within"
+        modelName = "SpatialMatch__spatial_match_within"
     )
-    spatial_match_2.out >> model_SpatialMatch_spatial_match_within.in_0
-    spatial_match_1.out >> model_SpatialMatch_spatial_match_within.in_1
+    spatial_match_2.out >> SpatialMatch__spatial_match_within.in_0
+    spatial_match_1.out >> SpatialMatch__spatial_match_within.in_1

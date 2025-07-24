@@ -71,24 +71,24 @@
       "id" : "WYw19E6hGaD35AQvD6T4r$$qOP5FcB5uYXkNUa70yKgP",
       "component" : "Model",
       "metadata" : {
-        "label" : "model_Generalize_sp_generalize_us_states",
+        "label" : "Generalize_sp__generalize_us_states",
         "phase" : 0
       },
       "properties" : {
-        "modelName" : "model_Generalize_sp_generalize_us_states"
+        "modelName" : "Generalize_sp__generalize_us_states"
       },
       "visualMetaInfo" : {
-        "visualProcessIds" : [ "prophecy_tmp__Generalize_sp__generalize_us_states", "WYw19E6hGaD35AQvD6T4r$$qOP5FcB5uYXkNUa70yKgP", "0VZQK42y_sAwLmLAM1T7W$$xfL3otB8KbmVAyye0_G16" ],
-        "type" : "table",
+        "visualProcessIds" : [ "generalize_us_states_LjdM9X2SIPwVxw_erghW9$$67S49hP6HQi6nufDh_IW0", "WYw19E6hGaD35AQvD6T4r$$qOP5FcB5uYXkNUa70yKgP", "0VZQK42y_sAwLmLAM1T7W$$xfL3otB8KbmVAyye0_G16" ],
+        "type" : "ephemeral",
         "isTemporaryTable" : true
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "model_Generalize_sp_generalize_us_states_in_0",
+          "id" : "Generalize_sp__generalize_us_states_in_0",
           "slug" : "in_0"
         } ],
         "outputs" : [ {
-          "id" : "model_Generalize_sp_generalize_us_states_out_0",
+          "id" : "Generalize_sp__generalize_us_states_out_0",
           "slug" : "out_0"
         } ],
         "isCustomOutputSchema" : false
@@ -100,7 +100,7 @@
     "source" : "0VZQK42y_sAwLmLAM1T7W$$xfL3otB8KbmVAyye0_G16",
     "sourcePort" : "BPyw_T7xLH8AugwQSre9j$$cP6mLSer3MvvEscMNUM5-",
     "target" : "WYw19E6hGaD35AQvD6T4r$$qOP5FcB5uYXkNUa70yKgP",
-    "targetPort" : "model_Generalize_sp_generalize_us_states_in_0"
+    "targetPort" : "Generalize_sp__generalize_us_states_in_0"
   } ],
   "component" : "Pipeline"
 }

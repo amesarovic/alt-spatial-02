@@ -1,7 +1,6 @@
 {{
   config({    
-    "materialized": "table",
-    "alias": "prophecy_tmp__mdfekda2__Generalize_sp__generalize_us_states",
+    "materialized": "ephemeral",
     "database": "andre_dev",
     "schema": "alteryx_spatial"
   })

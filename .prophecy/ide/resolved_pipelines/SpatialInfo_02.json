@@ -1,7 +1,7 @@
 {
-  "id" : "SpatialInfo",
+  "id" : "SpatialInfo_02",
   "metainfo" : {
-    "label" : "SpatialInfo",
+    "label" : "SpatialInfo_02",
     "autoLayout" : false,
     "version" : 1,
     "configuration" : {
@@ -27,28 +27,28 @@
     "isTranspiledPipeline" : false
   },
   "processes" : {
-    "6-BnX7EXpb0w9rHiribWH$$vw67BLmAWBoY5-XQjxXKz" : {
-      "id" : "6-BnX7EXpb0w9rHiribWH$$vw67BLmAWBoY5-XQjxXKz",
+    "3Is9lEs2Gx-KZ7MVRAE16$$uL7g-g309ozpUNZ0_sKpB" : {
+      "id" : "3Is9lEs2Gx-KZ7MVRAE16$$uL7g-g309ozpUNZ0_sKpB",
       "component" : "Model",
       "metadata" : {
-        "label" : "SpatialInfo__spatial_info_new_england",
+        "label" : "SpatialInfo_02__compute_spatial_info",
         "phase" : 0
       },
       "properties" : {
-        "modelName" : "SpatialInfo__spatial_info_new_england"
+        "modelName" : "SpatialInfo_02__compute_spatial_info"
       },
       "visualMetaInfo" : {
-        "visualProcessIds" : [ "spatial_info_new_england_oM3gF1dX7zzd3cnxafna4$$J4yYiY_sDyf8M6fUJabeS", "6-BnX7EXpb0w9rHiribWH$$vw67BLmAWBoY5-XQjxXKz", "Uu2_N1bm5M3xZ286VLhev$$sohsT7LEelw5m6q6LJKsv" ],
+        "visualProcessIds" : [ "compute_spatial_info_W1nGnuXdY3ktFyBEpdiG0$$w7btDYkmWxk8VukwYM1e-", "3Is9lEs2Gx-KZ7MVRAE16$$uL7g-g309ozpUNZ0_sKpB", "UV85U9p2gtQfx5Qjg5T-_$$OHwvh90T2Hl8QtEn9VVe1" ],
         "type" : "ephemeral",
         "isTemporaryTable" : true
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "SpatialInfo__spatial_info_new_england_in_0",
+          "id" : "SpatialInfo_02__compute_spatial_info_in_0",
           "slug" : "in_0"
         } ],
         "outputs" : [ {
-          "id" : "SpatialInfo__spatial_info_new_england_out_0",
+          "id" : "SpatialInfo_02__compute_spatial_info_out_0",
           "slug" : "out_0"
         } ],
         "isCustomOutputSchema" : false

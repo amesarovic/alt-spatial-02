@@ -1,6 +1,6 @@
 ---
 version: 2
 models:
-- name: "Generalize_sp__generalize_us_states"
+- name: "SpatialInfo_02__compute_spatial_info"
   tags:
   - "prophecy_temp"

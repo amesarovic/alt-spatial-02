@@ -1,7 +1,7 @@
 {
-  "id" : "model_PolyBuild_sp_build_polyline",
+  "id" : "PolyBuild_sp__build_polyline",
   "metainfo" : {
-    "label" : "model_PolyBuild_sp_build_polyline",
+    "label" : "PolyBuild_sp__build_polyline",
     "autoLayout" : true,
     "staleState" : "none",
     "sourceSuggestions" : {
@@ -9,8 +9,7 @@
     },
     "graphConfig" : {
       "entityConfig" : {
-        "alias" : "\"prophecy_tmp__mdfew55r__PolyBuild_sp__build_polyline\"",
-        "materialized" : "table",
+        "materialized" : "ephemeral",
         "database" : "\"andre_dev\"",
         "schema" : "\"alteryx_spatial\"",
         "type" : "ModelConfig"
@@ -19,12 +18,11 @@
     "version" : 3
   },
   "processes" : {
-    "prophecy_tmp__PolyBuild_sp__build_polyline" : {
-      "id" : "prophecy_tmp__PolyBuild_sp__build_polyline",
+    "build_polyline_W9Ya6buGNfkRwo4EvWDH2$$BYl3D37YF5iiT4EVXtu-X" : {
+      "id" : "build_polyline_W9Ya6buGNfkRwo4EvWDH2$$BYl3D37YF5iiT4EVXtu-X",
       "component" : "TargetModel",
       "metadata" : {
-        "label" : "build_polyline",
-        "phase" : 0
+        "label" : "build_polyline"
       },
       "properties" : {
         "customQueryDisabled" : true,
@@ -133,10 +131,10 @@
     }
   },
   "connections" : [ {
-    "id" : "conn_dDSvM7xQ5phb3fNbz4qjZ$$f0XiwkfNuDlG_VP4GT_eC_prophecy_tmp__PolyBuild_sp__build_polyline",
+    "id" : "conn_dDSvM7xQ5phb3fNbz4qjZ$$f0XiwkfNuDlG_VP4GT_eC_build_polyline_W9Ya6buGNfkRwo4EvWDH2$$BYl3D37YF5iiT4EVXtu-X",
     "source" : "dDSvM7xQ5phb3fNbz4qjZ$$f0XiwkfNuDlG_VP4GT_eC",
     "sourcePort" : "W9Ya6buGNfkRwo4EvWDH2$$BYl3D37YF5iiT4EVXtu-X",
-    "target" : "prophecy_tmp__PolyBuild_sp__build_polyline",
+    "target" : "build_polyline_W9Ya6buGNfkRwo4EvWDH2$$BYl3D37YF5iiT4EVXtu-X",
     "targetPort" : "input_port_0"
   }, {
     "id" : "QuoqQZSSicNS83sBPkaJv$$IJVXQQr20n4EKkDHkwDYV",

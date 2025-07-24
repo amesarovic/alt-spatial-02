@@ -58,17 +58,17 @@
             }, {
               "name" : "stop_schedule",
               "dataType" : {
-                "type" : "Date"
+                "type" : "Timestamp"
               }
             }, {
               "name" : "latitude",
               "dataType" : {
-                "type" : "Float"
+                "type" : "Decimal"
               }
             }, {
               "name" : "longitude",
               "dataType" : {
-                "type" : "Float"
+                "type" : "Decimal"
               }
             } ]
           },
@@ -81,24 +81,24 @@
       "id" : "dDSvM7xQ5phb3fNbz4qjZ$$f0XiwkfNuDlG_VP4GT_eC",
       "component" : "Model",
       "metadata" : {
-        "label" : "model_PolyBuild_sp_build_polyline",
+        "label" : "PolyBuild_sp__build_polyline",
         "phase" : 0
       },
       "properties" : {
-        "modelName" : "model_PolyBuild_sp_build_polyline"
+        "modelName" : "PolyBuild_sp__build_polyline"
       },
       "visualMetaInfo" : {
-        "visualProcessIds" : [ "prophecy_tmp__PolyBuild_sp__build_polyline", "dDSvM7xQ5phb3fNbz4qjZ$$f0XiwkfNuDlG_VP4GT_eC", "Nnsf2wqBkc8VMAkPQAU-m$$3WJ7lCICzG_RRCic_NYBl" ],
-        "type" : "table",
+        "visualProcessIds" : [ "build_polyline_W9Ya6buGNfkRwo4EvWDH2$$BYl3D37YF5iiT4EVXtu-X", "dDSvM7xQ5phb3fNbz4qjZ$$f0XiwkfNuDlG_VP4GT_eC", "Nnsf2wqBkc8VMAkPQAU-m$$3WJ7lCICzG_RRCic_NYBl" ],
+        "type" : "ephemeral",
         "isTemporaryTable" : true
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "model_PolyBuild_sp_build_polyline_in_0",
+          "id" : "PolyBuild_sp__build_polyline_in_0",
           "slug" : "in_0"
         } ],
         "outputs" : [ {
-          "id" : "model_PolyBuild_sp_build_polyline_out_0",
+          "id" : "PolyBuild_sp__build_polyline_out_0",
           "slug" : "out_0"
         } ],
         "isCustomOutputSchema" : false
@@ -110,7 +110,7 @@
     "source" : "Nnsf2wqBkc8VMAkPQAU-m$$3WJ7lCICzG_RRCic_NYBl",
     "sourcePort" : "N5w1cA_IXy36GVELuRyFL$$aIC3EeZjduqeNSBBRXzU4",
     "target" : "dDSvM7xQ5phb3fNbz4qjZ$$f0XiwkfNuDlG_VP4GT_eC",
-    "targetPort" : "model_PolyBuild_sp_build_polyline_in_0"
+    "targetPort" : "PolyBuild_sp__build_polyline_in_0"
   } ],
   "component" : "Pipeline"
 }

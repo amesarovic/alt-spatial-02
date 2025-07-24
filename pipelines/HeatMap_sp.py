@@ -7,9 +7,9 @@ with DAG(Schedule = Schedule):
         writeOptions = {"writeMode" : "overwrite"}, 
         table = {"name" : "points", "sourceType" : "Seed"}
     )
-    model_HeatMap_sp_generate_heatmap = Task(
-        task_id = "model_HeatMap_sp_generate_heatmap", 
+    HeatMap_sp__generate_heatmap = Task(
+        task_id = "HeatMap_sp__generate_heatmap", 
         component = "Model", 
-        modelName = "model_HeatMap_sp_generate_heatmap"
+        modelName = "HeatMap_sp__generate_heatmap"
     )
-    points.out >> model_HeatMap_sp_generate_heatmap.in_0
+    points.out >> HeatMap_sp__generate_heatmap.in_0

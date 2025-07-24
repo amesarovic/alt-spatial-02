@@ -13,10 +13,10 @@ with DAG(Schedule = Schedule):
         writeOptions = {"writeMode" : "overwrite"}, 
         table = {"name" : "find_nearest_2", "sourceType" : "Seed"}
     )
-    model_FindNearest_sp_find_nearest_centers = Task(
-        task_id = "model_FindNearest_sp_find_nearest_centers", 
+    FindNearest_sp__find_nearest_centers = Task(
+        task_id = "FindNearest_sp__find_nearest_centers", 
         component = "Model", 
-        modelName = "model_FindNearest_sp_find_nearest_centers"
+        modelName = "FindNearest_sp__find_nearest_centers"
     )
-    find_nearest_2.out >> model_FindNearest_sp_find_nearest_centers.in_0
-    find_nearest_1.out >> model_FindNearest_sp_find_nearest_centers.in_1
+    find_nearest_2.out >> FindNearest_sp__find_nearest_centers.in_0
+    find_nearest_1.out >> FindNearest_sp__find_nearest_centers.in_1

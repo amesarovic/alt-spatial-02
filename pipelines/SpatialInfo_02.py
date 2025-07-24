@@ -2,8 +2,8 @@ Schedule = Schedule(cron = "* 0 2 * * * *", timezone = "GMT", emails = ["email@g
 SensorSchedule = SensorSchedule(enabled = False)
 
 with DAG(Schedule = Schedule, SensorSchedule = SensorSchedule):
-    SpatialInfo__spatial_info_new_england = Task(
-        task_id = "SpatialInfo__spatial_info_new_england", 
+    SpatialInfo_02__compute_spatial_info = Task(
+        task_id = "SpatialInfo_02__compute_spatial_info", 
         component = "Model", 
-        modelName = "SpatialInfo__spatial_info_new_england"
+        modelName = "SpatialInfo_02__compute_spatial_info"
     )

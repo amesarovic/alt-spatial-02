@@ -58,12 +58,12 @@
             }, {
               "name" : "lon",
               "dataType" : {
-                "type" : "Float"
+                "type" : "Decimal"
               }
             }, {
               "name" : "lat",
               "dataType" : {
-                "type" : "Float"
+                "type" : "Decimal"
               }
             } ]
           },
@@ -76,24 +76,24 @@
       "id" : "-E7JAralZ2WYjurkg82ud$$_bSV_-2S3vL_lENBAaGse",
       "component" : "Model",
       "metadata" : {
-        "label" : "model_HeatMap_sp_generate_heatmap",
+        "label" : "HeatMap_sp__generate_heatmap",
         "phase" : 0
       },
       "properties" : {
-        "modelName" : "model_HeatMap_sp_generate_heatmap"
+        "modelName" : "HeatMap_sp__generate_heatmap"
       },
       "visualMetaInfo" : {
-        "visualProcessIds" : [ "prophecy_tmp__HeatMap_sp__generate_heatmap", "-E7JAralZ2WYjurkg82ud$$_bSV_-2S3vL_lENBAaGse", "WindUbK9FWA-zVjYwBg9b$$6xie5QL0j1_cnfhv8bTER" ],
-        "type" : "table",
+        "visualProcessIds" : [ "generate_heatmap_8c7xKEoJx3SfMxns7EHMj$$hwWEhQuWY7TBGVe0G0aXx", "-E7JAralZ2WYjurkg82ud$$_bSV_-2S3vL_lENBAaGse", "WindUbK9FWA-zVjYwBg9b$$6xie5QL0j1_cnfhv8bTER" ],
+        "type" : "ephemeral",
         "isTemporaryTable" : true
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "model_HeatMap_sp_generate_heatmap_in_0",
+          "id" : "HeatMap_sp__generate_heatmap_in_0",
           "slug" : "in_0"
         } ],
         "outputs" : [ {
-          "id" : "model_HeatMap_sp_generate_heatmap_out_0",
+          "id" : "HeatMap_sp__generate_heatmap_out_0",
           "slug" : "out_0"
         } ],
         "isCustomOutputSchema" : false
@@ -105,7 +105,7 @@
     "source" : "WindUbK9FWA-zVjYwBg9b$$6xie5QL0j1_cnfhv8bTER",
     "sourcePort" : "wRMc39_8zDgYuzYcJUqGb$$1mqlgSKmy-5t6Lk7HGFXe",
     "target" : "-E7JAralZ2WYjurkg82ud$$_bSV_-2S3vL_lENBAaGse",
-    "targetPort" : "model_HeatMap_sp_generate_heatmap_in_0"
+    "targetPort" : "HeatMap_sp__generate_heatmap_in_0"
   } ],
   "component" : "Pipeline"
 }

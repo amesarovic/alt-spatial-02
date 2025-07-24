@@ -1,16 +1,6 @@
 ---
 version: 2
 models:
-- name: "model_SpatialMatch_spatial_match_within"
+- name: "SpatialMatch__spatial_match_within"
   tags:
   - "prophecy_temp"
-sources:
-- name: "prophecy_tmp_source__SpatialMatch"
-  database: "andre_dev"
-  schema: "alteryx_spatial"
-  config:
-    enabled: true
-  tables:
-  - name: "prophecy_tmp__mdf3os7t__SpatialMatch__spatial_match_within"
-    tags:
-    - "prophecy_temp"

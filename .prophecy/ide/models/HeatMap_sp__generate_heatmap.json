@@ -1,7 +1,7 @@
 {
-  "id" : "model_HeatMap_sp_generate_heatmap",
+  "id" : "HeatMap_sp__generate_heatmap",
   "metainfo" : {
-    "label" : "model_HeatMap_sp_generate_heatmap",
+    "label" : "HeatMap_sp__generate_heatmap",
     "autoLayout" : true,
     "staleState" : "none",
     "sourceSuggestions" : {
@@ -9,8 +9,7 @@
     },
     "graphConfig" : {
       "entityConfig" : {
-        "alias" : "\"prophecy_tmp__mdfjrctq__HeatMap_sp__generate_heatmap\"",
-        "materialized" : "table",
+        "materialized" : "ephemeral",
         "database" : "\"andre_dev\"",
         "schema" : "\"alteryx_spatial\"",
         "type" : "ModelConfig"
@@ -19,12 +18,11 @@
     "version" : 3
   },
   "processes" : {
-    "prophecy_tmp__HeatMap_sp__generate_heatmap" : {
-      "id" : "prophecy_tmp__HeatMap_sp__generate_heatmap",
+    "generate_heatmap_8c7xKEoJx3SfMxns7EHMj$$hwWEhQuWY7TBGVe0G0aXx" : {
+      "id" : "generate_heatmap_8c7xKEoJx3SfMxns7EHMj$$hwWEhQuWY7TBGVe0G0aXx",
       "component" : "TargetModel",
       "metadata" : {
-        "label" : "generate_heatmap",
-        "phase" : 0
+        "label" : "generate_heatmap"
       },
       "properties" : {
         "customQueryDisabled" : true,
@@ -137,10 +135,10 @@
     }
   },
   "connections" : [ {
-    "id" : "conn_-E7JAralZ2WYjurkg82ud$$_bSV_-2S3vL_lENBAaGse_prophecy_tmp__HeatMap_sp__generate_heatmap",
+    "id" : "conn_-E7JAralZ2WYjurkg82ud$$_bSV_-2S3vL_lENBAaGse_generate_heatmap_8c7xKEoJx3SfMxns7EHMj$$hwWEhQuWY7TBGVe0G0aXx",
     "source" : "-E7JAralZ2WYjurkg82ud$$_bSV_-2S3vL_lENBAaGse",
     "sourcePort" : "8c7xKEoJx3SfMxns7EHMj$$hwWEhQuWY7TBGVe0G0aXx",
-    "target" : "prophecy_tmp__HeatMap_sp__generate_heatmap",
+    "target" : "generate_heatmap_8c7xKEoJx3SfMxns7EHMj$$hwWEhQuWY7TBGVe0G0aXx",
     "targetPort" : "input_port_0"
   }, {
     "id" : "X_SCuCYEL58D74vWjqEVK$$6rnkzr2ObOe236mHR4Oxb",
