@@ -21,7 +21,8 @@ compute_spatial_area AS (
       'new_england', 
       [{ "name": "name", "dataType": "String" }, { "name": "geometry", "dataType": "String" }], 
       'geometry', 
-      True
+      true, 
+      false
     )
   }}
 

@@ -2,7 +2,7 @@
   "SpatialInfo" : {
     "name" : "SpatialInfo",
     "macroType" : "query",
-    "definition" : "\n  {{ log(\"table_name=\" ~ table_name, info=True) }}\n  {{ log(\"schema=\" ~ schema, info=True) }}\n  {{ log(\"geom_column_name=\" ~ geom_column_name, info=True) }}\n  {{ log(\"area=\" ~ arexa, info=True) }}\n\n  SELECT\n    ST_AsText(ST_Centroid(ST_GeomFromText({{geom_column_name}}))) as centroid,\n    round(ST_GeogArea({{geom_column_name}})/1000000) as area_kms,\n    round(ST_GeogArea({{geom_column_name}})/1000000/2.59) as area_miles,\n    {{geom_column_name}} as input\n  FROM\n    {{table_name}}",
+    "definition" : "\n  {{ log(\"table_name=\" ~ table_name, info=True) }}\n  {{ log(\"schema=\" ~ schema, info=True) }}\n  {{ log(\"geom_column_name=\" ~ geom_column_name, info=True) }}\n  {{ log(\"area=\" ~ area, info=True) }}\n  {{ log(\"centroid=\" ~ centroid, info=True) }}\n\n  SELECT\n    ST_AsText(ST_Centroid(ST_GeomFromText({{geom_column_name}}))) as centroid,\n    round(ST_GeogArea({{geom_column_name}})/1000000) as area_kms,\n    round(ST_GeogArea({{geom_column_name}})/1000000/2.59) as area_miles,\n    {{geom_column_name}} as input\n  FROM\n    {{table_name}}",
     "parameters" : {
       "type" : "record",
       "fields" : [ {
@@ -39,6 +39,14 @@
         },
         "optional" : false,
         "comment" : "",
+        "isWorkflowNodeConfiguration" : false,
+        "isReferenced" : false
+      }, {
+        "name" : "centroid",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
         "isWorkflowNodeConfiguration" : false,
         "isReferenced" : false
       } ]
