@@ -516,6 +516,17 @@ sqlOrchestratorPipelines:
     - .prophecy/ide/pipelines/Distance.json
     - pipelines/Distance.py
     createdAt: '2025-07-22 20:30:27'
+  .prophecy/metadata/sqlorchestratorpipeline/Generalize_sp:
+    name: Generalize_sp
+    schema: null
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/Generalize_sp/schema.yml
+    - models/Generalize_sp/Generalize_sp__generalize_us_states.sql
+    - .prophecy/ide/pipelines/Generalize_sp.json
+    - pipelines/Generalize_sp.py
+    createdAt: '2025-07-22 23:00:58'
   .prophecy/metadata/sqlorchestratorpipeline/Distance_sp:
     name: Distance_sp
     schema: null
@@ -614,28 +625,6 @@ sqlOrchestratorPipelines:
     - .prophecy/ide/pipelines/Buffer.json
     - pipelines/Buffer.py
     createdAt: '2025-07-22 17:12:28'
-  .prophecy/metadata/sqlorchestratorpipeline/Generalize_sp:
-    name: Generalize_sp
-    schema: null
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - models/Generalize_sp/schema.yml
-    - models/Generalize_sp/Generalize_sp__generalize_us_states.sql
-    - .prophecy/ide/pipelines/Generalize_sp.json
-    - pipelines/Generalize_sp.py
-    createdAt: '2025-07-22 23:00:58'
-  .prophecy/metadata/sqlorchestratorpipeline/SpatialInfo_02:
-    name: SpatialInfo_02
-    schema: null
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - models/SpatialInfo_02/schema.yml
-    - models/SpatialInfo_02/SpatialInfo_02__compute_spatial_info.sql
-    - .prophecy/ide/pipelines/SpatialInfo_02.json
-    - pipelines/SpatialInfo_02.py
-    createdAt: '2025-07-24 01:58:59'
   .prophecy/metadata/sqlorchestratorpipeline/CreatePoint:
     name: CreatePoint
     schema: null
@@ -670,10 +659,8 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
+    - models/SpatialInfo/SpatialInfo__compute_spatial_area.sql
     - models/SpatialInfo/schema.yml
-    - models/SpatialInfo/SpatialInfo__spatial_info_new_england.sql
-    - models/SpatialInfo_02/schema.yml
-    - models/SpatialInfo_02/SpatialInfo_02__compute_spatial_info.sql
     - .prophecy/ide/pipelines/SpatialInfo.json
     - pipelines/SpatialInfo.py
     createdAt: '2025-07-23 13:30:03'

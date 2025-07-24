@@ -192,7 +192,4 @@ macros:
   - name: "area"
     type: "value"
     description: "{\"ProphecyType\": \"value\"}"
-  - name: "centroid"
-    type: "value"
-    description: "{\"ProphecyType\": \"value\"}"
   macroType: "query"

@@ -75,17 +75,17 @@
         "isCustomOutputSchema" : false
       }
     },
-    "6-BnX7EXpb0w9rHiribWH$$vw67BLmAWBoY5-XQjxXKz" : {
-      "id" : "6-BnX7EXpb0w9rHiribWH$$vw67BLmAWBoY5-XQjxXKz",
+    "kbk6z4aB9XVzuiB47S-sJ$$2lYt4t9Bq60gIOTo4X3Te" : {
+      "id" : "kbk6z4aB9XVzuiB47S-sJ$$2lYt4t9Bq60gIOTo4X3Te",
       "component" : "SpatialInfo",
       "metadata" : {
-        "label" : "spatial_info_new_england",
-        "x" : -360,
+        "label" : "compute_spatial_area",
+        "x" : -340,
         "y" : -280,
         "phase" : 0
       },
       "properties" : {
-        "area" : false,
+        "area" : true,
         "relation_name" : [ "new_england" ],
         "geometryColumnName" : "geometry",
         "_oldMacroProperties" : {
@@ -102,20 +102,16 @@
             "value" : "geometry"
           }, {
             "name" : "area",
-            "value" : "False"
-          }, {
-            "name" : "centroid",
-            "value" : "False"
+            "value" : "1"
           } ]
         },
         "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
-        "centroid" : false,
         "unit" : "miles",
         "distance" : 1
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "8Tr7p7BVqFWH6pBsEF0nF$$PootSwNtVPpJl6HN8MUQs",
+          "id" : "2pVFNrIGMSdnWjdQtTjp_$$vmBelJJoV2HNX8fkig2-B",
           "schema" : {
             "entityType" : "",
             "providerType" : "databricks",
@@ -134,22 +130,7 @@
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "oM3gF1dX7zzd3cnxafna4$$J4yYiY_sDyf8M6fUJabeS",
-          "schema" : {
-            "entityType" : "",
-            "providerType" : "Databricks",
-            "fields" : [ {
-              "name" : "centroid",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "input",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
+          "id" : "6FWqsv_HEpdzg4fNbM7Kd$$vF_7y0n68YvTf1NML0t20",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
@@ -163,11 +144,11 @@
     }
   },
   "connections" : [ {
-    "id" : "1lINtDA6IW2XpE5x0t8Gx$$vPPMRCHRaBjZfV9ybx4dY",
+    "id" : "XH28KpOv0DyA0cFYW9Yeb$$9hyLthJScwteDCL7UxzJ2",
     "source" : "Uu2_N1bm5M3xZ286VLhev$$sohsT7LEelw5m6q6LJKsv",
     "sourcePort" : "llwtctVZbziwBv2pzhPt9$$EGAv6FSdQv31NrwE3pK0o",
-    "target" : "6-BnX7EXpb0w9rHiribWH$$vw67BLmAWBoY5-XQjxXKz",
-    "targetPort" : "8Tr7p7BVqFWH6pBsEF0nF$$PootSwNtVPpJl6HN8MUQs"
+    "target" : "kbk6z4aB9XVzuiB47S-sJ$$2lYt4t9Bq60gIOTo4X3Te",
+    "targetPort" : "2pVFNrIGMSdnWjdQtTjp_$$vmBelJJoV2HNX8fkig2-B"
   } ],
   "component" : "Pipeline"
 }

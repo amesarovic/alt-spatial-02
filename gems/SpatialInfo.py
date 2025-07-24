@@ -19,7 +19,6 @@ class SpatialInfo(MacroSpec):
         unit: str = "miles"
         geometryColumnName: str = ""
         area: bool = False
-        centroid: bool = False
         
 
     def get_relation_names(self, component: Component, context: SqlContext):
@@ -57,7 +56,6 @@ class SpatialInfo(MacroSpec):
                         .bindProperty("geometryColumnName")
                 )                               
                 .addElement(Checkbox("Area").bindProperty("area"))
-                .addElement(Checkbox("Centroid").bindProperty("centroid"))
                 .addElement(
                    AlertBox(
                        variant="warning",
@@ -98,9 +96,8 @@ class SpatialInfo(MacroSpec):
         arguments = [
             f"'{table_name}'",   
             props.schema,
-            f"'{props.geometryColumnName}'", 
-            str(props.area).lower(), 
-            str(props.centroid).lower(),           
+            f"'{props.geometryColumnName}'",            
+            str(props.area),
         ]
 
         params = ",".join([param for param in arguments])
@@ -114,8 +111,7 @@ class SpatialInfo(MacroSpec):
             relation_name=parametersMap.get('relation_name'),
             schema=parametersMap.get('schema'),
             geometryColumnName=parametersMap.get('geometryColumnName'),
-            area=parametersMap.get('area').lower() == 'true',
-            centroid=parametersMap.get('area').lower() == 'true',
+            distance=int(parametersMap.get('area')),
         )
 
     def unloadProperties(self, properties: PropertiesType) -> MacroProperties:
@@ -127,8 +123,7 @@ class SpatialInfo(MacroSpec):
                 MacroParameter("relation_name", str(properties.relation_name)),
                 MacroParameter("schema", str(properties.schema)),
                 MacroParameter("destinationColumnNames", properties.geometryColumnName),
-                MacroParameter("area", str(properties.area)),
-                MacroParameter("centroid", str(properties.centroid)),
+                MacroParameter("area", str(properties.distance)),
             ]
         )
 
