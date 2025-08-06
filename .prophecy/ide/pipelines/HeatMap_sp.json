@@ -58,12 +58,12 @@
             }, {
               "name" : "lon",
               "dataType" : {
-                "type" : "Decimal"
+                "type" : "Float"
               }
             }, {
               "name" : "lat",
               "dataType" : {
-                "type" : "Decimal"
+                "type" : "Float"
               }
             } ]
           },
@@ -130,12 +130,12 @@
             }, {
               "name" : "lon",
               "dataType" : {
-                "type" : "Decimal"
+                "type" : "Float"
               }
             }, {
               "name" : "lat",
               "dataType" : {
-                "type" : "Decimal"
+                "type" : "Float"
               }
             } ]
           },

@@ -60,6 +60,17 @@ sqlMacros:
     - macros/macros.yml
     - gems/Distance.py
     createdAt: '2025-07-22 17:33:36'
+  .prophecy/metadata/sqlmacros/Simplify_02:
+    name: Simplify_02
+    macroType: query
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - macros/Simplify_02.sql
+    - .prophecy/ide/macros/Simplify_02.json
+    - macros/macros.yml
+    - gems/Simplify_02.py
+    createdAt: '2025-08-06 20:57:07'
   .prophecy/metadata/sqlmacros/SpatialMatch:
     name: SpatialMatch
     macroType: query
@@ -408,7 +419,13 @@ sqlSources:
       schema:
         entityType: ''
         providerType: databricks
-        fields: []
+        fields:
+        - name: name
+          dataType:
+            type: String
+        - name: geometry
+          dataType:
+            type: String
       description: null
       author: mesarovic.andre@prophecy.io
       createdAt: '2025-07-22 16:57:02'
@@ -511,9 +528,22 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
+    - models/Simplify_02/schema.yml
+    - models/Simplify_02/Simplify_02__simplify_geospatial_data.sql
     - .prophecy/ide/pipelines/Simplify.json
     - pipelines/Simplify.py
     createdAt: '2025-08-06 19:35:54'
+  .prophecy/metadata/sqlorchestratorpipeline/Simplify_02:
+    name: Simplify_02
+    schema: null
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/Simplify_02/schema.yml
+    - models/Simplify_02/Simplify_02__simplify_geospatial_data.sql
+    - .prophecy/ide/pipelines/Simplify_02.json
+    - pipelines/Simplify_02.py
+    createdAt: '2025-08-06 20:58:55'
   .prophecy/metadata/sqlorchestratorpipeline/Generalize_sp:
     name: Generalize_sp
     schema: null
