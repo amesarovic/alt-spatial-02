@@ -142,7 +142,7 @@
                 "type" : "String"
               }
             }, {
-              "name" : "buffer",
+              "name" : "as",
               "dataType" : {
                 "type" : "String"
               }

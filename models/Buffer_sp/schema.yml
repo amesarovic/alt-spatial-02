@@ -1,6 +1,0 @@
----
-version: 2
-models:
-- name: "Buffer_sp__buffer_us_states"
-  tags:
-  - "prophecy_temp"

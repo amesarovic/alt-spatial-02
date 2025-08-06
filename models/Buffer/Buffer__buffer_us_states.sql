@@ -22,7 +22,8 @@ buffer_us_states AS (
       [{ "name": "name", "dataType": "String" }, { "name": "geometry", "dataType": "String" }], 
       'geometry', 
       25, 
-      'miles'
+      'miles', 
+      'foo'
     )
   }}
 

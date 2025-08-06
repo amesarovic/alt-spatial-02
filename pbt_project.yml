@@ -337,14 +337,6 @@ sqlSources:
     - models/HeatMap/schema.yml
     createdAt: '2025-07-22 21:24:43'
     tables: []
-  .prophecy/metadata/sqlsources/prophecy_tmp_source__Buffer_Delta:
-    name: prophecy_tmp_source__Buffer_Delta
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - models/Buffer_Delta/schema.yml
-    createdAt: '2025-07-22 17:05:27'
-    tables: []
   .prophecy/metadata/sqlsources/prophecy_tmp_source__Test:
     name: prophecy_tmp_source__Test
     description: null
@@ -555,8 +547,6 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/Buffer_Delta/schema.yml
-    - models/Buffer_Delta/model_Buffer_Delta_buffer_new_england.sql
     - .prophecy/ide/pipelines/Buffer_Delta.json
     - pipelines/Buffer_Delta.py
     createdAt: '2025-07-22 17:05:01'
@@ -618,12 +608,8 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/Buffer_Delta/schema.yml
-    - models/Buffer_sp/Buffer_sp__buffer_us_states.sql
-    - models/Buffer/schema.yml
-    - models/Buffer_sp/schema.yml
     - models/Buffer/Buffer__buffer_us_states.sql
-    - models/Buffer_Delta/model_Buffer_Delta_buffer_new_england.sql
+    - models/Buffer/schema.yml
     - .prophecy/ide/pipelines/Buffer.json
     - pipelines/Buffer.py
     createdAt: '2025-07-22 17:12:28'
@@ -633,8 +619,6 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/Buffer_sp/Buffer_sp__buffer_us_states.sql
-    - models/Buffer_sp/schema.yml
     - .prophecy/ide/pipelines/Buffer_sp.json
     - pipelines/Buffer_sp.py
     createdAt: '2025-07-22 22:58:54'

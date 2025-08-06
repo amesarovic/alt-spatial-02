@@ -1,7 +1,8 @@
-{%- macro Buffer(table_name, schema, geom_column_name, distance, unit) -%}
+{%- macro Buffer(table_name, schema, geom_column_name, distance, unit, output_column_name) -%}
   {{ log("table_name=" ~ table_name, info=True) }}
   {{ log("schema=" ~ schema, info=True) }}
   {{ log("geom_column_name=" ~ geom_column_name, info=True) }}
+  {{ log("output_column_name=" ~ output_column_name, info=True) }}
   {{ log("distance=" ~ distance, info=True) }}
   {{ log("unit=" ~ unit, info=True) }}
 
@@ -24,7 +25,7 @@
         ),
         4326
       )
-    ) as buffer
+    ) as {{output_column_name}}
   FROM
     {{table_name}}
 
