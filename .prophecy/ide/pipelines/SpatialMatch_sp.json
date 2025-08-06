@@ -123,7 +123,7 @@
             }, {
               "name" : "delivery_fee",
               "dataType" : {
-                "type" : "Float"
+                "type" : "Decimal"
               }
             } ]
           },
@@ -220,7 +220,7 @@
             }, {
               "name" : "delivery_fee",
               "dataType" : {
-                "type" : "Float"
+                "type" : "Decimal"
               }
             } ]
           },
@@ -269,7 +269,7 @@
             }, {
               "name" : "target_delivery_fee",
               "dataType" : {
-                "type" : "Float"
+                "type" : "Decimal"
               }
             } ]
           },

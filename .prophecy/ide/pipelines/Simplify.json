@@ -1,0 +1,78 @@
+{
+  "id" : "Simplify",
+  "metainfo" : {
+    "label" : "Simplify",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "UJMvi0JjToSkg_6PzwCPi$$R1hwpAOptjnl2ZjIbE9G_" : {
+      "id" : "UJMvi0JjToSkg_6PzwCPi$$R1hwpAOptjnl2ZjIbE9G_",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "us_states_lines",
+        "x" : -480,
+        "y" : -180,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "us_states_lines",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "zDWVUEhkLTfQwAUwP_dXA$$F0pNvGkdM5nT45z3BPJgi",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "ZXkZvs2FAgfu5qCIEfuEy$$OK0inkczogG5Q6e8I9xSC",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ ],
+  "component" : "Pipeline"
+}

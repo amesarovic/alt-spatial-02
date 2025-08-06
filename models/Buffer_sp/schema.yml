@@ -1,6 +1,6 @@
 ---
 version: 2
 models:
-- name: "Generalize__generalize_us_states"
+- name: "Buffer_sp__buffer_us_states"
   tags:
   - "prophecy_temp"

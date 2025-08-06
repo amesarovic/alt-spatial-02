@@ -1,7 +1,7 @@
 {
-  "id" : "model_Generalize_generalize_us_states",
+  "id" : "Generalize__generalize_us_states",
   "metainfo" : {
-    "label" : "model_Generalize_generalize_us_states",
+    "label" : "Generalize__generalize_us_states",
     "autoLayout" : true,
     "staleState" : "none",
     "sourceSuggestions" : {
@@ -9,8 +9,7 @@
     },
     "graphConfig" : {
       "entityConfig" : {
-        "alias" : "\"prophecy_tmp__mdezrv9k__Generalize__generalize_us_states\"",
-        "materialized" : "table",
+        "materialized" : "ephemeral",
         "database" : "\"andre_dev\"",
         "schema" : "\"alteryx_spatial\"",
         "type" : "ModelConfig"
@@ -19,12 +18,11 @@
     "version" : 3
   },
   "processes" : {
-    "prophecy_tmp__Generalize__generalize_us_states" : {
-      "id" : "prophecy_tmp__Generalize__generalize_us_states",
+    "generalize_us_states_qSz1flHHNOwcswyCZCeXO$$UN1ZH5_RwGMCOt8eFiu_8" : {
+      "id" : "generalize_us_states_qSz1flHHNOwcswyCZCeXO$$UN1ZH5_RwGMCOt8eFiu_8",
       "component" : "TargetModel",
       "metadata" : {
-        "label" : "generalize_us_states",
-        "phase" : 0
+        "label" : "generalize_us_states"
       },
       "properties" : {
         "customQueryDisabled" : true,
@@ -129,10 +127,10 @@
     }
   },
   "connections" : [ {
-    "id" : "conn_ZqKmcWrwxWNJpmMNr2-1d$$AJI8W7tdXyiPxzir8vriC_prophecy_tmp__Generalize__generalize_us_states",
+    "id" : "conn_ZqKmcWrwxWNJpmMNr2-1d$$AJI8W7tdXyiPxzir8vriC_generalize_us_states_qSz1flHHNOwcswyCZCeXO$$UN1ZH5_RwGMCOt8eFiu_8",
     "source" : "ZqKmcWrwxWNJpmMNr2-1d$$AJI8W7tdXyiPxzir8vriC",
     "sourcePort" : "qSz1flHHNOwcswyCZCeXO$$UN1ZH5_RwGMCOt8eFiu_8",
-    "target" : "prophecy_tmp__Generalize__generalize_us_states",
+    "target" : "generalize_us_states_qSz1flHHNOwcswyCZCeXO$$UN1ZH5_RwGMCOt8eFiu_8",
     "targetPort" : "input_port_0"
   }, {
     "id" : "LFGXV9wHPg2goukTt3xAt$$iIp0t6D32JnwTGAshz2Yd",

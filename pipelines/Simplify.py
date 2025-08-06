@@ -1,15 +1,10 @@
 Schedule = Schedule(cron = "* 0 2 * * * *", timezone = "GMT", emails = ["email@gmail.com"], enabled = False)
+SensorSchedule = SensorSchedule(enabled = False)
 
-with DAG(Schedule = Schedule):
+with DAG(Schedule = Schedule, SensorSchedule = SensorSchedule):
     us_states_lines = Task(
         task_id = "us_states_lines", 
         component = "Dataset", 
         writeOptions = {"writeMode" : "overwrite"}, 
         table = {"name" : "us_states_lines", "sourceType" : "Seed"}
     )
-    Generalize__generalize_us_states = Task(
-        task_id = "Generalize__generalize_us_states", 
-        component = "Model", 
-        modelName = "Generalize__generalize_us_states"
-    )
-    us_states_lines.out >> Generalize__generalize_us_states.in_0

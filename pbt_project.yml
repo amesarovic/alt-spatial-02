@@ -27,6 +27,17 @@ sqlModels: {}
 sqlSnapshots: {}
 sqlTests: {}
 sqlMacros:
+  .prophecy/metadata/sqlmacros/Simplify:
+    name: Simplify
+    macroType: query
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - macros/Simplify.sql
+    - .prophecy/ide/macros/Simplify.json
+    - macros/macros.yml
+    - gems/Simplify.py
+    createdAt: '2025-08-06 19:33:41'
   .prophecy/metadata/sqlmacros/PolyBuild:
     name: PolyBuild
     macroType: query
@@ -207,7 +218,7 @@ sqlSeeds:
           type: String
       - name: delivery_fee
         dataType:
-          type: Float
+          type: Decimal
     description: null
     author: mesarovic.andre@prophecy.io
     files:
@@ -224,13 +235,13 @@ sqlSeeds:
           type: String
       - name: stop_schedule
         dataType:
-          type: Date
+          type: Timestamp
       - name: latitude
         dataType:
-          type: Float
+          type: Decimal
       - name: longitude
         dataType:
-          type: Float
+          type: Decimal
     description: null
     author: mesarovic.andre@prophecy.io
     files:
@@ -247,10 +258,10 @@ sqlSeeds:
           type: String
       - name: lon
         dataType:
-          type: Float
+          type: Decimal
       - name: lat
         dataType:
-          type: Float
+          type: Decimal
     description: null
     author: mesarovic.andre@prophecy.io
     files:
@@ -329,6 +340,14 @@ sqlSources:
     - models/FindNearest/schema.yml
     createdAt: '2025-07-22 22:30:30'
     tables: []
+  .prophecy/metadata/sqlsources/prophecy_tmp_source__Distance:
+    name: prophecy_tmp_source__Distance
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/Distance/schema.yml
+    createdAt: '2025-07-22 20:30:50'
+    tables: []
   .prophecy/metadata/sqlsources/prophecy_tmp_source__HeatMap:
     name: prophecy_tmp_source__HeatMap
     description: null
@@ -400,22 +419,6 @@ sqlSources:
       author: mesarovic.andre@prophecy.io
       createdAt: '2025-07-22 16:57:02'
       tableType: table
-  .prophecy/metadata/sqlsources/prophecy_tmp_source__Distance:
-    name: prophecy_tmp_source__Distance
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - models/Distance/schema.yml
-    createdAt: '2025-07-22 20:30:50'
-    tables: []
-  .prophecy/metadata/sqlsources/prophecy_tmp_source__Generalize:
-    name: prophecy_tmp_source__Generalize
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - models/Generalize/schema.yml
-    createdAt: '2025-07-22 17:25:09'
-    tables: []
 sqlUnreferencedSources: {}
 sqlPipeline:
   name: sqlPipeline
@@ -488,10 +491,10 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/PolyBuild/schema.yml
-    - models/PolyBuild/model_PolyBuild_build_polyline.sql
     - models/PolyBuild_sp/schema.yml
     - models/PolyBuild_sp/PolyBuild_sp__build_polyline.sql
+    - models/PolyBuild/schema.yml
+    - models/PolyBuild/model_PolyBuild_build_polyline.sql
     - .prophecy/ide/pipelines/PolyBuild.json
     - pipelines/PolyBuild.py
     createdAt: '2025-07-22 17:31:03'
@@ -508,6 +511,15 @@ sqlOrchestratorPipelines:
     - .prophecy/ide/pipelines/Distance.json
     - pipelines/Distance.py
     createdAt: '2025-07-22 20:30:27'
+  .prophecy/metadata/sqlorchestratorpipeline/Simplify:
+    name: Simplify
+    schema: null
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - .prophecy/ide/pipelines/Simplify.json
+    - pipelines/Simplify.py
+    createdAt: '2025-08-06 19:35:54'
   .prophecy/metadata/sqlorchestratorpipeline/Generalize_sp:
     name: Generalize_sp
     schema: null
@@ -582,7 +594,7 @@ sqlOrchestratorPipelines:
     files:
     - models/Generalize_sp/schema.yml
     - models/Generalize_sp/Generalize_sp__generalize_us_states.sql
-    - models/Generalize/model_Generalize_generalize_us_states.sql
+    - models/Generalize/Generalize__generalize_us_states.sql
     - models/Generalize/schema.yml
     - .prophecy/ide/pipelines/Generalize.json
     - pipelines/Generalize.py
@@ -593,10 +605,10 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/Test/model_Test_Limit_1.sql
+    - models/Test/model_Test_TextToColumns_1.sql
     - models/Test_ST_GeogArea/schema.yml
     - models/Test/model_Test_DynamicSelect_1.sql
-    - models/Test/model_Test_TextToColumns_1.sql
+    - models/Test/model_Test_Limit_1.sql
     - models/Test/schema.yml
     - models/Test_ST_GeogArea/Test_ST_GeogArea__test_geog_area.sql
     - .prophecy/ide/pipelines/Test.json
@@ -608,8 +620,10 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/Buffer/Buffer__buffer_us_states.sql
+    - models/Buffer_sp/Buffer_sp__buffer_us_states.sql
+    - models/Buffer_sp/schema.yml
     - models/Buffer/schema.yml
+    - models/Buffer/Buffer__buffer_us_states.sql
     - .prophecy/ide/pipelines/Buffer.json
     - pipelines/Buffer.py
     createdAt: '2025-07-22 17:12:28'
@@ -619,6 +633,8 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
+    - models/Buffer_sp/Buffer_sp__buffer_us_states.sql
+    - models/Buffer_sp/schema.yml
     - .prophecy/ide/pipelines/Buffer_sp.json
     - pipelines/Buffer_sp.py
     createdAt: '2025-07-22 22:58:54'
@@ -639,12 +655,12 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/CreatePoint/schema.yml
-    - models/CreatePoint_02/model_CreatePoint_02_create_geo_points.sql
-    - models/CreatePoint_02/schema.yml
-    - models/CreatePoint_sp/schema.yml
     - models/CreatePoint_sp/CreatePoint_sp__create_geo_point.sql
     - models/CreatePoint/model_CreatePoint_create_geo_point.sql
+    - models/CreatePoint_02/schema.yml
+    - models/CreatePoint_02/model_CreatePoint_02_create_geo_points.sql
+    - models/CreatePoint_sp/schema.yml
+    - models/CreatePoint/schema.yml
     - .prophecy/ide/pipelines/CreatePoint.json
     - pipelines/CreatePoint.py
     createdAt: '2025-07-22 17:28:23'

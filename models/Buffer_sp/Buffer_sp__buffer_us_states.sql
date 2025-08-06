@@ -1,7 +1,6 @@
 {{
   config({    
-    "materialized": "table",
-    "alias": "prophecy_tmp__mdezrv9k__Generalize__generalize_us_states",
+    "materialized": "ephemeral",
     "database": "andre_dev",
     "schema": "alteryx_spatial"
   })
@@ -15,15 +14,16 @@ WITH us_states_lines AS (
 
 ),
 
-generalize_us_states AS (
+buffer_us_states AS (
 
   {{
-    andre_spatial_09.Generalize(
+    andre_spatial_09.Buffer(
       'us_states_lines', 
       [{ "name": "name", "dataType": "String" }, { "name": "geometry", "dataType": "String" }], 
       'geometry', 
-      25, 
-      'kms'
+      20, 
+      'miles', 
+      ''
     )
   }}
 
@@ -31,4 +31,4 @@ generalize_us_states AS (
 
 SELECT *
 
-FROM generalize_us_states
+FROM buffer_us_states
