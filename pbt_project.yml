@@ -218,7 +218,7 @@ sqlSeeds:
           type: String
       - name: delivery_fee
         dataType:
-          type: Decimal
+          type: Float
     description: null
     author: mesarovic.andre@prophecy.io
     files:
@@ -235,13 +235,13 @@ sqlSeeds:
           type: String
       - name: stop_schedule
         dataType:
-          type: Timestamp
+          type: Date
       - name: latitude
         dataType:
-          type: Decimal
+          type: Float
       - name: longitude
         dataType:
-          type: Decimal
+          type: Float
     description: null
     author: mesarovic.andre@prophecy.io
     files:
@@ -258,10 +258,10 @@ sqlSeeds:
           type: String
       - name: lon
         dataType:
-          type: Decimal
+          type: Float
       - name: lat
         dataType:
-          type: Decimal
+          type: Float
     description: null
     author: mesarovic.andre@prophecy.io
     files:
@@ -408,13 +408,7 @@ sqlSources:
       schema:
         entityType: ''
         providerType: databricks
-        fields:
-        - name: name
-          dataType:
-            type: String
-        - name: geometry
-          dataType:
-            type: String
+        fields: []
       description: null
       author: mesarovic.andre@prophecy.io
       createdAt: '2025-07-22 16:57:02'
@@ -478,10 +472,10 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/FindNearest/schema.yml
-    - models/FindNearest/model_FindNearest_find_nearest_centers.sql
     - models/FindNearest_sp/FindNearest_sp__find_nearest_centers.sql
     - models/FindNearest_sp/schema.yml
+    - models/FindNearest/schema.yml
+    - models/FindNearest/model_FindNearest_find_nearest_centers.sql
     - .prophecy/ide/pipelines/FindNearest.json
     - pipelines/FindNearest.py
     createdAt: '2025-07-22 17:31:15'
@@ -504,10 +498,10 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/Distance/model_Distance_calc_distance_kms.sql
-    - models/Distance/schema.yml
     - models/Distance_sp/schema.yml
     - models/Distance_sp/model_Distance_sp_calculate_distances.sql
+    - models/Distance/model_Distance_calc_distance_kms.sql
+    - models/Distance/schema.yml
     - .prophecy/ide/pipelines/Distance.json
     - pipelines/Distance.py
     createdAt: '2025-07-22 20:30:27'
@@ -579,10 +573,10 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/HeatMap_sp/schema.yml
-    - models/HeatMap_sp/HeatMap_sp__generate_heatmap.sql
     - models/HeatMap/model_HeatMap_create_heatmap.sql
     - models/HeatMap/schema.yml
+    - models/HeatMap_sp/schema.yml
+    - models/HeatMap_sp/HeatMap_sp__generate_heatmap.sql
     - .prophecy/ide/pipelines/HeatMap.json
     - pipelines/HeatMap.py
     createdAt: '2025-07-22 17:31:28'
@@ -592,10 +586,10 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/Generalize_sp/schema.yml
-    - models/Generalize_sp/Generalize_sp__generalize_us_states.sql
     - models/Generalize/Generalize__generalize_us_states.sql
     - models/Generalize/schema.yml
+    - models/Generalize_sp/schema.yml
+    - models/Generalize_sp/Generalize_sp__generalize_us_states.sql
     - .prophecy/ide/pipelines/Generalize.json
     - pipelines/Generalize.py
     createdAt: '2025-07-22 17:17:18'
@@ -605,11 +599,11 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
+    - models/Test/schema.yml
+    - models/Test/model_Test_DynamicSelect_1.sql
     - models/Test/model_Test_TextToColumns_1.sql
     - models/Test_ST_GeogArea/schema.yml
-    - models/Test/model_Test_DynamicSelect_1.sql
     - models/Test/model_Test_Limit_1.sql
-    - models/Test/schema.yml
     - models/Test_ST_GeogArea/Test_ST_GeogArea__test_geog_area.sql
     - .prophecy/ide/pipelines/Test.json
     - pipelines/Test.py
@@ -620,10 +614,10 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/Buffer_sp/Buffer_sp__buffer_us_states.sql
-    - models/Buffer_sp/schema.yml
     - models/Buffer/schema.yml
     - models/Buffer/Buffer__buffer_us_states.sql
+    - models/Buffer_sp/Buffer_sp__buffer_us_states.sql
+    - models/Buffer_sp/schema.yml
     - .prophecy/ide/pipelines/Buffer.json
     - pipelines/Buffer.py
     createdAt: '2025-07-22 17:12:28'
@@ -655,12 +649,12 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/CreatePoint_sp/CreatePoint_sp__create_geo_point.sql
-    - models/CreatePoint/model_CreatePoint_create_geo_point.sql
-    - models/CreatePoint_02/schema.yml
-    - models/CreatePoint_02/model_CreatePoint_02_create_geo_points.sql
     - models/CreatePoint_sp/schema.yml
+    - models/CreatePoint_02/schema.yml
+    - models/CreatePoint/model_CreatePoint_create_geo_point.sql
     - models/CreatePoint/schema.yml
+    - models/CreatePoint_02/model_CreatePoint_02_create_geo_points.sql
+    - models/CreatePoint_sp/CreatePoint_sp__create_geo_point.sql
     - .prophecy/ide/pipelines/CreatePoint.json
     - pipelines/CreatePoint.py
     createdAt: '2025-07-22 17:28:23'
@@ -670,10 +664,10 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/SpatialMatch_sp/SpatialMatch_sp__spatial_match_within.sql
-    - models/SpatialMatch_sp/schema.yml
     - models/SpatialMatch/schema.yml
     - models/SpatialMatch/SpatialMatch__spatial_match_within.sql
+    - models/SpatialMatch_sp/SpatialMatch_sp__spatial_match_within.sql
+    - models/SpatialMatch_sp/schema.yml
     - .prophecy/ide/pipelines/SpatialMatch.json
     - pipelines/SpatialMatch.py
     createdAt: '2025-07-22 17:29:16'
