@@ -503,9 +503,11 @@ sqlOrchestratorPipelines:
     author: mesarovic.andre@prophecy.io
     files:
     - models/PolyBuild_sp/schema.yml
+    - models/PolyBuild_Buffer_workflow/schema.yml
     - models/PolyBuild_sp/PolyBuild_sp__build_polyline.sql
-    - models/PolyBuild/schema.yml
+    - models/PolyBuild_Buffer_workflow/PolyBuild_Buffer_workflow__buffer_geometry.sql
     - models/PolyBuild/model_PolyBuild_build_polyline.sql
+    - models/PolyBuild/schema.yml
     - .prophecy/ide/pipelines/PolyBuild.json
     - pipelines/PolyBuild.py
     createdAt: '2025-07-22 17:31:03'
@@ -673,6 +675,17 @@ sqlOrchestratorPipelines:
     - .prophecy/ide/pipelines/Test_ST_GeogArea.json
     - pipelines/Test_ST_GeogArea.py
     createdAt: '2025-07-24 04:42:52'
+  .prophecy/metadata/sqlorchestratorpipeline/PolyBuild_Buffer_workflow:
+    name: PolyBuild_Buffer_workflow
+    schema: null
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/PolyBuild_Buffer_workflow/schema.yml
+    - models/PolyBuild_Buffer_workflow/PolyBuild_Buffer_workflow__buffer_geometry.sql
+    - .prophecy/ide/pipelines/PolyBuild_Buffer_workflow.json
+    - pipelines/PolyBuild_Buffer_workflow.py
+    createdAt: '2025-08-06 21:02:38'
   .prophecy/metadata/sqlorchestratorpipeline/CreatePoint:
     name: CreatePoint
     schema: null
