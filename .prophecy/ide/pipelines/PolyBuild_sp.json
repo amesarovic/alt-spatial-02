@@ -58,17 +58,17 @@
             }, {
               "name" : "stop_schedule",
               "dataType" : {
-                "type" : "Timestamp"
+                "type" : "Date"
               }
             }, {
               "name" : "latitude",
               "dataType" : {
-                "type" : "Decimal"
+                "type" : "Float"
               }
             }, {
               "name" : "longitude",
               "dataType" : {
-                "type" : "Decimal"
+                "type" : "Float"
               }
             } ]
           },
@@ -131,17 +131,17 @@
             }, {
               "name" : "stop_schedule",
               "dataType" : {
-                "type" : "Timestamp"
+                "type" : "Date"
               }
             }, {
               "name" : "latitude",
               "dataType" : {
-                "type" : "Decimal"
+                "type" : "Float"
               }
             }, {
               "name" : "longitude",
               "dataType" : {
-                "type" : "Decimal"
+                "type" : "Float"
               }
             } ]
           },

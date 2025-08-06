@@ -1,0 +1,6 @@
+---
+version: 2
+models:
+- name: "Test_ST_GeogArea__test_geog_area"
+  tags:
+  - "prophecy_temp"

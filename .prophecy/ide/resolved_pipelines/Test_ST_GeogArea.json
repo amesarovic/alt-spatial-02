@@ -1,0 +1,60 @@
+{
+  "id" : "Test_ST_GeogArea",
+  "metainfo" : {
+    "label" : "Test_ST_GeogArea",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "X34sZUew5fXYd1UJc6HQ8$$XYzqv8h9tRTbcfhGOJgPc" : {
+      "id" : "X34sZUew5fXYd1UJc6HQ8$$XYzqv8h9tRTbcfhGOJgPc",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "Test_ST_GeogArea__test_geog_area",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "Test_ST_GeogArea__test_geog_area"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "test_geog_area_o5aJ9ukmeUsx7tHZWB6nN$$xhNlTAUJo78eow7Nnihrs", "X34sZUew5fXYd1UJc6HQ8$$XYzqv8h9tRTbcfhGOJgPc", "zJwT81bOSBRqNrBqfvDwT$$Di81IhhQWVnaKn0JozIxE" ],
+        "type" : "ephemeral",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Test_ST_GeogArea__test_geog_area_in_0",
+          "slug" : "in_0"
+        } ],
+        "outputs" : [ {
+          "id" : "Test_ST_GeogArea__test_geog_area_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ ],
+  "component" : "Pipeline"
+}

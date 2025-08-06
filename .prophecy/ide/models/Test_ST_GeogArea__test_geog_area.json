@@ -1,0 +1,130 @@
+{
+  "id" : "Test_ST_GeogArea__test_geog_area",
+  "metainfo" : {
+    "label" : "Test_ST_GeogArea__test_geog_area",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "ephemeral",
+        "database" : "\"andre_dev\"",
+        "schema" : "\"alteryx_spatial\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "test_geog_area_o5aJ9ukmeUsx7tHZWB6nN$$xhNlTAUJo78eow7Nnihrs" : {
+      "id" : "test_geog_area_o5aJ9ukmeUsx7tHZWB6nN$$xhNlTAUJo78eow7Nnihrs",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "test_geog_area"
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM test_geog_area\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "X34sZUew5fXYd1UJc6HQ8$$XYzqv8h9tRTbcfhGOJgPc" : {
+      "id" : "X34sZUew5fXYd1UJc6HQ8$$XYzqv8h9tRTbcfhGOJgPc",
+      "component" : "Test_ST_GeogArea",
+      "metadata" : {
+        "label" : "test_geog_area",
+        "x" : -200,
+        "y" : -200,
+        "phase" : 0
+      },
+      "properties" : {
+        "parameter1" : "'points'",
+        "_oldMacroProperties" : {
+          "macroName" : "Test_ST_GeogArea",
+          "projectName" : "andre_spatial_09",
+          "parameters" : [ {
+            "name" : "parameter1",
+            "value" : "'points'"
+          } ]
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "dT26iubaTcpl12yjGzb2V$$jLDouk5ZgUUeb9sULIN6r",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "o5aJ9ukmeUsx7tHZWB6nN$$xhNlTAUJo78eow7Nnihrs",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "zJwT81bOSBRqNrBqfvDwT$$Di81IhhQWVnaKn0JozIxE" : {
+      "id" : "zJwT81bOSBRqNrBqfvDwT$$Di81IhhQWVnaKn0JozIxE",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "new_england",
+        "x" : -440,
+        "y" : -200,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "new_england",
+          "sourceType" : "Table",
+          "sourceName" : "andre_dev.alteryx_spatial",
+          "alias" : "",
+          "additionalProperties" : null
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "WpWsiSdo7tzdMIwZ9jg0s$$9at9mrvqb8VzxzGuSONmB",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_X34sZUew5fXYd1UJc6HQ8$$XYzqv8h9tRTbcfhGOJgPc_test_geog_area_o5aJ9ukmeUsx7tHZWB6nN$$xhNlTAUJo78eow7Nnihrs",
+    "source" : "X34sZUew5fXYd1UJc6HQ8$$XYzqv8h9tRTbcfhGOJgPc",
+    "sourcePort" : "o5aJ9ukmeUsx7tHZWB6nN$$xhNlTAUJo78eow7Nnihrs",
+    "target" : "test_geog_area_o5aJ9ukmeUsx7tHZWB6nN$$xhNlTAUJo78eow7Nnihrs",
+    "targetPort" : "input_port_0"
+  }, {
+    "id" : "NdMMI4YvVXjps8UeGW7u7",
+    "source" : "zJwT81bOSBRqNrBqfvDwT$$Di81IhhQWVnaKn0JozIxE",
+    "sourcePort" : "WpWsiSdo7tzdMIwZ9jg0s$$9at9mrvqb8VzxzGuSONmB",
+    "target" : "X34sZUew5fXYd1UJc6HQ8$$XYzqv8h9tRTbcfhGOJgPc",
+    "targetPort" : "dT26iubaTcpl12yjGzb2V$$jLDouk5ZgUUeb9sULIN6r"
+  } ],
+  "component" : "Model"
+}

@@ -1,48 +1,12 @@
 {
-  "Buffer" : {
-    "name" : "Buffer",
+  "Test_ST_GeogArea" : {
+    "name" : "Test_ST_GeogArea",
     "macroType" : "query",
-    "definition" : "\n  {{ log(\"table_name=\" ~ table_name, info=True) }}\n  {{ log(\"schema=\" ~ schema, info=True) }}\n  {{ log(\"geom_column_name=\" ~ geom_column_name, info=True) }}\n  {{ log(\"distance=\" ~ distance, info=True) }}\n  {{ log(\"unit=\" ~ unit, info=True) }}\n\n  {% if unit == 'kilometers' %}\n    {% set distance_meters = distance * 1000 %}\n  {% else %}\n    {% set distance_meters = distance * 1609.34 %}\n  {% endif %}\n\n  SELECT\n    *,\n    ST_AsText(\n      ST_Transform(\n        ST_Buffer(\n          ST_Transform(\n            ST_GeomFromText({{geom_column_name}}, 4326),\n            3857\n          ),\n          {{distance_meters}}\n        ),\n        4326\n      )\n    ) as buffer\n  FROM\n    {{table_name}}",
+    "definition" : "\n/*\n    select * from {{ parameter1 }}\n*/\n    select * from {{ parameter1 }}",
     "parameters" : {
       "type" : "record",
       "fields" : [ {
-        "name" : "table_name",
-        "kind" : {
-          "type" : "value"
-        },
-        "optional" : false,
-        "comment" : "",
-        "isWorkflowNodeConfiguration" : false,
-        "isReferenced" : false
-      }, {
-        "name" : "schema",
-        "kind" : {
-          "type" : "value"
-        },
-        "optional" : false,
-        "comment" : "",
-        "isWorkflowNodeConfiguration" : false,
-        "isReferenced" : false
-      }, {
-        "name" : "geom_column_name",
-        "kind" : {
-          "type" : "value"
-        },
-        "optional" : false,
-        "comment" : "",
-        "isWorkflowNodeConfiguration" : false,
-        "isReferenced" : false
-      }, {
-        "name" : "distance",
-        "kind" : {
-          "type" : "value"
-        },
-        "optional" : false,
-        "comment" : "",
-        "isWorkflowNodeConfiguration" : false,
-        "isReferenced" : false
-      }, {
-        "name" : "unit",
+        "name" : "parameter1",
         "kind" : {
           "type" : "value"
         },

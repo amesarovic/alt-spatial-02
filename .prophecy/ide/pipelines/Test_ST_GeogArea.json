@@ -1,0 +1,140 @@
+{
+  "id" : "Test_ST_GeogArea",
+  "metainfo" : {
+    "label" : "Test_ST_GeogArea",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "X34sZUew5fXYd1UJc6HQ8$$XYzqv8h9tRTbcfhGOJgPc" : {
+      "id" : "X34sZUew5fXYd1UJc6HQ8$$XYzqv8h9tRTbcfhGOJgPc",
+      "component" : "Test_ST_GeogArea",
+      "metadata" : {
+        "label" : "test_geog_area",
+        "x" : -200,
+        "y" : -200,
+        "phase" : 0
+      },
+      "properties" : {
+        "parameter1" : "'points'",
+        "_oldMacroProperties" : {
+          "macroName" : "Test_ST_GeogArea",
+          "projectName" : "andre_spatial_09",
+          "parameters" : [ {
+            "name" : "parameter1",
+            "value" : "'points'"
+          } ]
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "dT26iubaTcpl12yjGzb2V$$jLDouk5ZgUUeb9sULIN6r",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "o5aJ9ukmeUsx7tHZWB6nN$$xhNlTAUJo78eow7Nnihrs",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "componentInfo" : {
+        "gemId" : "Test_ST_GeogArea_andre_spatial_09",
+        "name" : "Test_ST_GeogArea",
+        "projectName" : "andre_spatial_09",
+        "sourceProjectName" : "andre_spatial_09"
+      }
+    },
+    "zJwT81bOSBRqNrBqfvDwT$$Di81IhhQWVnaKn0JozIxE" : {
+      "id" : "zJwT81bOSBRqNrBqfvDwT$$Di81IhhQWVnaKn0JozIxE",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "new_england",
+        "x" : -440,
+        "y" : -200,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "new_england",
+          "sourceType" : "Table",
+          "sourceName" : "andre_dev.alteryx_spatial",
+          "alias" : "",
+          "additionalProperties" : null
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "uNZdATpdpjzLy6jhwwLGD$$ui5vnEFhjgmLWI56BIZIR",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "WpWsiSdo7tzdMIwZ9jg0s$$9at9mrvqb8VzxzGuSONmB",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "NdMMI4YvVXjps8UeGW7u7",
+    "source" : "zJwT81bOSBRqNrBqfvDwT$$Di81IhhQWVnaKn0JozIxE",
+    "sourcePort" : "WpWsiSdo7tzdMIwZ9jg0s$$9at9mrvqb8VzxzGuSONmB",
+    "target" : "X34sZUew5fXYd1UJc6HQ8$$XYzqv8h9tRTbcfhGOJgPc",
+    "targetPort" : "dT26iubaTcpl12yjGzb2V$$jLDouk5ZgUUeb9sULIN6r"
+  } ],
+  "component" : "Pipeline"
+}

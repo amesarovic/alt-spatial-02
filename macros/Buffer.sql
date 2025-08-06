@@ -12,7 +12,7 @@
   {%- endif -%}
 
   SELECT
-    {{geom_column_name}} as input,
+    *,
     ST_AsText(
       ST_Transform(
         ST_Buffer(
@@ -24,7 +24,7 @@
         ),
         4326
       )
-    ) as output
+    ) as buffer
   FROM
     {{table_name}}
 
