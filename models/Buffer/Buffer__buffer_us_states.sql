@@ -23,7 +23,7 @@ buffer_us_states AS (
       'geometry', 
       25, 
       'miles', 
-      'foo'
+      'bar'
     )
   }}
 

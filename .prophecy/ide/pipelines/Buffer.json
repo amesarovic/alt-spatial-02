@@ -99,10 +99,10 @@
             "value" : "miles"
           }, {
             "name" : "outputColumnName",
-            "value" : "foo"
+            "value" : "bar"
           } ]
         },
-        "outputColumnName" : "foo",
+        "outputColumnName" : "bar",
         "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
         "unit" : "miles",
         "distance" : 25
@@ -143,7 +143,7 @@
                 "type" : "String"
               }
             }, {
-              "name" : "foo",
+              "name" : "bar",
               "dataType" : {
                 "type" : "String"
               }

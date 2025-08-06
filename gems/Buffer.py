@@ -67,7 +67,7 @@ class Buffer(MacroSpec):
                         .bindProperty("geometryColumnName")
                 )
                 .addElement(
-                    TextBox("Output column").bindProperty("outputColumnName")
+                    TextBox("Output column", placeholder="Output column").bindProperty("outputColumnName")
                 )                                
                 .addElement(
                     NumberBox("Distance",placeholder="10").bindProperty("distance")
@@ -79,7 +79,17 @@ class Buffer(MacroSpec):
 
     def validate(self, context: SqlContext, component: Component) -> List[Diagnostic]:
         # Validate the component's state
-        return super().validate(context,component)
+        diagnostics = []
+        if len(component.properties.outputColumnName.strip()) == 0:
+            diagnostics.append(
+                Diagnostic(
+                    "properties.outputColumnName",
+                    "Field 'Output column' cannot be empty.",
+                    SeverityLevelEnum.Error  
+                ) 
+            )     
+        return diagnostics
+
 
     def onChange(self, context: SqlContext, oldState: Component, newState: Component) -> Component:
         # Handle changes in the component's state and return the new state
