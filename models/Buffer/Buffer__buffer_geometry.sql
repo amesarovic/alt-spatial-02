@@ -6,26 +6,11 @@
   })
 }}
 
-WITH poly_build AS (
+WITH Table_1 AS (
 
   SELECT * 
   
-  FROM {{ ref('poly_build')}}
-
-),
-
-PolyBuild_1 AS (
-
-  {{
-    andre_spatial_09.PolyBuild(
-      'poly_build', 
-      'SequencePolygon', 
-      'longitude', 
-      'latitude', 
-      'route_id', 
-      'stop_schedule'
-    )
-  }}
+  FROM {{ ref('PolyBuild_output_line')}}
 
 ),
 
@@ -33,15 +18,15 @@ buffer_geometry AS (
 
   {{
     andre_spatial_09.Buffer(
-      'PolyBuild_1', 
+      'Table_1', 
       [
         { "name": "grouping_column_name", "dataType": "String" }, 
         { "name": "geometry_wkt", "dataType": "String" }
       ], 
       'geometry_wkt', 
-      2, 
-      'miles', 
-      'output'
+      300, 
+      'meters', 
+      'foo'
     )
   }}
 

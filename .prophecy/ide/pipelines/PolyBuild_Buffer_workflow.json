@@ -81,17 +81,17 @@
             }, {
               "name" : "stop_schedule",
               "dataType" : {
-                "type" : "Date"
+                "type" : "Timestamp"
               }
             }, {
               "name" : "latitude",
               "dataType" : {
-                "type" : "Float"
+                "type" : "Decimal"
               }
             }, {
               "name" : "longitude",
               "dataType" : {
-                "type" : "Float"
+                "type" : "Decimal"
               }
             } ]
           },
@@ -151,7 +151,7 @@
             "value" : "geometry_wkt"
           }, {
             "name" : "distance",
-            "value" : "1"
+            "value" : "2"
           }, {
             "name" : "unit",
             "value" : "miles"
@@ -163,7 +163,7 @@
         "outputColumnName" : "output",
         "schema" : "[{\"name\": \"grouping_column_name\", \"dataType\": \"String\"}, {\"name\": \"geometry_wkt\", \"dataType\": \"String\"}]",
         "unit" : "miles",
-        "distance" : 1
+        "distance" : 2
       },
       "ports" : {
         "inputs" : [ {
@@ -254,17 +254,17 @@
             }, {
               "name" : "stop_schedule",
               "dataType" : {
-                "type" : "Date"
+                "type" : "Timestamp"
               }
             }, {
               "name" : "latitude",
               "dataType" : {
-                "type" : "Float"
+                "type" : "Decimal"
               }
             }, {
               "name" : "longitude",
               "dataType" : {
-                "type" : "Float"
+                "type" : "Decimal"
               }
             } ]
           },

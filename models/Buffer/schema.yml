@@ -1,6 +1,9 @@
 ---
 version: 2
 models:
+- name: "Buffer__buffer_geometry"
+  tags:
+  - "prophecy_temp"
 - name: "Buffer__buffer_us_states"
   tags:
   - "prophecy_temp"

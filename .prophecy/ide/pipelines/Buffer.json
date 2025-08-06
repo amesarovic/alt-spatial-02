@@ -96,7 +96,7 @@
             "value" : "25"
           }, {
             "name" : "unit",
-            "value" : "miles"
+            "value" : "meters"
           }, {
             "name" : "outputColumnName",
             "value" : "bar"
@@ -104,7 +104,7 @@
         },
         "outputColumnName" : "bar",
         "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
-        "unit" : "miles",
+        "unit" : "meters",
         "distance" : 25
       },
       "ports" : {
@@ -160,6 +160,51 @@
         "sourceProjectName" : "andre_spatial_09"
       }
     },
+    "gYkVVGfhfflqmjUVetq48$$F0ou_-vZ65XBy0pnMM7yE" : {
+      "id" : "gYkVVGfhfflqmjUVetq48$$F0ou_-vZ65XBy0pnMM7yE",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "Table_1",
+        "x" : -580,
+        "y" : -40,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "PolyBuild_output_line",
+          "sourceType" : "Seed"
+        },
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "2g4Rl8rHIcc0eUgcW8j06$$cCSvGB2WmofrxYcibFA5S",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "HTW9BlDH77ZlMnhNF3iMD$$0gSx6ftFMxQ29C9rvU0W-",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "grouping_column_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry_wkt",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
     "RLXBTrS3uvBo-arhs9ujf$$G5OSzFhsQTZ-cFG1Dt7sb" : {
       "id" : "RLXBTrS3uvBo-arhs9ujf$$G5OSzFhsQTZ-cFG1Dt7sb",
       "component" : "Comment",
@@ -178,6 +223,99 @@
         "inputs" : [ ],
         "outputs" : [ ]
       }
+    },
+    "Ce-nncY37E7kXKDluEGBX$$5Dxfm6xgzCtMC__moGRx1" : {
+      "id" : "Ce-nncY37E7kXKDluEGBX$$5Dxfm6xgzCtMC__moGRx1",
+      "component" : "Buffer",
+      "metadata" : {
+        "label" : "buffer_geometry",
+        "x" : -360,
+        "y" : -40,
+        "phase" : 0
+      },
+      "properties" : {
+        "relation_name" : [ "Table_1" ],
+        "geometryColumnName" : "geometry_wkt",
+        "_oldMacroProperties" : {
+          "macroName" : "Buffer",
+          "projectName" : "andre_spatial_09",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['Table_1']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"grouping_column_name\", \"dataType\": \"String\"}, {\"name\": \"geometry_wkt\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "destinationColumnNames",
+            "value" : "geometry_wkt"
+          }, {
+            "name" : "distance",
+            "value" : "300"
+          }, {
+            "name" : "unit",
+            "value" : "meters"
+          }, {
+            "name" : "outputColumnName",
+            "value" : "foo"
+          } ]
+        },
+        "outputColumnName" : "foo",
+        "schema" : "[{\"name\": \"grouping_column_name\", \"dataType\": \"String\"}, {\"name\": \"geometry_wkt\", \"dataType\": \"String\"}]",
+        "unit" : "meters",
+        "distance" : 300
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Ehx1EcxfmQwkqKU0XjBj7$$8nvPbLid2txODNt9CrQY2",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "grouping_column_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry_wkt",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "R58cyNiO82xI_SX9BHoS_$$m7Sy0bS8Ir-gkTq4RJrTE",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "grouping_column_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry_wkt",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "foo",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "componentInfo" : {
+        "gemId" : "Buffer_andre_spatial_09",
+        "name" : "Buffer",
+        "projectName" : "andre_spatial_09",
+        "sourceProjectName" : "andre_spatial_09"
+      }
     }
   },
   "connections" : [ {
@@ -186,6 +324,12 @@
     "sourcePort" : "o1xh8NlejHCjJr8v66pXa$$-J8GNbTZhhVUZckK6dqlJ",
     "target" : "TDEC6XIqnxz1PCHxl3BGO$$EYS8m5ezSLhDzdLDf6wBF",
     "targetPort" : "beC9AzHLLLsDin8CuDtzu$$fm88ILSENtvse8e4tfc0L"
+  }, {
+    "id" : "jsW79Co0unyAMyrrvjW92$$iRREFpao_XTeDzvmbrfKk",
+    "source" : "gYkVVGfhfflqmjUVetq48$$F0ou_-vZ65XBy0pnMM7yE",
+    "sourcePort" : "HTW9BlDH77ZlMnhNF3iMD$$0gSx6ftFMxQ29C9rvU0W-",
+    "target" : "Ce-nncY37E7kXKDluEGBX$$5Dxfm6xgzCtMC__moGRx1",
+    "targetPort" : "Ehx1EcxfmQwkqKU0XjBj7$$8nvPbLid2txODNt9CrQY2"
   } ],
   "component" : "Pipeline"
 }

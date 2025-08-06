@@ -212,6 +212,24 @@ sqlSeeds:
     files:
     - seeds/us_states_lines.csv
     createdAt: '2025-07-22 17:12:12'
+  .prophecy/metadata/sqlseeds/PolyBuild_output_line:
+    name: PolyBuild_output_line
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: grouping_column_name
+        dataType:
+          type: String
+      - name: geometry_wkt
+        dataType:
+          type: String
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - seeds/PolyBuild_output_line.csv
+    - seeds/seeds.yml
+    createdAt: '2025-08-06 21:50:12'
   .prophecy/metadata/sqlseeds/spatial_match_2:
     name: spatial_match_2
     schema:
@@ -229,7 +247,7 @@ sqlSeeds:
           type: String
       - name: delivery_fee
         dataType:
-          type: Float
+          type: Decimal
     description: null
     author: mesarovic.andre@prophecy.io
     files:
@@ -246,13 +264,13 @@ sqlSeeds:
           type: String
       - name: stop_schedule
         dataType:
-          type: Date
+          type: Timestamp
       - name: latitude
         dataType:
-          type: Float
+          type: Decimal
       - name: longitude
         dataType:
-          type: Float
+          type: Decimal
     description: null
     author: mesarovic.andre@prophecy.io
     files:
@@ -269,10 +287,10 @@ sqlSeeds:
           type: String
       - name: lon
         dataType:
-          type: Float
+          type: Decimal
       - name: lat
         dataType:
-          type: Float
+          type: Decimal
     description: null
     author: mesarovic.andre@prophecy.io
     files:
@@ -340,7 +358,6 @@ sqlSeeds:
     author: mesarovic.andre@prophecy.io
     files:
     - seeds/find_nearest_2.csv
-    - seeds/seeds.yml
     createdAt: '2025-07-22 22:29:04'
 sqlSources:
   .prophecy/metadata/sqlsources/prophecy_tmp_source__FindNearest:
@@ -489,10 +506,10 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/FindNearest_sp/FindNearest_sp__find_nearest_centers.sql
-    - models/FindNearest_sp/schema.yml
     - models/FindNearest/schema.yml
     - models/FindNearest/model_FindNearest_find_nearest_centers.sql
+    - models/FindNearest_sp/FindNearest_sp__find_nearest_centers.sql
+    - models/FindNearest_sp/schema.yml
     - .prophecy/ide/pipelines/FindNearest.json
     - pipelines/FindNearest.py
     createdAt: '2025-07-22 17:31:15'
@@ -502,12 +519,12 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/PolyBuild_sp/schema.yml
-    - models/PolyBuild_Buffer_workflow/schema.yml
-    - models/PolyBuild_sp/PolyBuild_sp__build_polyline.sql
-    - models/PolyBuild_Buffer_workflow/PolyBuild_Buffer_workflow__buffer_geometry.sql
-    - models/PolyBuild/model_PolyBuild_build_polyline.sql
     - models/PolyBuild/schema.yml
+    - models/PolyBuild/model_PolyBuild_build_polyline.sql
+    - models/PolyBuild_Buffer_workflow/schema.yml
+    - models/PolyBuild_sp/schema.yml
+    - models/PolyBuild_Buffer_workflow/PolyBuild_Buffer_workflow__buffer_geometry.sql
+    - models/PolyBuild_sp/PolyBuild_sp__build_polyline.sql
     - .prophecy/ide/pipelines/PolyBuild.json
     - pipelines/PolyBuild.py
     createdAt: '2025-07-22 17:31:03'
@@ -517,10 +534,10 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/Distance_sp/schema.yml
-    - models/Distance_sp/model_Distance_sp_calculate_distances.sql
     - models/Distance/model_Distance_calc_distance_kms.sql
     - models/Distance/schema.yml
+    - models/Distance_sp/schema.yml
+    - models/Distance_sp/model_Distance_sp_calculate_distances.sql
     - .prophecy/ide/pipelines/Distance.json
     - pipelines/Distance.py
     createdAt: '2025-07-22 20:30:27'
@@ -530,8 +547,8 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/Simplify_02/schema.yml
     - models/Simplify_02/Simplify_02__simplify_geospatial_data.sql
+    - models/Simplify_02/schema.yml
     - .prophecy/ide/pipelines/Simplify.json
     - pipelines/Simplify.py
     createdAt: '2025-08-06 19:35:54'
@@ -541,8 +558,8 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/Simplify_02/schema.yml
     - models/Simplify_02/Simplify_02__simplify_geospatial_data.sql
+    - models/Simplify_02/schema.yml
     - .prophecy/ide/pipelines/Simplify_02.json
     - pipelines/Simplify_02.py
     createdAt: '2025-08-06 20:58:55'
@@ -605,10 +622,10 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/HeatMap/model_HeatMap_create_heatmap.sql
-    - models/HeatMap/schema.yml
     - models/HeatMap_sp/schema.yml
     - models/HeatMap_sp/HeatMap_sp__generate_heatmap.sql
+    - models/HeatMap/model_HeatMap_create_heatmap.sql
+    - models/HeatMap/schema.yml
     - .prophecy/ide/pipelines/HeatMap.json
     - pipelines/HeatMap.py
     createdAt: '2025-07-22 17:31:28'
@@ -618,10 +635,10 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/Generalize/Generalize__generalize_us_states.sql
-    - models/Generalize/schema.yml
     - models/Generalize_sp/schema.yml
     - models/Generalize_sp/Generalize_sp__generalize_us_states.sql
+    - models/Generalize/Generalize__generalize_us_states.sql
+    - models/Generalize/schema.yml
     - .prophecy/ide/pipelines/Generalize.json
     - pipelines/Generalize.py
     createdAt: '2025-07-22 17:17:18'
@@ -631,12 +648,12 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/Test/schema.yml
-    - models/Test/model_Test_DynamicSelect_1.sql
-    - models/Test/model_Test_TextToColumns_1.sql
     - models/Test_ST_GeogArea/schema.yml
-    - models/Test/model_Test_Limit_1.sql
+    - models/Test/schema.yml
+    - models/Test/model_Test_TextToColumns_1.sql
+    - models/Test/model_Test_DynamicSelect_1.sql
     - models/Test_ST_GeogArea/Test_ST_GeogArea__test_geog_area.sql
+    - models/Test/model_Test_Limit_1.sql
     - .prophecy/ide/pipelines/Test.json
     - pipelines/Test.py
     createdAt: '2025-07-22 16:55:51'
@@ -646,10 +663,9 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/Buffer/schema.yml
     - models/Buffer/Buffer__buffer_us_states.sql
-    - models/Buffer_sp/Buffer_sp__buffer_us_states.sql
-    - models/Buffer_sp/schema.yml
+    - models/Buffer/schema.yml
+    - models/Buffer/Buffer__buffer_geometry.sql
     - .prophecy/ide/pipelines/Buffer.json
     - pipelines/Buffer.py
     createdAt: '2025-07-22 17:12:28'
@@ -659,8 +675,6 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/Buffer_sp/Buffer_sp__buffer_us_states.sql
-    - models/Buffer_sp/schema.yml
     - .prophecy/ide/pipelines/Buffer_sp.json
     - pipelines/Buffer_sp.py
     createdAt: '2025-07-22 22:58:54'
@@ -692,12 +706,12 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/CreatePoint_sp/schema.yml
-    - models/CreatePoint_02/schema.yml
-    - models/CreatePoint/model_CreatePoint_create_geo_point.sql
-    - models/CreatePoint/schema.yml
     - models/CreatePoint_02/model_CreatePoint_02_create_geo_points.sql
+    - models/CreatePoint/schema.yml
+    - models/CreatePoint/model_CreatePoint_create_geo_point.sql
+    - models/CreatePoint_02/schema.yml
     - models/CreatePoint_sp/CreatePoint_sp__create_geo_point.sql
+    - models/CreatePoint_sp/schema.yml
     - .prophecy/ide/pipelines/CreatePoint.json
     - pipelines/CreatePoint.py
     createdAt: '2025-07-22 17:28:23'
@@ -707,10 +721,10 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/SpatialMatch/schema.yml
-    - models/SpatialMatch/SpatialMatch__spatial_match_within.sql
     - models/SpatialMatch_sp/SpatialMatch_sp__spatial_match_within.sql
     - models/SpatialMatch_sp/schema.yml
+    - models/SpatialMatch/schema.yml
+    - models/SpatialMatch/SpatialMatch__spatial_match_within.sql
     - .prophecy/ide/pipelines/SpatialMatch.json
     - pipelines/SpatialMatch.py
     createdAt: '2025-07-22 17:29:16'

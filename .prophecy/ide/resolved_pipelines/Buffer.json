@@ -93,9 +93,87 @@
         } ],
         "isCustomOutputSchema" : false
       }
+    },
+    "gYkVVGfhfflqmjUVetq48$$F0ou_-vZ65XBy0pnMM7yE" : {
+      "id" : "gYkVVGfhfflqmjUVetq48$$F0ou_-vZ65XBy0pnMM7yE",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "Table_1",
+        "x" : -580,
+        "y" : -40,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "PolyBuild_output_line",
+          "sourceType" : "Seed"
+        },
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "2g4Rl8rHIcc0eUgcW8j06$$cCSvGB2WmofrxYcibFA5S",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "HTW9BlDH77ZlMnhNF3iMD$$0gSx6ftFMxQ29C9rvU0W-",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "grouping_column_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry_wkt",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "Ce-nncY37E7kXKDluEGBX$$5Dxfm6xgzCtMC__moGRx1" : {
+      "id" : "Ce-nncY37E7kXKDluEGBX$$5Dxfm6xgzCtMC__moGRx1",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "Buffer__buffer_geometry",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "Buffer__buffer_geometry"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "buffer_geometry_R58cyNiO82xI_SX9BHoS_$$m7Sy0bS8Ir-gkTq4RJrTE", "Ce-nncY37E7kXKDluEGBX$$5Dxfm6xgzCtMC__moGRx1", "gYkVVGfhfflqmjUVetq48$$F0ou_-vZ65XBy0pnMM7yE" ],
+        "type" : "ephemeral",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Buffer__buffer_geometry_in_0",
+          "slug" : "in_0"
+        } ],
+        "outputs" : [ {
+          "id" : "Buffer__buffer_geometry_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
     }
   },
   "connections" : [ {
+    "id" : "jsW79Co0unyAMyrrvjW92$$iRREFpao_XTeDzvmbrfKk",
+    "source" : "gYkVVGfhfflqmjUVetq48$$F0ou_-vZ65XBy0pnMM7yE",
+    "sourcePort" : "HTW9BlDH77ZlMnhNF3iMD$$0gSx6ftFMxQ29C9rvU0W-",
+    "target" : "Ce-nncY37E7kXKDluEGBX$$5Dxfm6xgzCtMC__moGRx1",
+    "targetPort" : "Buffer__buffer_geometry_in_0"
+  }, {
     "id" : "Czm3l0CJkrHz01zt_k6MY$$MoSEh9m5Lub3tX4dpVuXq",
     "source" : "RqhhkXStLTbunvy33oEJ9$$h3f0OWtgunQzlxC9PoYda",
     "sourcePort" : "o1xh8NlejHCjJr8v66pXa$$-J8GNbTZhhVUZckK6dqlJ",

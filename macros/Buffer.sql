@@ -6,10 +6,12 @@
   {{ log("distance=" ~ distance, info=True) }}
   {{ log("unit=" ~ unit, info=True) }}
 
-  {%- if unit == 'kilometers' -%}
+ {%- if unit == 'kilometers' -%}
     {%- set distance_meters = distance * 1000 -%}
+  {%- elif unit == 'miles' -%}
+      {%- set distance_meters = distance * 1609.34 -%}
   {%- else -%}
-    {%- set distance_meters = distance * 1609.34 -%}
+    {%- set distance_meters = distance -%}
   {%- endif -%}
 
   SELECT

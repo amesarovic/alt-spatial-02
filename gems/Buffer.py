@@ -73,7 +73,7 @@ class Buffer(MacroSpec):
                     NumberBox("Distance",placeholder="10").bindProperty("distance")
                 )                
                 .addElement(
-                    SelectBox("Units").addOption("Miles", "miles").addOption("Kilometers", "kms").bindProperty("unit")
+                    SelectBox("Units").addOption("Miles", "miles").addOption("Kilometers", "kms").addOption("Meters", "meters").bindProperty("unit")
                 ) 
        ))
 
@@ -114,10 +114,10 @@ class Buffer(MacroSpec):
         arguments = [
             f"'{table_name}'",   
             props.schema,
-            f"'{props.geometryColumnName}'",            
+            f"'{props.geometryColumnName}'",         
             str(props.distance),
-            f"'{props.unit}'",
-            f"'{props.outputColumnName}'"
+            f"'{props.unit}'", 
+            f"'{props.outputColumnName}'",
         ]
 
         params = ",".join([param for param in arguments])

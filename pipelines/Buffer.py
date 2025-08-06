@@ -12,4 +12,16 @@ with DAG(Schedule = Schedule):
         component = "Model", 
         modelName = "Buffer__buffer_us_states"
     )
+    Table_1 = Task(
+        task_id = "Table_1", 
+        component = "Dataset", 
+        table = {"name" : "PolyBuild_output_line", "sourceType" : "Seed"}, 
+        writeOptions = {"writeMode" : "overwrite"}
+    )
+    Buffer__buffer_geometry = Task(
+        task_id = "Buffer__buffer_geometry", 
+        component = "Model", 
+        modelName = "Buffer__buffer_geometry"
+    )
+    Table_1.out >> Buffer__buffer_geometry.in_0
     us_states_lines.out >> Buffer__buffer_us_states.in_0
