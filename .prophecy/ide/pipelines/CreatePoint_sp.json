@@ -127,31 +127,6 @@
         } ],
         "outputs" : [ {
           "id" : "JZbpB-XOH1JcjOZuCp-El$$UteHlRtkrmnPDvb6i77lz",
-          "schema" : {
-            "entityType" : "",
-            "providerType" : "Databricks",
-            "fields" : [ {
-              "name" : "city",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "lon",
-              "dataType" : {
-                "type" : "Decimal"
-              }
-            }, {
-              "name" : "lat",
-              "dataType" : {
-                "type" : "Decimal"
-              }
-            }, {
-              "name" : "point",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false

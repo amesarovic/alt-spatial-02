@@ -213,46 +213,6 @@
         } ],
         "outputs" : [ {
           "id" : "6D7E7meGxRjXlUT9yiiJ9$$mi_MuKFC7sKHFmz_gAS-9",
-          "schema" : {
-            "entityType" : "",
-            "providerType" : "Databricks",
-            "fields" : [ {
-              "name" : "customer_id",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "customer_point",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "center_id",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "center_point",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "rank_number",
-              "dataType" : {
-                "type" : "Integer"
-              }
-            }, {
-              "name" : "distanceKilometers",
-              "dataType" : {
-                "type" : "Double"
-              }
-            }, {
-              "name" : "cardinal_direction",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false

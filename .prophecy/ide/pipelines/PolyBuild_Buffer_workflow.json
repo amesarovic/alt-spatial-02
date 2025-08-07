@@ -99,21 +99,6 @@
         } ],
         "outputs" : [ {
           "id" : "RiqI8cCANFe8RIfufrAPM$$w-VhqKs5J8uom4U4tXdQa",
-          "schema" : {
-            "entityType" : "",
-            "providerType" : "Databricks",
-            "fields" : [ {
-              "name" : "grouping_column_name",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "geometry_wkt",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
@@ -168,45 +153,10 @@
       "ports" : {
         "inputs" : [ {
           "id" : "yvcLIrdmuLb8XRJUW6KKA$$iIMrGZwtzyFA4ngCs5A01",
-          "schema" : {
-            "entityType" : "",
-            "providerType" : "Databricks",
-            "fields" : [ {
-              "name" : "grouping_column_name",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "geometry_wkt",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
           "slug" : "in0"
         } ],
         "outputs" : [ {
           "id" : "ZuEpvE4WatPZqTIkMc41m$$DKHUZMgJz83NousgoM13L",
-          "schema" : {
-            "entityType" : "",
-            "providerType" : "Databricks",
-            "fields" : [ {
-              "name" : "grouping_column_name",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "geometry_wkt",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "output",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false

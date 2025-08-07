@@ -94,21 +94,6 @@
         } ],
         "outputs" : [ {
           "id" : "fKvUG-uIT0p_71bFbbFQn$$1WPyHN0zYdw2MbAVXo__1",
-          "schema" : {
-            "entityType" : "",
-            "providerType" : "Databricks",
-            "fields" : [ {
-              "name" : "grouping_column_name",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "geometry_wkt",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false

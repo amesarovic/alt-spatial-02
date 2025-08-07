@@ -138,11 +138,6 @@
               "dataType" : {
                 "type" : "String"
               }
-            }, {
-              "name" : "as",
-              "dataType" : {
-                "type" : "String"
-              }
             } ]
           },
           "slug" : "out"

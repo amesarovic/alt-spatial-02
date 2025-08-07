@@ -228,51 +228,6 @@
         } ],
         "outputs" : [ {
           "id" : "DccVZV3RWPMUwJOdHYCPK$$hUPGwQTsfJGNmXVhkIgKK",
-          "schema" : {
-            "entityType" : "",
-            "providerType" : "Databricks",
-            "fields" : [ {
-              "name" : "store_id",
-              "dataType" : {
-                "type" : "Integer"
-              }
-            }, {
-              "name" : "store_name",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "store_location",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "store_type",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "target_zone_id",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "target_zone_name",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "target_zone_polygon",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "target_delivery_fee",
-              "dataType" : {
-                "type" : "Decimal"
-              }
-            } ]
-          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false

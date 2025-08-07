@@ -143,21 +143,6 @@
         } ],
         "outputs" : [ {
           "id" : "8c7xKEoJx3SfMxns7EHMj$$hwWEhQuWY7TBGVe0G0aXx",
-          "schema" : {
-            "entityType" : "",
-            "providerType" : "Databricks",
-            "fields" : [ {
-              "name" : "density",
-              "dataType" : {
-                "type" : "Bigint"
-              }
-            }, {
-              "name" : "geometry_wkt",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false

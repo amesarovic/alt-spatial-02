@@ -164,51 +164,6 @@
         } ],
         "outputs" : [ {
           "id" : "i_JItPyFBJ8H8WiWqMqiM$$mgwsHuHm36w61Y0H67HG1",
-          "schema" : {
-            "entityType" : "",
-            "providerType" : "Databricks",
-            "fields" : [ {
-              "name" : "start_city",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "start_lat",
-              "dataType" : {
-                "type" : "Float"
-              }
-            }, {
-              "name" : "start_long",
-              "dataType" : {
-                "type" : "Float"
-              }
-            }, {
-              "name" : "destination_city",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "destination_lat",
-              "dataType" : {
-                "type" : "Float"
-              }
-            }, {
-              "name" : "destination_long",
-              "dataType" : {
-                "type" : "Float"
-              }
-            }, {
-              "name" : "start_point",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "dest_point",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false

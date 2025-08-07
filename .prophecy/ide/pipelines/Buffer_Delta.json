@@ -130,7 +130,7 @@
           "id" : "3xzySlgkENSrQo1D5JswH$$FMoTAmo1CVzoYxoURVGtZ",
           "schema" : {
             "entityType" : "",
-            "providerType" : "Databricks",
+            "providerType" : "databricks",
             "fields" : [ {
               "name" : "name",
               "dataType" : {
@@ -138,11 +138,6 @@
               }
             }, {
               "name" : "geometry",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "as",
               "dataType" : {
                 "type" : "String"
               }

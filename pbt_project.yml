@@ -36,7 +36,6 @@ sqlMacros:
     - macros/PolyBuild.sql
     - .prophecy/ide/macros/PolyBuild.json
     - macros/macros.yml
-    - gems/PolyBuild.py
     createdAt: '2025-07-22 17:46:13'
   .prophecy/metadata/sqlmacros/Distance:
     name: Distance
@@ -47,7 +46,6 @@ sqlMacros:
     - macros/Distance.sql
     - .prophecy/ide/macros/Distance.json
     - macros/macros.yml
-    - gems/Distance.py
     createdAt: '2025-07-22 17:33:36'
   .prophecy/metadata/sqlmacros/SpatialMatch:
     name: SpatialMatch
@@ -58,7 +56,6 @@ sqlMacros:
     - macros/SpatialMatch.sql
     - .prophecy/ide/macros/SpatialMatch.json
     - macros/macros.yml
-    - gems/SpatialMatch.py
     createdAt: '2025-07-22 18:37:18'
   .prophecy/metadata/sqlmacros/Buffer:
     name: Buffer
@@ -69,7 +66,6 @@ sqlMacros:
     - macros/Buffer.sql
     - .prophecy/ide/macros/Buffer.json
     - macros/macros.yml
-    - gems/Buffer.py
     createdAt: '2025-07-22 17:03:19'
   .prophecy/metadata/sqlmacros/generate_schema_name:
     name: generate_schema_name
@@ -98,7 +94,6 @@ sqlMacros:
     - macros/HeatMap.sql
     - .prophecy/ide/macros/HeatMap.json
     - macros/macros.yml
-    - gems/HeatMap.py
     createdAt: '2025-07-22 18:40:49'
   .prophecy/metadata/sqlmacros/Test_ST_GeogArea:
     name: Test_ST_GeogArea
@@ -109,7 +104,6 @@ sqlMacros:
     - macros/Test_ST_GeogArea.sql
     - .prophecy/ide/macros/Test_ST_GeogArea.json
     - macros/macros.yml
-    - gems/Test_ST_GeogArea.py
     createdAt: '2025-07-24 04:37:00'
   .prophecy/metadata/sqlmacros/SpatialInfo:
     name: SpatialInfo
@@ -120,7 +114,6 @@ sqlMacros:
     - macros/SpatialInfo.sql
     - .prophecy/ide/macros/SpatialInfo.json
     - macros/macros.yml
-    - gems/SpatialInfo.py
     createdAt: '2025-07-23 13:23:33'
   .prophecy/metadata/sqlmacros/FindNearest:
     name: FindNearest
@@ -131,7 +124,6 @@ sqlMacros:
     - macros/FindNearest.sql
     - .prophecy/ide/macros/FindNearest.json
     - macros/macros.yml
-    - gems/FindNearest.py
     createdAt: '2025-07-22 18:42:49'
   .prophecy/metadata/sqlmacros/CreatePoint:
     name: CreatePoint
@@ -142,7 +134,6 @@ sqlMacros:
     - macros/CreatePoint.sql
     - .prophecy/ide/macros/CreatePoint.json
     - macros/macros.yml
-    - gems/CreatePoint.py
     createdAt: '2025-07-22 17:42:05'
   .prophecy/metadata/sqlmacros/Generalize:
     name: Generalize
@@ -153,7 +144,6 @@ sqlMacros:
     - macros/Generalize.sql
     - .prophecy/ide/macros/Generalize.json
     - macros/macros.yml
-    - gems/Generalize.py
     createdAt: '2025-07-22 17:20:29'
 sqlSeeds:
   .prophecy/metadata/sqlseeds/find_nearest_1:
@@ -497,12 +487,12 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/PolyBuild_Buffer_workflow/schema.yml
-    - models/PolyBuild/schema.yml
-    - models/PolyBuild/model_PolyBuild_build_polyline.sql
     - models/PolyBuild_sp/schema.yml
-    - models/PolyBuild_sp/PolyBuild_sp__build_polyline.sql
     - models/PolyBuild_Buffer_workflow/PolyBuild_Buffer_workflow__buffer_geometry.sql
+    - models/PolyBuild_Buffer_workflow/schema.yml
+    - models/PolyBuild_sp/PolyBuild_sp__build_polyline.sql
+    - models/PolyBuild/model_PolyBuild_build_polyline.sql
+    - models/PolyBuild/schema.yml
     - .prophecy/ide/pipelines/PolyBuild.json
     - pipelines/PolyBuild.py
     createdAt: '2025-07-22 17:31:03'
@@ -512,10 +502,10 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/Distance/model_Distance_calc_distance_kms.sql
-    - models/Distance/schema.yml
     - models/Distance_sp/schema.yml
     - models/Distance_sp/model_Distance_sp_calculate_distances.sql
+    - models/Distance/model_Distance_calc_distance_kms.sql
+    - models/Distance/schema.yml
     - .prophecy/ide/pipelines/Distance.json
     - pipelines/Distance.py
     createdAt: '2025-07-22 20:30:27'
@@ -626,12 +616,12 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/Test/model_Test_TextToColumns_1.sql
-    - models/Test_ST_GeogArea/schema.yml
-    - models/Test/schema.yml
-    - models/Test_ST_GeogArea/Test_ST_GeogArea__test_geog_area.sql
     - models/Test/model_Test_Limit_1.sql
+    - models/Test_ST_GeogArea/Test_ST_GeogArea__test_geog_area.sql
     - models/Test/model_Test_DynamicSelect_1.sql
+    - models/Test/schema.yml
+    - models/Test_ST_GeogArea/schema.yml
+    - models/Test/model_Test_TextToColumns_1.sql
     - .prophecy/ide/pipelines/Test.json
     - pipelines/Test.py
     createdAt: '2025-07-22 16:55:51'
@@ -684,12 +674,12 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/CreatePoint/model_CreatePoint_create_geo_point.sql
-    - models/CreatePoint_sp/schema.yml
-    - models/CreatePoint_sp/CreatePoint_sp__create_geo_point.sql
-    - models/CreatePoint_02/model_CreatePoint_02_create_geo_points.sql
     - models/CreatePoint/schema.yml
+    - models/CreatePoint/model_CreatePoint_create_geo_point.sql
+    - models/CreatePoint_02/model_CreatePoint_02_create_geo_points.sql
+    - models/CreatePoint_sp/CreatePoint_sp__create_geo_point.sql
     - models/CreatePoint_02/schema.yml
+    - models/CreatePoint_sp/schema.yml
     - .prophecy/ide/pipelines/CreatePoint.json
     - pipelines/CreatePoint.py
     createdAt: '2025-07-22 17:28:23'

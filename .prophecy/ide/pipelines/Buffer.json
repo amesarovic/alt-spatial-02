@@ -142,11 +142,6 @@
               "dataType" : {
                 "type" : "String"
               }
-            }, {
-              "name" : "bar",
-              "dataType" : {
-                "type" : "String"
-              }
             } ]
           },
           "slug" : "out"
@@ -296,11 +291,6 @@
               }
             }, {
               "name" : "geometry_wkt",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "foo",
               "dataType" : {
                 "type" : "String"
               }
