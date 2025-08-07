@@ -87,14 +87,14 @@
           "id" : "ZtChEPHim5yhHvLRjDsM4$$-7cjlXC0EhfBFJsBnvr7x",
           "schema" : {
             "entityType" : "",
-            "providerType" : "Databricks",
+            "providerType" : "databricks",
             "fields" : [ {
-              "name" : "input",
+              "name" : "name",
               "dataType" : {
                 "type" : "String"
               }
             }, {
-              "name" : "output",
+              "name" : "geometry",
               "dataType" : {
                 "type" : "String"
               }
