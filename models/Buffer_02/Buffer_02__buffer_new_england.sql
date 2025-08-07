@@ -14,15 +14,16 @@ WITH new_england AS (
 
 ),
 
-simplify_geospatial_data AS (
+buffer_new_england AS (
 
   {{
-    andre_spatial_09.Simplify_02(
+    andre_spatial_10.Buffer_02(
       'new_england', 
       [{ "name": "name", "dataType": "String" }, { "name": "geometry", "dataType": "String" }], 
       'geometry', 
       1, 
-      'kms'
+      'miles', 
+      'foo'
     )
   }}
 
@@ -30,4 +31,4 @@ simplify_geospatial_data AS (
 
 SELECT *
 
-FROM simplify_geospatial_data
+FROM buffer_new_england

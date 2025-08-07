@@ -1,6 +1,6 @@
 ---
 version: 2
 models:
-- name: "Simplify_02__simplify_geospatial_data"
+- name: "Buffer_02__buffer_new_england"
   tags:
   - "prophecy_temp"

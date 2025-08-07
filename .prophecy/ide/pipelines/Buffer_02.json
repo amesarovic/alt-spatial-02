@@ -1,7 +1,7 @@
 {
-  "id" : "Buffer_sp",
+  "id" : "Buffer_02",
   "metainfo" : {
-    "label" : "Buffer_sp",
+    "label" : "Buffer_02",
     "autoLayout" : false,
     "version" : 1,
     "configuration" : {
@@ -19,16 +19,21 @@
       "emails" : [ "email@gmail.com" ],
       "enabled" : false
     },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
     "isTranspiledPipeline" : false
   },
   "processes" : {
-    "LJC9CJMKYOpP2DPkgbYOk$$hpB68Ja7aZja2_E5NYAHQ" : {
-      "id" : "LJC9CJMKYOpP2DPkgbYOk$$hpB68Ja7aZja2_E5NYAHQ",
+    "mHO7xOBStEp3-oNGNBf-D$$FLsyaDRFoKbHyFiCLif-i" : {
+      "id" : "mHO7xOBStEp3-oNGNBf-D$$FLsyaDRFoKbHyFiCLif-i",
       "component" : "Dataset",
       "metadata" : {
-        "label" : "us_states_lines",
-        "x" : -380,
-        "y" : -260,
+        "label" : "new_england",
+        "x" : -420,
+        "y" : -180,
         "phase" : 0
       },
       "properties" : {
@@ -36,20 +41,23 @@
           "writeMode" : "overwrite"
         },
         "table" : {
-          "name" : "us_states_lines",
-          "sourceType" : "Seed"
+          "name" : "new_england",
+          "sourceType" : "Table",
+          "sourceName" : "andre_dev.alteryx_spatial",
+          "alias" : "",
+          "additionalProperties" : null
         }
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "Y7XpplVa0qmQQt7E8j6uc$$7ynFv_w2wYLj-A2DWuPse",
+          "id" : "rjZRWl3eu-hZqXnn-2suN$$el4cdifokjTIwudfx-hKJ",
           "slug" : "in"
         } ],
         "outputs" : [ {
-          "id" : "DG-wJI0dK1i-kGMHdM4pQ$$K5njth7ka6ki7b-SM_lqB",
+          "id" : "LP4SDJLti_PyFIEkg_1Jk$$I8qoJv8AAZtolXYBQtyuS",
           "schema" : {
             "entityType" : "",
-            "providerType" : "Databricks",
+            "providerType" : "databricks",
             "fields" : [ {
               "name" : "name",
               "dataType" : {
@@ -67,24 +75,24 @@
         "isCustomOutputSchema" : false
       }
     },
-    "4hkX6AyMXFn-69pfdWGR0$$2teN-u-NEcdQJJU-WndXM" : {
-      "id" : "4hkX6AyMXFn-69pfdWGR0$$2teN-u-NEcdQJJU-WndXM",
-      "component" : "Buffer",
+    "HTh7iurvUTUyXNvOrzdep$$gh-LqAtFZdSc8mQNVYlFn" : {
+      "id" : "HTh7iurvUTUyXNvOrzdep$$gh-LqAtFZdSc8mQNVYlFn",
+      "component" : "Buffer_02",
       "metadata" : {
-        "label" : "buffer_us_states",
-        "x" : -220,
-        "y" : -260,
+        "label" : "buffer_new_england",
+        "x" : -240,
+        "y" : -180,
         "phase" : 0
       },
       "properties" : {
-        "relation_name" : [ "us_states_lines" ],
+        "relation_name" : [ "new_england" ],
         "geometryColumnName" : "geometry",
         "_oldMacroProperties" : {
-          "macroName" : "Buffer",
-          "projectName" : "andre_spatial_09",
+          "macroName" : "Buffer_02",
+          "projectName" : "andre_spatial_10",
           "parameters" : [ {
             "name" : "relation_name",
-            "value" : "['us_states_lines']"
+            "value" : "['new_england']"
           }, {
             "name" : "schema",
             "value" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]"
@@ -93,22 +101,26 @@
             "value" : "geometry"
           }, {
             "name" : "distance",
-            "value" : "20"
+            "value" : "1"
           }, {
             "name" : "unit",
             "value" : "miles"
+          }, {
+            "name" : "outputColumnName",
+            "value" : "foo"
           } ]
         },
+        "outputColumnName" : "foo",
         "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
         "unit" : "miles",
-        "distance" : 20
+        "distance" : 1
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "FA4HTvmIv6JivlMF_1UMT$$kjZMhf0FDfKw3oiMsEXLj",
+          "id" : "ttk96mzBJV8ZO1MWV-ADp$$A-KKO_ZBVSeFPRhnptkR6",
           "schema" : {
             "entityType" : "",
-            "providerType" : "Databricks",
+            "providerType" : "databricks",
             "fields" : [ {
               "name" : "name",
               "dataType" : {
@@ -124,25 +136,25 @@
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "VbGS13YuWK-IXBPcsBXHK$$_RzGxRPdgrReJ0B3wmvM5",
+          "id" : "vtLNRGx0-OyH-oeBZ1g_u$$Ash9EyvZht3Z5mqRwD07Q",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
       },
       "componentInfo" : {
-        "gemId" : "Buffer_andre_spatial_09",
-        "name" : "Buffer",
-        "projectName" : "andre_spatial_09",
+        "gemId" : "Buffer_02_andre_spatial_10",
+        "name" : "Buffer_02",
+        "projectName" : "andre_spatial_10",
         "sourceProjectName" : "andre_spatial_09"
       }
     }
   },
   "connections" : [ {
-    "id" : "J3VLy-1EN0SPs9K6QbmNV$$OKQmP9xrI07zv1SQegW6k",
-    "source" : "LJC9CJMKYOpP2DPkgbYOk$$hpB68Ja7aZja2_E5NYAHQ",
-    "sourcePort" : "DG-wJI0dK1i-kGMHdM4pQ$$K5njth7ka6ki7b-SM_lqB",
-    "target" : "4hkX6AyMXFn-69pfdWGR0$$2teN-u-NEcdQJJU-WndXM",
-    "targetPort" : "FA4HTvmIv6JivlMF_1UMT$$kjZMhf0FDfKw3oiMsEXLj"
+    "id" : "G0XZLQQlUz_C_6FlE5f3L$$tjwRh672Rn_X93sxyDAUA",
+    "source" : "mHO7xOBStEp3-oNGNBf-D$$FLsyaDRFoKbHyFiCLif-i",
+    "sourcePort" : "LP4SDJLti_PyFIEkg_1Jk$$I8qoJv8AAZtolXYBQtyuS",
+    "target" : "HTh7iurvUTUyXNvOrzdep$$gh-LqAtFZdSc8mQNVYlFn",
+    "targetPort" : "ttk96mzBJV8ZO1MWV-ADp$$A-KKO_ZBVSeFPRhnptkR6"
   } ],
   "component" : "Pipeline"
 }

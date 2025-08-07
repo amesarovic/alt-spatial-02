@@ -7,9 +7,9 @@ with DAG(Schedule = Schedule):
         writeOptions = {"writeMode" : "overwrite"}, 
         table = {"name" : "points", "sourceType" : "Seed"}
     )
-    model_CreatePoint_create_geo_point = Task(
-        task_id = "model_CreatePoint_create_geo_point", 
+    CreatePoint__create_geo_point = Task(
+        task_id = "CreatePoint__create_geo_point", 
         component = "Model", 
-        modelName = "model_CreatePoint_create_geo_point"
+        modelName = "CreatePoint__create_geo_point"
     )
-    points.out >> model_CreatePoint_create_geo_point.in_0
+    points.out >> CreatePoint__create_geo_point.in_0

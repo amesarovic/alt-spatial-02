@@ -4,14 +4,14 @@ import json
 from prophecy.cb.sql.MacroBuilderBase import *
 from prophecy.cb.ui.uispec import *
 
-class Buffer(MacroSpec):
-    name: str = "Buffer"
+class Buffer_02(MacroSpec):
+    name: str = "Buffer_02"
     projectName: str = "andre_spatial_10"
     category: str = "Spatial"
     minNumOfInputPorts: int = 1
     
     @dataclass(frozen=True)
-    class BufferProperties(MacroProperties):
+    class Buffer_02Properties(MacroProperties):
         # properties for the component with default values
         relation_name: List[str] = field(default_factory=list)
         schema: str = ''
@@ -42,7 +42,7 @@ class Buffer(MacroSpec):
 
     def dialog(self) -> Dialog:
         help = "Add the input geometry to the result along with the output geometry"
-        return Dialog("Buffer").addElement(
+        return Dialog("Buffer_02").addElement(
             ColumnsLayout(gap="1rem", height="100%")
             .addColumn(
                 Ports(allowInputAddOrDelete=True),
@@ -104,7 +104,7 @@ class Buffer(MacroSpec):
         )
         return newState.bindProperties(newProperties)
 
-    def apply(self, props: BufferProperties) -> str:
+    def apply(self, props: Buffer_02Properties) -> str:
         # Get the table name
         table_name: str = ",".join(str(rel) for rel in props.relation_name)
 
@@ -127,7 +127,7 @@ class Buffer(MacroSpec):
     def loadProperties(self, properties: MacroProperties) -> PropertiesType:
         # load the component's state given default macro property representation
         parametersMap = self.convertToParameterMap(properties.parameters)
-        return Buffer.BufferProperties(
+        return Buffer_02.Buffer_02Properties(
             relation_name=parametersMap.get('relation_name'),
             schema=parametersMap.get('schema'),
             geometryColumnName=parametersMap.get('geometryColumnName'),

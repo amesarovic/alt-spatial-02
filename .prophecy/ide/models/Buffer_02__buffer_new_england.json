@@ -1,7 +1,7 @@
 {
-  "id" : "Simplify_02__simplify_geospatial_data",
+  "id" : "Buffer_02__buffer_new_england",
   "metainfo" : {
-    "label" : "Simplify_02__simplify_geospatial_data",
+    "label" : "Buffer_02__buffer_new_england",
     "autoLayout" : true,
     "staleState" : "none",
     "sourceSuggestions" : {
@@ -18,17 +18,17 @@
     "version" : 3
   },
   "processes" : {
-    "simplify_geospatial_data_ZtChEPHim5yhHvLRjDsM4$$-7cjlXC0EhfBFJsBnvr7x" : {
-      "id" : "simplify_geospatial_data_ZtChEPHim5yhHvLRjDsM4$$-7cjlXC0EhfBFJsBnvr7x",
+    "buffer_new_england_vtLNRGx0-OyH-oeBZ1g_u$$Ash9EyvZht3Z5mqRwD07Q" : {
+      "id" : "buffer_new_england_vtLNRGx0-OyH-oeBZ1g_u$$Ash9EyvZht3Z5mqRwD07Q",
       "component" : "TargetModel",
       "metadata" : {
-        "label" : "simplify_geospatial_data"
+        "label" : "buffer_new_england"
       },
       "properties" : {
         "customQueryDisabled" : true,
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
-        "query" : "\nSELECT *\n\nFROM simplify_geospatial_data\n\n",
+        "query" : "\nSELECT *\n\nFROM buffer_new_england\n\n",
         "isModel" : true,
         "incrementalKey" : false,
         "incremental" : {
@@ -48,20 +48,21 @@
         "autoUpdateOnRun" : false
       }
     },
-    "9cLpsbtkYkktqzQ2laQBN$$yh7Y5KwIRowuBAfR5y2JF" : {
-      "id" : "9cLpsbtkYkktqzQ2laQBN$$yh7Y5KwIRowuBAfR5y2JF",
-      "component" : "Simplify_02",
+    "HTh7iurvUTUyXNvOrzdep$$gh-LqAtFZdSc8mQNVYlFn" : {
+      "id" : "HTh7iurvUTUyXNvOrzdep$$gh-LqAtFZdSc8mQNVYlFn",
+      "component" : "Buffer_02",
       "metadata" : {
-        "label" : "simplify_geospatial_data",
-        "x" : -200,
-        "y" : -200,
+        "label" : "buffer_new_england",
+        "x" : -240,
+        "y" : -180,
         "phase" : 0
       },
       "properties" : {
         "relation_name" : [ "new_england" ],
+        "geometryColumnName" : "geometry",
         "_oldMacroProperties" : {
-          "macroName" : "Simplify_02",
-          "projectName" : "andre_spatial_09",
+          "macroName" : "Buffer_02",
+          "projectName" : "andre_spatial_10",
           "parameters" : [ {
             "name" : "relation_name",
             "value" : "['new_england']"
@@ -72,38 +73,41 @@
             "name" : "destinationColumnNames",
             "value" : "geometry"
           }, {
-            "name" : "threshold",
+            "name" : "distance",
             "value" : "1"
           }, {
             "name" : "unit",
-            "value" : "kms"
+            "value" : "miles"
+          }, {
+            "name" : "outputColumnName",
+            "value" : "foo"
           } ]
         },
+        "outputColumnName" : "foo",
         "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
-        "threshold" : "1",
-        "polygonColumnName" : "geometry",
-        "unit" : "kms"
+        "unit" : "miles",
+        "distance" : 1
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "nBMjHpnYIUbFnalCTRezK$$9z13TAEkGJoL_quktILvw",
+          "id" : "ttk96mzBJV8ZO1MWV-ADp$$A-KKO_ZBVSeFPRhnptkR6",
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "ZtChEPHim5yhHvLRjDsM4$$-7cjlXC0EhfBFJsBnvr7x",
+          "id" : "vtLNRGx0-OyH-oeBZ1g_u$$Ash9EyvZht3Z5mqRwD07Q",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
       }
     },
-    "BCumizQf-FXU2pqNctu1-$$pVvp2UXmh7NupNlJvC2yC" : {
-      "id" : "BCumizQf-FXU2pqNctu1-$$pVvp2UXmh7NupNlJvC2yC",
+    "mHO7xOBStEp3-oNGNBf-D$$FLsyaDRFoKbHyFiCLif-i" : {
+      "id" : "mHO7xOBStEp3-oNGNBf-D$$FLsyaDRFoKbHyFiCLif-i",
       "component" : "Source",
       "metadata" : {
         "label" : "new_england",
-        "x" : -460,
-        "y" : -200,
+        "x" : -420,
+        "y" : -180,
         "phase" : 0
       },
       "properties" : {
@@ -121,7 +125,7 @@
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "Vd8UfzAA8670HoGRAaCZa$$I83lC-4EMxkNz4fFh4ozG",
+          "id" : "LP4SDJLti_PyFIEkg_1Jk$$I8qoJv8AAZtolXYBQtyuS",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -130,17 +134,17 @@
     }
   },
   "connections" : [ {
-    "id" : "conn_9cLpsbtkYkktqzQ2laQBN$$yh7Y5KwIRowuBAfR5y2JF_simplify_geospatial_data_ZtChEPHim5yhHvLRjDsM4$$-7cjlXC0EhfBFJsBnvr7x",
-    "source" : "9cLpsbtkYkktqzQ2laQBN$$yh7Y5KwIRowuBAfR5y2JF",
-    "sourcePort" : "ZtChEPHim5yhHvLRjDsM4$$-7cjlXC0EhfBFJsBnvr7x",
-    "target" : "simplify_geospatial_data_ZtChEPHim5yhHvLRjDsM4$$-7cjlXC0EhfBFJsBnvr7x",
+    "id" : "conn_HTh7iurvUTUyXNvOrzdep$$gh-LqAtFZdSc8mQNVYlFn_buffer_new_england_vtLNRGx0-OyH-oeBZ1g_u$$Ash9EyvZht3Z5mqRwD07Q",
+    "source" : "HTh7iurvUTUyXNvOrzdep$$gh-LqAtFZdSc8mQNVYlFn",
+    "sourcePort" : "vtLNRGx0-OyH-oeBZ1g_u$$Ash9EyvZht3Z5mqRwD07Q",
+    "target" : "buffer_new_england_vtLNRGx0-OyH-oeBZ1g_u$$Ash9EyvZht3Z5mqRwD07Q",
     "targetPort" : "input_port_0"
   }, {
-    "id" : "yADhvixVEbdO6-Gqdqujk",
-    "source" : "BCumizQf-FXU2pqNctu1-$$pVvp2UXmh7NupNlJvC2yC",
-    "sourcePort" : "Vd8UfzAA8670HoGRAaCZa$$I83lC-4EMxkNz4fFh4ozG",
-    "target" : "9cLpsbtkYkktqzQ2laQBN$$yh7Y5KwIRowuBAfR5y2JF",
-    "targetPort" : "nBMjHpnYIUbFnalCTRezK$$9z13TAEkGJoL_quktILvw"
+    "id" : "G0XZLQQlUz_C_6FlE5f3L$$tjwRh672Rn_X93sxyDAUA",
+    "source" : "mHO7xOBStEp3-oNGNBf-D$$FLsyaDRFoKbHyFiCLif-i",
+    "sourcePort" : "LP4SDJLti_PyFIEkg_1Jk$$I8qoJv8AAZtolXYBQtyuS",
+    "target" : "HTh7iurvUTUyXNvOrzdep$$gh-LqAtFZdSc8mQNVYlFn",
+    "targetPort" : "ttk96mzBJV8ZO1MWV-ADp$$A-KKO_ZBVSeFPRhnptkR6"
   } ],
   "component" : "Model"
 }
