@@ -10,7 +10,7 @@ from prophecy.cb.ui.uispec import *
 
 class Test_ST_GeogArea(MacroSpec):
     name: str = "Test_ST_GeogArea"
-    projectName: str = "andre_spatial_09"
+    projectName: str = "andre_spatial_10"
     category: str = "Spatial"
 
 
